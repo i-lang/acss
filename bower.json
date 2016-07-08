@@ -7,7 +7,7 @@
   "main": ["dist/css/acss.css"],
   "moduleType": [],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://bitbucket.org/two_dot/acss#readme",
   "ignore": [
     "node_modules",
     "bower_components",

@@ -1,0 +1,16 @@
+{
+  "name": "acss",
+  "version": "1.0.0",
+  "description": "Attributed CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/two_dot/acss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/two_dot/acss#readme"
+}
