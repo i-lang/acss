@@ -1,0 +1,31 @@
+.td-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+
+  &[data-fit="width"] {
+    background-size: 100% auto;
+  }
+
+  &[data-fit="height"] {
+    background-size: auto 100%;
+  }
+
+  &[data-fit="cover"] {
+    background-size: cover;
+  }
+
+  &[data-fit="contain"] {
+    background-size: contain;
+  }
+
+  &.is-hoverable {
+    &[data-fit="width"]:hover {
+      background-size: 110% auto;
+    }
+
+    &[data-fit="height"]:hover {
+      background-size: auto 110%;
+    }
+  }
+}

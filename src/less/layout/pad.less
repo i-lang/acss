@@ -1,0 +1,71 @@
+@import "../base/td";
+
+.l-pad {
+  padding: 0;
+}
+
+.l-pad.no-y-pad {
+  .y-pad(0);
+}
+
+.l-pad.no-x-pad {
+  .x-pad(0);
+}
+
+.pad-build(200, 5);
+.vPadding-build(200, 5);
+.hPadding-build(200, 5);
+
+.vPadding-build(@vPadding, @diff) when (@vPadding >=0) {
+  .vPadding-build(@vPadding - @diff, @diff);
+
+  .l-pad[data-pad$="x@{vPadding}"] {
+    .y-pad(@vPadding);
+  }
+}
+
+.hPadding-build(@hPadding, @diff) when (@hPadding >=0) {
+  .hPadding-build(@hPadding - @diff, @diff);
+
+  .l-pad[data-pad^="@{hPadding}x"] {
+    .x-pad(@hPadding);
+  }
+}
+
+.pad-build(@padding, @diff) when (@padding>=0) {
+  .pad-build(@padding - @diff, @diff);
+  .l-pad[data-pad="@{padding}"] {
+    padding: @padding * 1px;
+  }
+
+  .y-pad-build(@padding);
+  .x-pad-build(@padding);
+}
+
+.y-pad-build(@padding) {
+  .l-pad[data-y-pad^="@{padding}-"] {
+    padding-top: @padding * 1px;
+  }
+
+  .l-pad[data-y-pad$="-@{padding}"] {
+    padding-bottom: @padding * 1px;
+  }
+
+  .l-pad[data-y-pad="@{padding}"] {
+    .y-pad(@padding);
+  }
+}
+
+.x-pad-build(@padding) {
+  .l-pad[data-x-pad^="@{padding}-"] {
+    padding-left: @padding * 1px;
+  }
+
+  .l-pad[data-x-pad$="-@{padding}"] {
+    padding-right: @padding * 1px;
+  }
+
+  .l-pad[data-x-pad="@{padding}"] {
+    .x-pad(@padding);
+  }
+}

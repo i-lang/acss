@@ -1,0 +1,105 @@
+@import "flex-border";
+
+@defaultGutter: 10px;
+
+// Deprecated
+l-row[data-gutter], l-row.has-gutter {
+  .rowGutterBetween(@defaultGutter);
+}
+
+// Deprecated
+l-row[data-gutter-around], l-row.has-gutter-around {
+  .rowGutterAround(@defaultGutter);
+}
+
+// Deprecated
+l-col[data-gutter], l-col.has-gutter {
+  .colGutterBetween(@defaultGutter);
+}
+
+// Deprecated
+l-col[data-gutter-around], l-col.has-gutter-around {
+  .colGutterAround(@defaultGutter);
+}
+
+.l-gutter-build(150, 5);
+
+.l-gutter-build(@gutter, @diff) when (@gutter > 0) {
+  .l-gutter-build(@gutter - @diff, @diff);
+  l-row {
+    &[data-gutter-between="@{gutter}"] {
+      .rowGutterBetween(@gutter);
+    }
+
+    &[data-gutter-around="@{gutter}"] {
+      .rowGutterAround(@gutter);
+    }
+  }
+  l-col {
+    &[data-gutter-between="@{gutter}"] {
+      .colGutterBetween(@gutter);
+    }
+
+    &[data-gutter-around="@{gutter}"] {
+      .colGutterAround(@gutter);
+    }
+  }
+}
+
+// row mixin
+.rowGutterBetween(@rowGutter) {
+  .rowGutterBorderBetween(@rowGutter);
+  .rowGutterBorderAround(@rowGutter);
+
+  > * {
+    margin-left: @rowGutter / 2px;
+    margin-right: @rowGutter / 2px;
+  }
+
+  > *:first-child {
+    margin-left: 0;
+  }
+
+  > *:last-child {
+    margin-right: 0;
+  }
+}
+
+.rowGutterAround(@rowGutter) {
+  .rowGutterBorderBetween(@rowGutter);
+  .rowGutterBorderAround(@rowGutter);
+  .rowGutterAroundBorderAround(@rowGutter);
+
+  > * {
+    margin-left: @rowGutter / 2px;
+    margin-right: @rowGutter / 2px;
+  }
+}
+
+.colGutterBetween(@colGutter) {
+  .colGutterBorderBetween(@colGutter);
+  .colGutterBorderAround(@colGutter);
+
+  > * {
+    margin-top: @colGutter / 2px;
+    margin-bottom: @colGutter / 2px;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.colGutterAround(@colGutter) {
+  .colGutterBorderBetween(@colGutter);
+  .colGutterBorderAround(@colGutter);
+  .colGutterAroundBorderAround(@colGutter);
+
+  > * {
+    margin-top: @colGutter / 2px;
+    margin-bottom: @colGutter / 2px;
+  }
+}

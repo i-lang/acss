@@ -1,0 +1,180 @@
+l-row {
+  .rowBorderBetween(1px, #979797);
+}
+
+l-row {
+  .rowBorderAround(1px, #979797);
+}
+
+l-col {
+  .colBorderBetween(1px, #979797);
+}
+
+l-col {
+  .colBorderAround(1px, #979797);
+}
+
+.rowGutterBorderBetween(@rowGutter) {
+  &[data-border=between] > *:nth-child(n+2):before {
+    left: -@rowGutter / 2px;
+  }
+}
+
+.rowGutterBorderAround(@rowGutter) {
+  &[data-border=around] {
+    > *:nth-child(n+2):before {
+      left: -@rowGutter / 2px;
+    }
+
+    > *:last-child:after {
+      right: 0;
+    }
+
+    > *:first-child:before {
+      left: 0;
+    }
+  }
+}
+
+.rowGutterAroundBorderAround(@rowGutter) {
+  &[data-border=around] {
+    > *:first-child:before {
+      left: -@rowGutter / 2px;
+    }
+
+    > *:last-child:after {
+      right: -@rowGutter / 2px;
+    }
+  }
+}
+
+.rowBorderBetween(@border, @color) {
+  &[data-border=between] {
+    > *:nth-child(n+2) {
+      position: relative;
+
+      &:before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left: @border solid @color;
+      }
+    }
+  }
+}
+
+.rowBorderAround(@border, @color) {
+  position: relative;
+
+  &[data-border=around] {
+    > * {
+      position: relative;
+
+      &:before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left: @border solid @color;
+      }
+    }
+
+    > *:last-child {
+      &:after {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-right: @border solid @color;
+      }
+    }
+  }
+}
+
+.colGutterBorderBetween(@colGutter) {
+  &[data-border=between] > *:nth-child(n+2):before {
+    top: -@colGutter / 2px;
+  }
+}
+
+.colGutterBorderAround(@colGutter) {
+  &[data-border=around] {
+    > *:nth-child(n+2):before {
+      top: -@colGutter / 2px;
+    }
+
+    > *:last-child:after {
+      bottom: 0;
+    }
+
+    > *:first-child:before {
+      top: 0;
+    }
+  }
+}
+
+.colGutterAroundBorderAround(@colGutter) {
+  &[data-border=around] {
+    > *:first-child:before {
+      top: -@colGutter / 2px;
+    }
+
+    > *:last-child:after {
+      bottom: -@colGutter / 2px;
+    }
+  }
+}
+
+.colBorderBetween(@border, @color) {
+  &[data-border=between] {
+    > *:nth-child(n+2) {
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 100%;
+        height: @border;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: @border solid @color;
+      }
+    }
+  }
+}
+
+.colBorderAround(@border, @color) {
+  &[data-border=around] {
+    > * {
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 100%;
+        height: @border;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: @border solid @color;
+      }
+    }
+
+    > *:last-child {
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: @border;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: @border solid @color;
+      }
+    }
+  }
+}

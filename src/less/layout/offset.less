@@ -1,0 +1,33 @@
+.l-offset {
+  position: relative;
+
+  > * {
+    &[data-offset] {
+      position: relative;
+    }
+
+    .offset-build(100, -100, 5);
+  }
+
+  .offset-build(@offset, @end, @diff) when (@offset >= @end) {
+    .offset-build(@offset - @diff, @end, @diff);
+
+    &[data-offset~="@{offset}"] {
+      &[data-offset~='left'] {
+        left: @offset * 1px;
+      }
+
+      &[data-offset~='right'] {
+        right: @offset * 1px;
+      }
+
+      &[data-offset~='top'] {
+        top: @offset * 1px;
+      }
+
+      &[data-offset~='bottom'] {
+        bottom: @offset * 1px;
+      }
+    }
+  }
+}

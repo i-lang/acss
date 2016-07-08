@@ -1,0 +1,61 @@
+.vBorder(@width, @top-color, @bottom-color) {
+  border-top: @width solid @top-color;
+  border-bottom: @width solid @bottom-color;
+}
+
+.hBorder(@width, @top-color, @bottom-color) {
+  border-left: @width solid @top-color;
+  border-right: @width solid @bottom-color;
+}
+
+//data-v-border
+table.td-table[data-v-border=between] {
+  > tbody {
+    .vBorder(4px, #c4c4c4, #c4c4c4);
+  }
+}
+
+table.td-table[data-v-border=around] {
+  .vBorder(4px, #979797, #c4c4c4);
+
+  > tbody {
+    .vBorder(4px, #c4c4c4, #c4c4c4);
+  }
+}
+
+table.td-table > tbody[data-v-border=between] {
+  > tr:nth-last-of-type(n+2):nth-of-type(n+2) {
+    .vBorder(1px, #c4c4c4,#c4c4c4);
+  }
+}
+
+table.td-table > tbody[data-v-border=around] {
+  > tr {
+    .vBorder(1px, #c4c4c4,#c4c4c4);
+  }
+}
+
+//data-h-border
+table.td-table[data-h-border=between] {
+  thead > tr > td:nth-last-of-type(n+2):nth-of-type(n+2) {
+    .hBorder(1px, #c4c4c4,#c4c4c4);
+  }
+}
+
+table.td-table[data-h-border=around] {
+  thead > tr > td {
+    .hBorder(1px, #c4c4c4,#c4c4c4);
+  }
+}
+
+table.td-table > tbody[data-h-border=between] {
+  tr > td:nth-last-of-type(n+2):nth-of-type(n+2) {
+    .hBorder(1px, #c4c4c4,#c4c4c4);
+  }
+}
+
+table.td-table > tbody[data-h-border=around] {
+  tr > td {
+    .hBorder(1px, #c4c4c4,#c4c4c4);
+  }
+}

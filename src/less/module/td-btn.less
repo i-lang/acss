@@ -1,0 +1,38 @@
+@import "td-btn-theme";
+@import "td-btn-size";
+
+.td-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  font-family: PingFangTC-Regular;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+
+  > span::selection {
+    background: transparent;
+  }
+}
+
+.td-btn > .td-btn-notify {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  overflow: visible;
+  background-color: #d85022;
+  opacity: 0.7;
+
+  > .text {
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 12px;
+    color: #ffffff;
+  }
+}

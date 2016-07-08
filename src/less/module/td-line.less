@@ -1,0 +1,13 @@
+.td-line {
+  width: 100%;
+
+  .buildThickness(10, 1);
+}
+
+.buildThickness(@thickness, @diff) when (@thickness >= @diff) {
+  .buildThickness(@thickness - @diff, @diff);
+
+  &[data-thickness="@{thickness}"] {
+    height: @thickness * 1px;
+  }
+}

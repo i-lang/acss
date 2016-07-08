@@ -1,0 +1,44 @@
+l-row, l-col, l-center {
+  &.is-full-screen {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &.is-full-height {
+    height: 100vh;
+  }
+
+  &.is-full-width {
+    width: 100vw;
+  }
+
+  &.has-scroll {
+    overflow: auto;
+    overflow: overlay;
+  }
+
+  &[data-min-height="100"] {
+    min-height: 100vh;
+  }
+
+  > *[data-size="parent"] {
+    flex: 0 0 100%;
+  }
+
+  & > img {
+    flex-shrink: 0;
+  }
+
+  &.no-shrink > * {
+    flex-shrink: 0;
+  }
+}
+
+l-col > .is-fill,
+l-row > .is-fill {
+  flex: 1;
+}
+
+l-row.is-wrap, l-col.is-wrap {
+  flex-wrap: wrap;
+}

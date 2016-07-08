@@ -1,0 +1,66 @@
+// main axis aligns
+l-row[data-x-align=center], l-col[data-y-align=center] {
+  justify-content: center !important;
+}
+
+l-row[data-x-align=left], l-col[data-y-align=top] {
+  justify-content: flex-start !important;
+}
+
+l-row[data-x-align=right], l-col[data-y-align=bottom] {
+  justify-content: flex-end !important;
+}
+
+l-row[data-x-align=between], l-col[data-y-align=between] {
+  justify-content: space-between !important;
+}
+
+l-row[data-x-align=around], l-col[data-y-align=around] {
+  justify-content: space-around !important;
+}
+
+l-row[data-x-align=stretch], l-col[data-y-align=stretch] {
+  justify-content: stretch !important;
+}
+
+// secondary axis aligns
+l-row[data-y-align=center], l-col[data-x-align=center] {
+  align-items: center !important;
+}
+
+l-row[data-y-align=top], l-col[data-x-align=left] {
+  align-items: flex-start !important;
+}
+
+l-row[data-y-align=bottom], l-col[data-x-align=right] {
+  align-items: flex-end !important;
+}
+
+l-row[data-y-align=center], l-col[data-x-align=center] {
+  align-items: center !important;
+}
+
+l-row[data-y-align=stretch], l-col[data-x-align=stretch] {
+  align-items: stretch !important;
+}
+
+// children align
+l-row > [data-child-align=stretch], l-col > [data-child-align=stretch] {
+  align-self: stretch;
+}
+l-row > [data-child-align=center], l-col > [data-child-align=center] {
+  align-self: center;
+}
+
+l-row > [data-child-align=top], l-col > [data-child-align=left] {
+  align-self: flex-start;
+}
+
+l-row > [data-child-align=bottom], l-col > [data-child-align=right] {
+  align-self: flex-end;
+}
+
+l-row.is-center, l-col.is-center {
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "acss",
+  "authors": [
+    "KellyYang <housemeow@gmail.com>"
+  ],
+  "description": "Attributed CSS",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

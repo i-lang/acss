@@ -1,0 +1,108 @@
+@colors: 'black-opacity', rgba(32, 33, 33, 0.6),
+'black 0.1', rgba(0, 0, 0, 0.1),
+'black 0.2', rgba(0, 0, 0, 0.2),
+'black 0.3', rgba(0, 0, 0, 0.3),
+'black 0.4', rgba(0, 0, 0, 0.4),
+'black 0.5', rgba(0, 0, 0, 0.5),
+'black 0.6', rgba(0, 0, 0, 0.6),
+'black 0.7', rgba(0, 0, 0, 0.7),
+'black 0.8', rgba(0, 0, 0, 0.8),
+'black 0.9', rgba(0, 0, 0, 0.9),
+'black 1', rgba(0, 0, 0, 1),
+'white 0.1', rgba(255, 255, 255, 0.1),
+'white 0.2', rgba(255, 255, 255, 0.2),
+'white 0.3', rgba(255, 255, 255, 0.3),
+'white 0.4', rgba(255, 255, 255, 0.4),
+'white 0.5', rgba(255, 255, 255, 0.5),
+'white 0.6', rgba(255, 255, 255, 0.6),
+'white 0.7', rgba(255, 255, 255, 0.7),
+'white 0.8', rgba(255, 255, 255, 0.8),
+'white 0.9', rgba(255, 255, 255, 0.9),
+'white 1', rgba(255, 255, 255, 1),
+'gray4', #515151,
+'gray5', #686868,
+'gray6', #9b9b9b,
+'gray7', #e1e1e1,
+'gray8', #3a3a3a,
+'gray9', #3f3f3f,
+'blue1', #068bb2,
+'blue2', #2ec0de,
+'blue3', #bff4ff,
+'blue4', #478bdb,
+'blue5', #2b5d96,
+'green1', #7ab737,
+'green2', #dceced,
+'green3', #31babe,
+'green4', #e9f4f5,
+'green5', #63c5c5,
+'red1', #b2061b,
+'red2', #d9623a,
+'orange1', #e03800,
+'red3', #e03800,
+'header1', #c7dae2,
+'major1', #31babe,
+'major2', #dceced,
+'major3', #e9f4f5,
+'theme1', #d04111,
+'theme2', #73bd2f,
+'theme3', #d8771a,
+'theme4', #2f6fb8,
+'minor1', #526f8a,
+'minor2', #4a5b6d,
+'gray1', #838383,
+'gray2', #b6b6b6,
+'gray3', #eaeaea,
+'white', #ffffff,
+'black', #000000,
+'emp1', #d9623a,
+'emp2', #ff9f00,
+'emp3', #0a9ded,
+'emp4', #e63817;
+
+.tdColorBuild(@list, @code) {
+  & {
+    .loop(@i:1) when (@i < length(@list)) {
+      @value: extract(@list, @i + 1);
+      @name: extract(@list, @i);
+      @class: e(@name);
+
+      @code();
+
+      .loop(@i + 2);
+    }
+
+    .loop();
+  }
+}
+
+.tdColor() {
+  .tdColorBuild(@colors, { .tdColor(@name, @value) })
+}
+
+.tdColor(@colorName, @color) {
+  &[data-bg-color="@{colorName}"] {
+    background: @color;
+  }
+
+  &[data-color="@{colorName}"] {
+    color: @color;
+  }
+
+  &[data-border-color="@{colorName}"] {
+    border-color: @color;
+  }
+
+  &[data-border-color="@{colorName}"] {
+    &.l-col, &.l-row {
+      > * {
+        &:first-child:before, &:before, &:last-child:after, &:nth-child(n+2):before {
+          border-color: @color;
+        }
+      }
+    }
+  }
+
+  &[data-triangle-color="@{colorName}"] {
+    border-color: @color transparent transparent transparent;
+  }
+}

@@ -1,0 +1,105 @@
+.l-dock {
+  position: relative;
+
+  > * {
+    &[data-dock] {
+      position: absolute;
+    }
+
+    &[data-dock="center"] {
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .offset-build(20, -20, 1);
+
+    .offset-build(@offset, @end, @diff) when (@offset >= @end) {
+      .offset-build(@offset - @diff, @end, @diff);
+
+      &[data-dock~="@{offset}"] {
+        &[data-dock~='left'] {
+          left: @offset * 1px;
+        }
+
+        &[data-dock~='right'] {
+          right: @offset * 1px;
+        }
+
+        &[data-dock~='top'] {
+          top: @offset * 1px;
+        }
+
+        &[data-dock~='bottom'] {
+          bottom: @offset * 1px;
+        }
+      }
+    }
+
+    &[data-dock~='left'] {
+      left: 0;
+
+      &[data-dock~='center'] {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
+
+    &[data-dock~='right'] {
+      right: 0;
+
+      &[data-dock~='center'] {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
+
+    &[data-dock~='top'] {
+      top: 0;
+
+      &[data-dock~='center'] {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+
+    &[data-dock~='bottom'] {
+      bottom: 0;
+
+      &[data-dock~='center'] {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+
+    &[data-dock*="fill"] {
+      &[data-dock~='left'], &[data-dock~='right'] {
+        height: 100%;
+      }
+
+      &[data-dock~='top'], &[data-dock~='bottom'] {
+        width: 100%;
+      }
+    }
+  }
+}
