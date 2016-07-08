@@ -4,7 +4,7 @@
     "KellyYang <housemeow@gmail.com>"
   ],
   "description": "Attributed CSS",
-  "main": "",
+  "main": ["dist/css/acss.css"],
   "moduleType": [],
   "license": "MIT",
   "homepage": "",
