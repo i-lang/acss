@@ -6814,6 +6814,11 @@ l-col {
   display: flex;
   flex-direction: column;
 }
+l-row > *,
+l-center > *,
+l-col > * {
+  width: auto;
+}
 .l-pad {
   padding: 0;
 }

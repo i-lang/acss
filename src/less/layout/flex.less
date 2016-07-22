@@ -5,19 +5,25 @@
 
 l-row {
   width: 100%;
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
 }
 
 l-center {
   width: 100%;
-  display: flex !important;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 l-col {
   width: 100%;
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  flex-direction: column;
+}
+
+l-row, l-center, l-col {
+  & > * {
+    width: auto;
+  }
 }
