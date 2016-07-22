@@ -6799,17 +6799,20 @@ l-col[data-border=around] > *:last-child:after {
   border-bottom: 1px solid #979797;
 }
 l-row {
-  display: flex !important;
-  flex-direction: row !important;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 l-center {
-  display: flex !important;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 l-col {
-  display: flex !important;
-  flex-direction: column !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .l-pad {
   padding: 0;
