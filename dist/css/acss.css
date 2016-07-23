@@ -9302,6 +9302,9 @@ table.td-table td > div {
   background-repeat: no-repeat;
   transition: 0.5s;
 }
+.td-cover.no-animation {
+  transition: 0s;
+}
 .td-cover[data-fit="width"] {
   background-size: 100% auto;
 }
