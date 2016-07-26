@@ -1,0 +1,23 @@
+{
+  "name": "demo",
+  "authors": [
+    "KellyYang <housemeow@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reset-css": "~2.0.2011012603",
+    "bootstrap": "~3.3.6",
+    "acss": "~0.0.1"
+  }
+}
