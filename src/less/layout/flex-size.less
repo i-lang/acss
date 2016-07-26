@@ -12,6 +12,11 @@ l-row, l-col, l-center {
     width: 100vw;
   }
 
+  &.is-fit-parent {
+    width: 100%;
+    height: 100%;
+  }
+
   &.has-scroll {
     overflow: auto;
     overflow: overlay;
@@ -32,13 +37,12 @@ l-row, l-col, l-center {
   &.no-shrink > * {
     flex-shrink: 0;
   }
-}
 
-l-col > .is-fill,
-l-row > .is-fill {
-  flex: 1;
-}
+  &.is-wrap {
+    flex-wrap: wrap;
+  }
 
-l-row.is-wrap, l-col.is-wrap {
-  flex-wrap: wrap;
+  > .is-fill {
+    flex: 1;
+  }
 }

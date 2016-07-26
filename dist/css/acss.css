@@ -6695,6 +6695,12 @@ l-col.is-full-width,
 l-center.is-full-width {
   width: 100vw;
 }
+l-row.is-fit-parent,
+l-col.is-fit-parent,
+l-center.is-fit-parent {
+  width: 100%;
+  height: 100%;
+}
 l-row.has-scroll,
 l-col.has-scroll,
 l-center.has-scroll {
@@ -6721,13 +6727,15 @@ l-col.no-shrink > *,
 l-center.no-shrink > * {
   flex-shrink: 0;
 }
-l-col > .is-fill,
-l-row > .is-fill {
-  flex: 1;
-}
 l-row.is-wrap,
-l-col.is-wrap {
+l-col.is-wrap,
+l-center.is-wrap {
   flex-wrap: wrap;
+}
+l-row > .is-fill,
+l-col > .is-fill,
+l-center > .is-fill {
+  flex: 1;
 }
 l-row[data-border=between] > *:nth-child(n+2) {
   position: relative;
