@@ -1,4 +1,5 @@
-@import "../base/td";
+@import '../base/td';
+@import '../base/rwd';
 
 .l-pad {
   padding: 0;
@@ -12,60 +13,100 @@
   .x-pad(0);
 }
 
-.pad-build(200, 5);
-.vPadding-build(200, 5);
-.hPadding-build(200, 5);
-
-.vPadding-build(@vPadding, @diff) when (@vPadding >=0) {
-  .vPadding-build(@vPadding - @diff, @diff);
-
-  .l-pad[data-pad$="x@{vPadding}"] {
-    .y-pad(@vPadding);
-  }
+@media @rwd {
+  .pad-build('', 200, 5);
+  .xPadding-build('', 200, 5);
+  .yPadding-build('', 200, 5);
 }
 
-.hPadding-build(@hPadding, @diff) when (@hPadding >=0) {
-  .hPadding-build(@hPadding - @diff, @diff);
-
-  .l-pad[data-pad^="@{hPadding}x"] {
-    .x-pad(@hPadding);
-  }
+@media @rwd-xs {
+  .pad-build('xs-', 200, 5);
+  .xPadding-build('xs-', 200, 5);
+  .yPadding-build('xs-', 200, 5);
 }
 
-.pad-build(@padding, @diff) when (@padding>=0) {
-  .pad-build(@padding - @diff, @diff);
-  .l-pad[data-pad="@{padding}"] {
+@media @rwd-sm {
+  .pad-build('sm-', 200, 5);
+  .xPadding-build('sm-', 200, 5);
+  .yPadding-build('sm-', 200, 5);
+}
+
+@media @rwd-md {
+  .pad-build('md-', 200, 5);
+  .xPadding-build('md-', 200, 5);
+  .yPadding-build('md-', 200, 5);
+}
+
+@media @rwd-lg {
+  .pad-build('lg-', 200, 5);
+  .xPadding-build('lg-', 200, 5);
+  .yPadding-build('lg-', 200, 5);
+}
+
+@media @rwd-xl {
+  .pad-build('xl-', 200, 5);
+  .xPadding-build('xl-', 200, 5);
+  .yPadding-build('xl-', 200, 5);
+}
+
+// builder
+.pad-build(@rwd, @padding, @diff) when (@padding>=0) {
+  .pad-build(@rwd, @padding - @diff, @diff);
+
+  @data-pad: ~'data-@{rwd}pad';
+  .l-pad[@{data-pad}="@{padding}"] {
     padding: @padding * 1px;
   }
 
-  .y-pad-build(@padding);
-  .x-pad-build(@padding);
+  .x-pad-build(@rwd, @padding);
+  .y-pad-build(@rwd, @padding);
 }
 
-.y-pad-build(@padding) {
-  .l-pad[data-y-pad^="@{padding}-"] {
-    padding-top: @padding * 1px;
-  }
+.xPadding-build(@rwd, @xPadding, @diff) when (@xPadding >=0) {
+  .xPadding-build(@rwd, @xPadding - @diff, @diff);
 
-  .l-pad[data-y-pad$="-@{padding}"] {
-    padding-bottom: @padding * 1px;
-  }
-
-  .l-pad[data-y-pad="@{padding}"] {
-    .y-pad(@padding);
+  @data-pad: ~'data-@{rwd}pad';
+  .l-pad[@{data-pad}^="@{xPadding}x"] {
+    .x-pad(@xPadding);
   }
 }
 
-.x-pad-build(@padding) {
-  .l-pad[data-x-pad^="@{padding}-"] {
+.yPadding-build(@rwd, @yPadding, @diff) when (@yPadding >=0) {
+  .yPadding-build(@rwd, @yPadding - @diff, @diff);
+
+  @data-pad: ~'data-@{rwd}pad';
+  .l-pad[@{data-pad}$="x@{yPadding}"] {
+    .y-pad(@yPadding);
+  }
+}
+
+// mixin
+.x-pad-build(@rwd, @padding) {
+  @data-x-pad: ~'data-@{rwd}x-pad';
+  .l-pad[@{data-x-pad}^="@{padding}-"] {
     padding-left: @padding * 1px;
   }
 
-  .l-pad[data-x-pad$="-@{padding}"] {
+  .l-pad[@{data-x-pad}$="-@{padding}"] {
     padding-right: @padding * 1px;
   }
 
-  .l-pad[data-x-pad="@{padding}"] {
+  .l-pad[@{data-x-pad}="@{padding}"] {
     .x-pad(@padding);
+  }
+}
+
+.y-pad-build(@rwd, @padding) {
+  @data-y-pad: ~'data-@{rwd}y-pad';
+  .l-pad[@{data-y-pad}^="@{padding}-"] {
+    padding-top: @padding * 1px;
+  }
+
+  .l-pad[@{data-y-pad}$="-@{padding}"] {
+    padding-bottom: @padding * 1px;
+  }
+
+  .l-pad[@{data-y-pad}="@{padding}"] {
+    .y-pad(@padding);
   }
 }

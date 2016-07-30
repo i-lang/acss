@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributed CSS</title>
+    <link rel="stylesheet" href="../css/acss.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="bower_components/reset-css/reset.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<l-col class="l-pad" data-gutter-between="30" data-pad="20">
+    <h1>pad</h1>
+
+    <l-col class="l-pad" data-pad="20x10">
+        <h1>data-pad</h1>
+        <l-row class="td l-pad" data-bg-color="gray7"
+               data-xs-pad="20"
+               data-sm-pad="40"
+               data-md-pad="60"
+               data-lg-pad="80"
+               data-xl-pad="100">
+            <div class="td l-pad" data-pad="25x50" data-bg-color="red2">END</div>
+        </l-row>
+    </l-col>
+
+    <l-col class="l-pad" data-pad="20x10">
+        <h1>data-x-pad</h1>
+        <l-row class="td" data-bg-color="gray7">
+            <div class="td l-pad" data-bg-color="red2"
+                 data-xs-x-pad="20"
+                 data-sm-x-pad="40"
+                 data-md-x-pad="60"
+                 data-lg-x-pad="80"
+                 data-xl-x-pad="100">x-pad</div>
+        </l-row>
+    </l-col>
+
+    <l-col class="l-pad" data-pad="20x10">
+        <h1>data-y-pad</h1>
+        <l-row class="td" data-bg-color="gray7">
+            <div class="td l-pad" data-bg-color="red2"
+                 data-xs-y-pad="20"
+                 data-sm-y-pad="40"
+                 data-md-y-pad="60"
+                 data-lg-y-pad="80"
+                 data-xl-y-pad="100">y-pad</div>
+        </l-row>
+    </l-col>
+</l-col>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
