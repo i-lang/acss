@@ -1,27 +1,29 @@
 l-row {
-  .rowBorderBetween(1px, #979797);
+  .rowBorderBetween('', 1px, #979797);
 }
 
 l-row {
-  .rowBorderAround(1px, #979797);
+  .rowBorderAround('', 1px, #979797);
 }
 
 l-col {
-  .colBorderBetween(1px, #979797);
+  .colBorderBetween('', 1px, #979797);
 }
 
 l-col {
-  .colBorderAround(1px, #979797);
+  .colBorderAround('', 1px, #979797);
 }
 
-.rowGutterBorderBetween(@rowGutter) {
-  &[data-border=between] > *:nth-child(n+2):before {
+.rowGutterBorderBetween(@rwd, @rowGutter) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=between] > *:nth-child(n+2):before {
     left: -@rowGutter / 2px;
   }
 }
 
-.rowGutterBorderAround(@rowGutter) {
-  &[data-border=around] {
+.rowGutterBorderAround(@rwd, @rowGutter) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=around] {
     > *:nth-child(n+2):before {
       left: -@rowGutter / 2px;
     }
@@ -36,8 +38,9 @@ l-col {
   }
 }
 
-.rowGutterAroundBorderAround(@rowGutter) {
-  &[data-border=around] {
+.rowGutterAroundBorderAround(@rwd, @rowGutter) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=around] {
     > *:first-child:before {
       left: -@rowGutter / 2px;
     }
@@ -48,8 +51,9 @@ l-col {
   }
 }
 
-.rowBorderBetween(@border, @color) {
-  &[data-border=between] {
+.rowBorderBetween(@rwd, @border, @color) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=between] {
     > *:nth-child(n+2) {
       position: relative;
 
@@ -65,10 +69,11 @@ l-col {
   }
 }
 
-.rowBorderAround(@border, @color) {
+.rowBorderAround(@rwd, @border, @color) {
   position: relative;
 
-  &[data-border=around] {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=around ] {
     > * {
       position: relative;
 
@@ -95,14 +100,16 @@ l-col {
   }
 }
 
-.colGutterBorderBetween(@colGutter) {
-  &[data-border=between] > *:nth-child(n+2):before {
+.colGutterBorderBetween(@rwd, @colGutter) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=between] > *:nth-child(n + 2):before {
     top: -@colGutter / 2px;
   }
 }
 
-.colGutterBorderAround(@colGutter) {
-  &[data-border=around] {
+.colGutterBorderAround(@rwd, @colGutter) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=around] {
     > *:nth-child(n+2):before {
       top: -@colGutter / 2px;
     }
@@ -117,8 +124,9 @@ l-col {
   }
 }
 
-.colGutterAroundBorderAround(@colGutter) {
-  &[data-border=around] {
+.colGutterAroundBorderAround(@rwd, @colGutter) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=around] {
     > *:first-child:before {
       top: -@colGutter / 2px;
     }
@@ -129,8 +137,9 @@ l-col {
   }
 }
 
-.colBorderBetween(@border, @color) {
-  &[data-border=between] {
+.colBorderBetween(@rwd, @border, @color) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=between] {
     > *:nth-child(n+2) {
       position: relative;
 
@@ -147,8 +156,9 @@ l-col {
   }
 }
 
-.colBorderAround(@border, @color) {
-  &[data-border=around] {
+.colBorderAround(@rwd, @border, @color) {
+  @data-border: ~'data-@{rwd}border';
+  &[@{data-border}=around] {
     > * {
       position: relative;
 

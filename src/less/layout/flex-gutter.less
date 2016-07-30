@@ -1,55 +1,66 @@
 @import "flex-border";
+@import '../base/rwd';
 
-@defaultGutter: 10px;
-
-// Deprecated
-l-row[data-gutter], l-row.has-gutter {
-  .rowGutterBetween(@defaultGutter);
+@media @rwd {
+  .l-gutter-build('', 150, 5);
 }
 
-// Deprecated
-l-row[data-gutter-around], l-row.has-gutter-around {
-  .rowGutterAround(@defaultGutter);
+@media @rwd-xs {
+  .l-gutter-build('xs-', 150, 5);
 }
 
-// Deprecated
-l-col[data-gutter], l-col.has-gutter {
-  .colGutterBetween(@defaultGutter);
+@media @rwd-sm {
+  .l-gutter-build('sm-', 150, 5);
 }
 
-// Deprecated
-l-col[data-gutter-around], l-col.has-gutter-around {
-  .colGutterAround(@defaultGutter);
+@media @rwd-md {
+  .l-gutter-build('md-', 150, 5);
 }
 
-.l-gutter-build(150, 5);
+@media @rwd-lg {
+  .l-gutter-build('lg-', 150, 5);
+}
 
-.l-gutter-build(@gutter, @diff) when (@gutter > 0) {
-  .l-gutter-build(@gutter - @diff, @diff);
+@media @rwd-xl {
+  .l-gutter-build('xl-', 150, 5);
+}
+
+// =================================
+// mixins
+// =================================
+
+// gutter builder
+.l-gutter-build(@rwd, @gutter, @diff) when (@gutter > 0) {
+  .l-gutter-build(@rwd, @gutter - @diff, @diff);
+
   l-row {
-    &[data-gutter-between="@{gutter}"] {
-      .rowGutterBetween(@gutter);
+    @data-gutter-between: ~'data-@{rwd}gutter-between';
+    &[@{data-gutter-between}="@{gutter}"] {
+      .rowGutterBetween(@rwd, @gutter);
     }
 
-    &[data-gutter-around="@{gutter}"] {
-      .rowGutterAround(@gutter);
+    @data-gutter-around: ~'data-@{rwd}gutter-around';
+    &[@{data-gutter-around}="@{gutter}"] {
+      .rowGutterAround(@rwd, @gutter);
     }
   }
   l-col {
-    &[data-gutter-between="@{gutter}"] {
-      .colGutterBetween(@gutter);
+    @data-gutter-between: ~'data-@{rwd}gutter-between';
+    &[@{data-gutter-between}="@{gutter}"] {
+      .colGutterBetween(@rwd, @gutter);
     }
 
-    &[data-gutter-around="@{gutter}"] {
-      .colGutterAround(@gutter);
+    @data-gutter-around: ~'data-@{rwd}gutter-around';
+    &[@{data-gutter-around}="@{gutter}"] {
+      .colGutterAround(@rwd, @gutter);
     }
   }
 }
 
 // row mixin
-.rowGutterBetween(@rowGutter) {
-  .rowGutterBorderBetween(@rowGutter);
-  .rowGutterBorderAround(@rowGutter);
+.rowGutterBetween(@rwd, @rowGutter) {
+  .rowGutterBorderBetween(@rwd, @rowGutter);
+  .rowGutterBorderAround(@rwd, @rowGutter);
 
   > * {
     margin-left: @rowGutter / 2px;
@@ -65,10 +76,10 @@ l-col[data-gutter-around], l-col.has-gutter-around {
   }
 }
 
-.rowGutterAround(@rowGutter) {
-  .rowGutterBorderBetween(@rowGutter);
-  .rowGutterBorderAround(@rowGutter);
-  .rowGutterAroundBorderAround(@rowGutter);
+.rowGutterAround(@rwd, @rowGutter) {
+  .rowGutterBorderBetween(@rwd, @rowGutter);
+  .rowGutterBorderAround(@rwd, @rowGutter);
+  .rowGutterAroundBorderAround(@rwd, @rowGutter);
 
   > * {
     margin-left: @rowGutter / 2px;
@@ -76,9 +87,9 @@ l-col[data-gutter-around], l-col.has-gutter-around {
   }
 }
 
-.colGutterBetween(@colGutter) {
-  .colGutterBorderBetween(@colGutter);
-  .colGutterBorderAround(@colGutter);
+.colGutterBetween(@rwd, @colGutter) {
+  .colGutterBorderBetween(@rwd, @colGutter);
+  .colGutterBorderAround(@rwd, @colGutter);
 
   > * {
     margin-top: @colGutter / 2px;
@@ -93,10 +104,10 @@ l-col[data-gutter-around], l-col.has-gutter-around {
   }
 }
 
-.colGutterAround(@colGutter) {
-  .colGutterBorderBetween(@colGutter);
-  .colGutterBorderAround(@colGutter);
-  .colGutterAroundBorderAround(@colGutter);
+.colGutterAround(@rwd, @colGutter) {
+  .colGutterBorderBetween(@rwd, @colGutter);
+  .colGutterBorderAround(@rwd, @colGutter);
+  .colGutterAroundBorderAround(@rwd, @colGutter);
 
   > * {
     margin-top: @colGutter / 2px;
