@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributed CSS</title>
+    <link rel="stylesheet" href="../css/acss.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="bower_components/reset-css/reset.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<l-col>
+    <h1 class="wa" data-font-size="30">nested flex</h1>
+
+    <div class="l-pad" data-pad="20">
+        <h1 class="wa" data-font-size="20">data-dock=left</h1>
+
+        <l-row style="height: 300px;" data-gutter-between="20">
+            <div class="l-dock is-fill td-cover is-hoverable"
+                 data-fit="height"
+                 style="background-image: url('images/program-banner.png');">
+                <div class="l-pad" data-dock="bottom fill" data-pad="10" style="background-color: #919191;">
+                    hihi
+                </div>
+            </div>
+            <l-col class="is-fill" data-gutter-between="20">
+                <div class="l-dock is-fill td-cover is-hoverable"
+                     data-fit="width"
+                     style="background-image: url('images/program-banner.png');">
+                    <div class="l-pad" data-dock="bottom fill" data-pad="10" style="background-color: #919191;">
+                        hihi
+                    </div>
+                </div>
+                <div class="is-fill l-row" data-gutter-between="20">
+                    <div class="l-dock is-fill td-cover is-hoverable"
+                         data-fit="height"
+                         style="background-image: url('images/program-banner.png');">
+                        <div class="l-pad" data-dock="bottom fill" data-pad="10" style="background-color: #919191;">
+                            hihi
+                        </div>
+                    </div>
+                    <div class="l-dock is-fill td-cover is-hoverable"
+                         data-fit="height"
+                         style="background-image: url('images/program-banner.png');">
+                        <div class="l-pad" data-dock="bottom fill" data-pad="10" style="background-color: #919191;">
+                            hihi
+                        </div>
+                    </div>
+                </div>
+
+            </l-col>
+        </l-row>
+    </div>
+</l-col>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
