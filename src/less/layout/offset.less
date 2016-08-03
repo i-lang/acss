@@ -1,33 +1,28 @@
 .l-offset {
-  position: relative;
-
-  > * {
-    &[data-offset] {
-      position: relative;
-    }
-
-    .offset-build(100, -100, 5);
+  &[data-offset-left], &[data-offset-right], &[data-offset-top], &[data-offset-bottom] {
+    position: relative;
   }
 
-  .offset-build(@offset, @end, @diff) when (@offset >= @end) {
-    .offset-build(@offset - @diff, @end, @diff);
+  .offset-build(100, -100, 5);
+}
 
-    &[data-offset~="@{offset}"] {
-      &[data-offset~='left'] {
-        left: @offset * 1px;
-      }
+.offset-build(@offset, @end, @diff) when (@offset >= @end) {
+  .offset-build(@offset - @diff, @end, @diff);
 
-      &[data-offset~='right'] {
-        right: @offset * 1px;
-      }
+  &[data-offset-left="@{offset}"] {
+    left: @offset * 1px;
+  }
 
-      &[data-offset~='top'] {
-        top: @offset * 1px;
-      }
+  &[data-offset-right="@{offset}"] {
+    right: @offset * 1px;
+  }
 
-      &[data-offset~='bottom'] {
-        bottom: @offset * 1px;
-      }
-    }
+  &[data-offset-top="@{offset}"] {
+    top: @offset * 1px;
+  }
+
+  &[data-offset-bottom="@{offset}"] {
+    bottom: @offset * 1px;
   }
 }
+

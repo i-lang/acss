@@ -2,8 +2,24 @@
   position: relative;
 
   > * {
-    &[data-dock] {
+    &[data-dock-top], &[data-dock-right], &[data-dock-bottom], &[data-dock-left] {
       position: absolute;
+    }
+
+    &[data-dock-top] {
+      top: 0;
+    }
+
+    &[data-dock-right] {
+      right: 0;
+    }
+
+    &[data-dock-bottom] {
+      bottom: 0;
+    }
+
+    &[data-dock-left] {
+      left: 0;
     }
 
     &[data-dock="center"] {
@@ -21,85 +37,47 @@
     .offset-build(@offset, @end, @diff) when (@offset >= @end) {
       .offset-build(@offset - @diff, @end, @diff);
 
-      &[data-dock~="@{offset}"] {
-        &[data-dock~='left'] {
-          left: @offset * 1px;
-        }
+      &[data-dock-top~="@{offset}"] {
+        top: @offset * 1px;
+      }
 
-        &[data-dock~='right'] {
-          right: @offset * 1px;
-        }
+      &[data-dock-bottom~="@{offset}"] {
+        bottom: @offset * 1px;
+      }
 
-        &[data-dock~='top'] {
-          top: @offset * 1px;
-        }
+      &[data-dock-right~="@{offset}"] {
+        right: @offset * 1px;
+      }
 
-        &[data-dock~='bottom'] {
-          bottom: @offset * 1px;
-        }
+      &[data-dock-left~="@{offset}"] {
+        left: @offset * 1px;
       }
     }
 
-    &[data-dock~='left'] {
-      left: 0;
-
-      &[data-dock~='center'] {
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-      }
+    &[data-dock-top~="center"], &[data-dock-bottom~="center"] {
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
     }
 
-    &[data-dock~='right'] {
-      right: 0;
-
-      &[data-dock~='center'] {
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-      }
+    &[data-dock-left~="center"], &[data-dock-right~="center"] {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
 
-    &[data-dock~='top'] {
-      top: 0;
-
-      &[data-dock~='center'] {
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-      }
+    &[data-dock-top~="fill"], &[data-dock-bottom~="fill"] {
+      width: 100%;
     }
 
-    &[data-dock~='bottom'] {
-      bottom: 0;
-
-      &[data-dock~='center'] {
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-      }
-    }
-
-    &[data-dock*="fill"] {
-      &[data-dock~='left'], &[data-dock~='right'] {
-        height: 100%;
-      }
-
-      &[data-dock~='top'], &[data-dock~='bottom'] {
-        width: 100%;
-      }
+    &[data-dock-left~="fill"], &[data-dock-right~="fill"] {
+      height: 100%;
     }
   }
 }

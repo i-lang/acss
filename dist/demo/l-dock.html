@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributed CSS</title>
+    <link rel="stylesheet" href="../css/acss.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="bower_components/reset-css/reset.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div class="l-col">
+    <h1 class="td-header1">l-dock position</h1>
+    <div class="l-pad" data-pad="20">
+        <h1 class="td-header2">data-dock-left</h1>
+        <div class="l-row">
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-left style="background-color: #333333;">I'm left.
+                    </div>
+                </div>
+            </div>
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-left="center" style="background-color: #333333;">I'm left center.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-right</h1>
+        <div class="l-row">
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-right style="background-color: #333333;">I'm right.
+                    </div>
+                </div>
+            </div>
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-right="center" style="background-color: #333333;">I'm right center.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-top</h1>
+        <div class="l-row">
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 150px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-top style="background-color: #333333;">I'm top.
+                    </div>
+                </div>
+            </div>
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 150px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-top="center" style="background-color: #333333;">I'm top center.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-bottom</h1>
+        <div class="l-row">
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 150px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-bottom style="background-color: #333333;">I'm bottom.
+                    </div>
+                </div>
+            </div>
+            <div class="l-pad" data-pad="20">
+                <div class="l-dock" style="width: 150px; height: 150px; background-color: #777777;">
+                    <div class="l-pad" data-pad="10"
+                         data-dock-bottom="center" style="background-color: #333333;">I'm bottom center.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="td" data-font-size="30">l-dock offset</h1>
+
+    <div class="l-pad" data-pad="20">
+        <h1 class="td-header2">data-dock-left=10</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-left="10" style="background-color: #333333;">I'm left.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-right=10</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-right="10" style="background-color: #333333;">I'm right.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-top=10</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-top="10" style="background-color: #333333;">I'm top.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-bottom=10</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-bottom="10" style="background-color: #333333;">I'm bottom.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="td" data-font-size="30">l-dock fill 20</h1>
+    <div class="l-pad" data-pad="20">
+        <h1 class="td-header2">data-dock=left 20 fill</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-left="20 fill" style="background-color: #333333;">I'm left.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-right=20 fill</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-right="20 fill" style="background-color: #333333;">I'm right.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-top=20 fill</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-top="20 fill" style="background-color: #333333;">I'm top.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td-header2">data-dock-bottom=20 fill</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-bottom="20 fill" style="background-color: #333333;">I'm bottom.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="td" data-font-size="30">l-dock -20</h1>
+    <div class="l-pad" data-pad="20">
+        <h1 class="td" data-font-size="-20">data-dock-left=-20</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-left="-20" style="background-color: #333333;">I'm left.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td" data-font-size="-20">data-dock-right=-20</h1>
+        <h1 class="td" data-font-size="-20">data-dock-right=-20</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-right="-20" style="background-color: #333333;">I'm right.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td" data-font-size="-20">data-dock-top=-20</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-top="-20" style="background-color: #333333;">I'm top.
+                </div>
+            </div>
+        </div>
+
+        <h1 class="td" data-font-size="-20">data-dock-bottom=-20</h1>
+        <div class="l-pad" data-pad="20">
+            <div class="l-dock" style="width: 240px; height: 150px; background-color: #777777;">
+                <div class="l-pad" data-pad="10"
+                     data-dock-bottom="-20" style="background-color: #333333;">I'm bottom.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
