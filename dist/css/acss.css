@@ -27586,7 +27586,7 @@ l-col {
   left: 0;
 }
 .l-dock > *[data-dock-top]:not([data-dock-right]),
-.l-dock > *[data-dock-bototm]:not([data-dock-right]) {
+.l-dock > *[data-dock-bottom]:not([data-dock-right]) {
   left: 0;
 }
 .l-dock > *[data-dock-left]:not([data-dock-bottom]),
