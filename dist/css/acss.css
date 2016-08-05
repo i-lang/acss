@@ -27594,6 +27594,12 @@ l-col {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.l-dock > *[data-dock="fill"] {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 .l-dock > *[data-dock-top~="-20"] {
   top: -20px;
 }
