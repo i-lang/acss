@@ -27585,6 +27585,14 @@ l-col {
 .l-dock > *[data-dock-left] {
   left: 0;
 }
+.l-dock > *[data-dock-top]:not([data-dock-right]),
+.l-dock > *[data-dock-bototm]:not([data-dock-right]) {
+  left: 0;
+}
+.l-dock > *[data-dock-left]:not([data-dock-bottom]),
+.l-dock > *[data-dock-right]:not([data-dock-bottom]) {
+  top: 0;
+}
 .l-dock > *[data-dock="center"] {
   left: 50%;
   top: 50%;

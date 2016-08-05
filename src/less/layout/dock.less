@@ -22,6 +22,16 @@
       left: 0;
     }
 
+    &[data-dock-top]:not([data-dock-right]),
+    &[data-dock-bototm]:not([data-dock-right]) {
+      left: 0;
+    }
+
+    &[data-dock-left]:not([data-dock-bottom]),
+    &[data-dock-right]:not([data-dock-bottom]) {
+      top: 0;
+    }
+
     &[data-dock="center"] {
       left: 50%;
       top: 50%;
