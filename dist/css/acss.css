@@ -27985,12 +27985,12 @@ l-col {
 .l-dock > *[data-dock-left] {
   left: 0;
 }
-.l-dock > *[data-dock-top]:not([data-dock-right]),
-.l-dock > *[data-dock-bottom]:not([data-dock-right]) {
+.l-dock > *[data-dock-top]:not([data-dock-right]):not([data-dock-top=center]),
+.l-dock > *[data-dock-bottom]:not([data-dock-right]):not([data-dock-bottom=center]) {
   left: 0;
 }
-.l-dock > *[data-dock-left]:not([data-dock-bottom]),
-.l-dock > *[data-dock-right]:not([data-dock-bottom]) {
+.l-dock > *[data-dock-left]:not([data-dock-bottom]):not([data-dock-left=center]),
+.l-dock > *[data-dock-right]:not([data-dock-bottom]):not([data-dock-right=center]) {
   top: 0;
 }
 .l-dock > *[data-dock="center"] {

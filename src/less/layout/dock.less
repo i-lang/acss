@@ -22,13 +22,13 @@
       left: 0;
     }
 
-    &[data-dock-top]:not([data-dock-right]),
-    &[data-dock-bottom]:not([data-dock-right]) {
+    &[data-dock-top]:not([data-dock-right]):not([data-dock-top=center]),
+    &[data-dock-bottom]:not([data-dock-right]):not([data-dock-bottom=center]) {
       left: 0;
     }
 
-    &[data-dock-left]:not([data-dock-bottom]),
-    &[data-dock-right]:not([data-dock-bottom]) {
+    &[data-dock-left]:not([data-dock-bottom]):not([data-dock-left=center]),
+    &[data-dock-right]:not([data-dock-bottom]):not([data-dock-right=center]) {
       top: 0;
     }
 
