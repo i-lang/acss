@@ -4,3 +4,34 @@
 @rwd-md: ~"screen and (min-width: 768px) and (max-width: 991px)";
 @rwd-lg: ~"screen and (min-width: 992px) and (max-width: 1199px)";
 @rwd-xl: ~"screen and (min-width: 1200px)";
+
+.rwd-test {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @media @rwd {
+      content: 'rwd';
+    }
+
+    @media @rwd-xs {
+      content: 'rwd-xs';
+    }
+    @media @rwd-sm {
+      content: 'rwd-sm';
+    }
+    @media @rwd-md {
+      content: 'rwd-md';
+    }
+    @media @rwd-lg {
+      content: 'rwd-lg';
+    }
+    @media @rwd-xl {
+      content: 'rwd-xl';
+    }
+  }
+}
