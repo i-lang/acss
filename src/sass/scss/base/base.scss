@@ -1,0 +1,17 @@
+@import 'compass/css3';
+@import 'compass/reset';
+@import 'color';
+@import 'rwd';
+@import 'size';
+
+* {
+  @include box-sizing();
+}
+
+a {
+  text-decoration: none;
+
+  &.is-underline {
+    text-decoration: underline;
+  }
+}

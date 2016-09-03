@@ -1,0 +1,258 @@
+@import '../base/rwd';
+@import '../base/default';
+@import '../base/util';
+
+// related with gutter
+@mixin row-gutter-between-divider-between($rwd, $row-gutter) {
+  &[acss#{$rwd}-divider~=between] > *:nth-child(n + 2):before {
+    left: px(-$row-gutter / 2);
+  }
+}
+
+@mixin row-gutter-between-divider-around($rwd, $row-gutter) {
+  &[acss#{$rwd}-divider~=around] {
+    > *:nth-child(n+2):before {
+      left: px(-$row-gutter / 2);
+    }
+
+    > *:last-child:after {
+      right: 0;
+    }
+
+    > *:first-child:before {
+      left: 0;
+    }
+  }
+}
+
+@mixin row-gutter-around-divider-around($rwd, $row-gutter) {
+  &[acss#{$rwd}-divider~=around] {
+    > *:first-child:before {
+      left: px(-$row-gutter / 2);
+    }
+
+    > *:last-child:after {
+      right: px(-$row-gutter / 2);
+    }
+  }
+}
+
+@mixin col-gutter-between-divider-between($rwd, $col-gutter) {
+  &[acss#{$rwd}-divider~=between] > *:nth-child(n + 2):before {
+    top: px(-$col-gutter / 2);
+  }
+}
+
+@mixin col-gutter-between-divider-around($rwd, $col-gutter) {
+  &[acss#{$rwd}-divider~=around] {
+    > *:nth-child(n+2):before {
+      top: px(-$col-gutter / 2);
+    }
+
+    > *:last-child:after {
+      bottom: 0;
+    }
+
+    > *:first-child:before {
+      top: 0;
+    }
+  }
+}
+
+@mixin col-gutter-around-divider-around($rwd, $col-gutter) {
+  &[acss#{$rwd}-divider~=around] {
+    > *:first-child:before {
+      top: px(-$col-gutter / 2);
+    }
+
+    > *:last-child:after {
+      bottom: px(-$col-gutter / 2);
+    }
+  }
+}
+
+// flex border
+@mixin row-divider-between($rwd) {
+  .l-row[acss#{$rwd}-divider~=between] {
+    > *:nth-child(n+2) {
+      position: relative;
+
+      &:before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left-style: solid;
+      }
+    }
+  }
+}
+
+@mixin row-divider-between-color($color) {
+  .l-row[acss-divider-color="#{$color}"] {
+    > *:nth-child(n+2) {
+      &:before {
+        border-left-color: $color;
+      }
+    }
+  }
+}
+
+@mixin row-divider-between-width($thickness) {
+  .l-row[acss-divider-width="#{$thickness}"] {
+    > *:nth-child(n+2) {
+      &:before {
+        border-left-width: px($thickness);
+      }
+    }
+  }
+}
+
+@mixin row-divider-around($rwd) {
+  .l-row {
+    position: relative;
+
+    &[acss#{$rwd}-divider~=around] {
+      > * {
+        position: relative;
+
+        &:before {
+          content: '';
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-left-style: solid;
+        }
+      }
+
+      > *:last-child {
+        &:after {
+          content: '';
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-right-style: solid;
+        }
+      }
+    }
+  }
+}
+
+@mixin row-divider-around-color($color) {
+  .l-row {
+    &[acss-divider-color="#{$color}"] {
+      > *:last-child:after {
+        border-right-color: $color;
+      }
+    }
+  }
+}
+
+@mixin row-divider-around-width($thickness) {
+  .l-row {
+    &[acss-divider-width="#{$thickness}"] {
+      > *:last-child:after {
+        border-right-width: px($thickness);
+      }
+    }
+  }
+}
+
+@mixin col-divider-between($rwd) {
+  .l-col[acss#{$rwd}-divider~=between] {
+    > *:nth-child(n+2) {
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-style: solid;
+      }
+    }
+  }
+}
+
+@mixin col-divider-between-color($color) {
+  .l-col[acss-divider-color="#{$color}"] {
+    > *:nth-child(n+2):before {
+      border-top-color: $color;
+    }
+  }
+}
+
+@mixin col-divider-between-width($thickness) {
+  .l-col[acss-divider-width="#{$thickness}"] {
+    > *:nth-child(n+2):before {
+      border-top-width: px($thickness);
+    }
+  }
+}
+
+@mixin col-divider-around($rwd) {
+  .l-col[acss#{$rwd}-divider~=around] {
+    > * {
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-style: solid;
+      }
+    }
+
+    > *:last-child {
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom-style: solid;
+      }
+    }
+  }
+}
+
+@mixin col-divider-around-color($color) {
+  .l-col[acss-divider-color="#{$color}"] {
+    > *:last-child:after {
+      border-bottom-color: $color;
+    }
+  }
+}
+
+@mixin col-divider-around-width($thickness) {
+  .l-col[acss-divider-width="#{$thickness}"] {
+    > *:last-child:after {
+      border-bottom-width: px($thickness);
+    }
+  }
+}
+
+@mixin build-flex-divider-layout {
+  @include row-divider-between($rwd);
+  @include row-divider-around($rwd);
+  @include col-divider-between($rwd);
+  @include col-divider-around($rwd);
+
+  $thickness: $divider-thickness-min;
+  @while $thickness <= $divider-thickness-max {
+    @include row-divider-between-width($thickness);
+    @include row-divider-around-width($thickness);
+    @include col-divider-between-width($thickness);
+    @include col-divider-around-width($thickness);
+
+    $thickness: $thickness + 1;
+  }
+}

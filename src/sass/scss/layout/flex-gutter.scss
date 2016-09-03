@@ -1,0 +1,111 @@
+@import '../base/default';
+@import '../base/rwd';
+@import '../base/util';
+@import "flex-divider";
+
+@mixin row-gutter-between($rwd, $row-gutter) {
+  @include row-gutter-between-divider-between($rwd, $row-gutter);
+  @include row-gutter-between-divider-around($rwd, $row-gutter);
+
+  > * {
+    margin-right: px($row-gutter/2);
+  }
+
+  > *:first-child {
+    margin-left: 0;
+  }
+
+  > *:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin row-gutter-around($rwd, $row-gutter) {
+  @include row-gutter-between-divider-between($rwd, $row-gutter);
+  @include row-gutter-between-divider-around($rwd, $row-gutter);
+  @include row-gutter-around-divider-around($rwd, $row-gutter);
+
+  > * {
+    margin-left: px($row-gutter/2);
+    margin-right: px($row-gutter/2);
+  }
+}
+
+@mixin col-gutter-between($rwd, $col-gutter) {
+  @include col-gutter-between-divider-between($rwd, $col-gutter);
+  @include col-gutter-between-divider-around($rwd, $col-gutter);
+
+  > * {
+    margin-top: px($col-gutter/2);
+    margin-bottom: px($col-gutter/2);
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin col-gutter-around($rwd, $col-gutter) {
+  @include col-gutter-between-divider-between($rwd, $col-gutter);
+  @include col-gutter-between-divider-around($rwd, $col-gutter);
+  @include col-gutter-around-divider-around($rwd, $col-gutter);
+
+  > * {
+    margin-top: px($col-gutter/2);
+    margin-bottom: px($col-gutter/2);
+  }
+}
+
+@mixin build-flex-gutter($rwd) {
+  $gutter: $gutter-min;
+  @while $gutter <= $gutter-max {
+    .l-row {
+      &[acss#{$rwd}-gutter-between="#{$gutter}"] {
+        @include row-gutter-between($rwd, $gutter);
+      }
+
+      &[acss#{$rwd}-gutter-around="#{$gutter}"] {
+        @include row-gutter-around($rwd, $gutter);
+      }
+    }
+
+    .l-col {
+      &[acss#{$rwd}-gutter-between="#{$gutter}"] {
+        @include col-gutter-between($rwd, $gutter);
+      }
+
+      &[acss#{$rwd}-gutter-around="#{$gutter}"] {
+        @include col-gutter-around($rwd, $gutter);
+      }
+    }
+
+    $gutter: $gutter + 5;
+  }
+}
+
+@include rwd {
+  @include build-flex-gutter ($rwd);
+}
+
+@include rwd-xs {
+  @include build-flex-gutter($rwd-xs);
+}
+
+@include rwd-sm {
+  @include build-flex-gutter($rwd-sm);
+}
+
+@include rwd-md {
+  @include build-flex-gutter($rwd-md);
+}
+
+@include rwd-lg {
+  @include build-flex-gutter($rwd-lg);
+}
+
+@include rwd-xl {
+  @include build-flex-gutter($rwd-xl);
+}

@@ -1,0 +1,129 @@
+@import '../base/rwd';
+@import '../base/default';
+@import '../base/util';
+@import 'compass/css3/transform';
+
+.l-dock {
+  position: relative;
+
+  > [acss-position~=dock] {
+    position: absolute;
+  }
+}
+
+[acss-position~=fixed] {
+  position: fixed;
+}
+
+[acss-position~=offset] {
+  position: relative;
+}
+
+@mixin center-x {
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin center-y {
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin top($position) {
+  top: px($position);
+}
+
+@mixin right($position) {
+  right: px($position);
+}
+
+@mixin bottom($position) {
+  bottom: px($position);
+}
+
+@mixin left($position) {
+  left: px($position);
+}
+
+@mixin build-position($rwd, $position) {
+  [acss#{$rwd}-position~="top=#{$position}"] {
+    @include top($position);
+  }
+
+  [acss#{$rwd}-position~="right=#{$position}"] {
+    @include right($position);
+  }
+
+  [acss#{$rwd}-position~="bottom=#{$position}"] {
+    @include bottom($position);
+  }
+
+  [acss#{$rwd}-position~="left=#{$position}"] {
+    @include left($position);
+  }
+}
+
+@mixin position-center {
+  [acss#{$rwd}-position~="center-x"] {
+    @include center-x;
+  }
+
+  [acss#{$rwd}-position~="center-y"] {
+    @include center-y;
+  }
+}
+
+@mixin build-position-layout {
+  $position: $position-min;
+  @while $position <= $position-max {
+    @include rwd {
+      @include build-position($rwd, $position);
+    }
+
+    @include rwd-xs {
+      @include build-position($rwd-xs, $position);
+    }
+
+    @include rwd-sm {
+      @include build-position($rwd-sm, $position);
+    }
+
+    @include rwd-md {
+      @include build-position($rwd-md, $position);
+    }
+
+    @include rwd-lg {
+      @include build-position($rwd-lg, $position);
+    }
+
+    @include rwd-xl {
+      @include build-position($rwd-xl, $position);
+    }
+
+    $position: $position + 5;
+  }
+
+  @include rwd {
+    @include position-center;
+  }
+
+  @include rwd-xs {
+    @include position-center;
+  }
+
+  @include rwd-sm {
+    @include position-center;
+  }
+
+  @include rwd-md {
+    @include position-center;
+  }
+
+  @include rwd-lg {
+    @include position-center;
+  }
+
+  @include rwd-xl {
+    @include position-center;
+  }
+}

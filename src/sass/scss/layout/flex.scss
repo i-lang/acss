@@ -1,0 +1,35 @@
+@import "flex-align";
+@import "flex-divider";
+@import "flex-gutter";
+@import "flex-size";
+
+// firefox flex workaround
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.l-row, .l-col, .l-center {
+  display: flex;
+}
+
+.l-row {
+  flex-direction: row;
+
+  &.is-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.l-col {
+  flex-direction: column;
+
+  &.is-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.l-center {
+  justify-content: center;
+  align-items: center;
+}

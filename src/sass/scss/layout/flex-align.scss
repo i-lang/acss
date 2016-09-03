@@ -1,0 +1,302 @@
+@import '../base/rwd';
+
+%is-center {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin row-col {
+  .l-row, .l-col {
+    @content;
+  }
+}
+
+.l-row.is-center, .l-col.is-center {
+  @extend %is-center;
+}
+
+.l-row.is-deep-center, .l-col.is-deep-center {
+  @extend %is-center;
+
+  @include row-col {
+    @extend %is-center;
+  }
+}
+
+@mixin row-y-align($rwd, $y-align) {
+  .l-row[acss#{$rwd}-y-align~=#{$y-align}] {
+    @content;
+
+    &[acss#{$rwd}-y-align~=deep] {
+      @include row-col {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin row-x-align($rwd, $x-align) {
+  .l-row[acss#{$rwd}-x-align~=#{$x-align}] {
+    @content;
+
+    &[acss#{$rwd}-x-align~=deep] {
+      @include row-col {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin row-wrap-align($rwd, $wrap-align) {
+  .l-row[acss#{$rwd}-wrap-align~=#{$wrap-align}] {
+    @content;
+
+    &[acss#{$rwd}-wrap-align~=deep] {
+      @include row-col {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin col-x-align($rwd, $x-align) {
+  .l-col[acss#{$rwd}-x-align~=#{$x-align}] {
+    @content;
+
+    &[acss#{$rwd}-x-align~=deep] {
+      @include row-col {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin col-y-align($rwd, $y-align) {
+  .l-col[acss#{$rwd}-y-align~=#{$y-align}] {
+    @content;
+
+    &[acss#{$rwd}-y-align~=deep] {
+      @include row-col {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin col-wrap-align($rwd, $wrap-align) {
+  .l-col[acss#{$rwd}-wrap-align~=#{$wrap-align}] {
+    @content;
+
+    &[acss#{$rwd}-wrap-align~=deep] {
+      @include row-col {
+        @content;
+      }
+    }
+  }
+}
+
+// main axis aligns
+@mixin row-col-main-axis-align($rwd, $row-attribute-value, $col-attribute-value) {
+  @include row-x-align($rwd, $row-attribute-value) {
+    @content;
+  }
+
+  @include col-y-align($rwd, $col-attribute-value) {
+    @content;
+  }
+}
+
+@mixin main-axis-align-start($rwd) {
+  @include row-col-main-axis-align($rwd, left, top) {
+    justify-content: flex-start;
+  }
+}
+
+@mixin main-axis-align-center($rwd) {
+  @include row-col-main-axis-align($rwd, center, center) {
+    justify-content: center;
+  }
+}
+
+@mixin main-axis-align-end($rwd) {
+  @include row-col-main-axis-align($rwd, right, bottom) {
+    justify-content: flex-end;
+  }
+}
+
+@mixin main-axis-between($rwd) {
+  @include row-col-main-axis-align($rwd, between, between) {
+    justify-content: space-between;
+  }
+}
+
+@mixin main-axis-align-around($rwd) {
+  @include row-col-main-axis-align($rwd, around, around) {
+    justify-content: space-around;
+  }
+}
+
+// cross axis aligns
+@mixin row-col-cross-axis-align($rwd, $row-attribute-value, $col-attribute-value) {
+  @include row-y-align($rwd, $row-attribute-value) {
+    @content;
+  }
+
+  @include col-x-align($rwd, $col-attribute-value) {
+    @content;
+  }
+}
+
+@mixin cross-axis-align-start($rwd) {
+  @include row-col-cross-axis-align($rwd, top, left) {
+    align-items: flex-start;
+  }
+}
+
+@mixin cross-axis-align-center($rwd) {
+  @include row-col-cross-axis-align($rwd, center, center) {
+    align-items: center;
+  }
+}
+
+@mixin cross-axis-align-end($rwd) {
+  @include row-col-cross-axis-align($rwd, bottom, right) {
+    align-items: flex-end;
+  }
+}
+
+@mixin cross-axis-align-stretch($rwd) {
+  @include row-col-cross-axis-align($rwd, stretch, stretch) {
+    align-items: stretch;
+  }
+}
+
+// wrap axis aligns
+@mixin row-col-wrap-axis-align($rwd, $row-attribute-value, $col-attribute-value) {
+  @include row-wrap-align($rwd, $row-attribute-value) {
+    @content;
+  }
+
+  @include col-wrap-align($rwd, $col-attribute-value) {
+    @content;
+  }
+}
+
+@mixin wrap-axis-align-start($rwd) {
+  @include row-col-wrap-axis-align($rwd, top, left) {
+    align-content: flex-start;
+  }
+}
+
+@mixin wrap-axis-align-center($rwd) {
+  @include row-col-wrap-axis-align($rwd, center, center) {
+    align-content: center;
+  }
+}
+
+@mixin wrap-axis-align-end($rwd) {
+  @include row-col-wrap-axis-align($rwd, bottom, right) {
+    align-content: flex-end;
+  }
+}
+
+@mixin wrap-axis-between($rwd) {
+  @include row-col-wrap-axis-align($rwd, between, between) {
+    align-content: space-between;
+  }
+}
+
+@mixin wrap-axis-align-around($rwd) {
+  @include row-col-wrap-axis-align($rwd, around, around) {
+    align-content: space-around;
+  }
+}
+
+// children align
+@mixin child-cross-align-start($rwd) {
+  .l-row > [acss#{$rwd}-child-align~=top] {
+    align-self: flex-start;
+  }
+
+  .l-col > [acss#{$rwd}-child-align~=left] {
+    align-self: flex-start;
+  }
+}
+
+@mixin child-cross-align-center($rwd) {
+  .l-row > [acss#{$rwd}-child-align~=center] {
+    align-self: center;
+  }
+
+  .l-col > [acss#{$rwd}-child-align~=center] {
+    align-self: center;
+  }
+}
+
+@mixin child-cross-align-end($rwd) {
+  .l-row > [acss#{$rwd}-child-align~=right] {
+    align-self: flex-end;
+  }
+
+  .l-col > [acss#{$rwd}-child-align~=bottom] {
+    align-self: flex-end;
+  }
+}
+
+@mixin child-cross-align-stretch($rwd) {
+  .l-row > [acss#{$rwd}-child-align~=stretch] {
+    align-self: stretch;
+  }
+
+  .l-col > [acss#{$rwd}-child-align~=stretch] {
+    align-self: stretch;
+  }
+}
+
+@mixin build-flex-align($rwd) {
+  @include main-axis-align-start($rwd);
+  @include main-axis-align-center($rwd);
+  @include main-axis-align-end($rwd);
+  @include main-axis-between($rwd);
+  @include main-axis-align-around($rwd);
+
+  @include cross-axis-align-start($rwd);
+  @include cross-axis-align-center($rwd);
+  @include cross-axis-align-end($rwd);
+  @include cross-axis-align-stretch($rwd);
+
+  @include wrap-axis-align-start($rwd);
+  @include wrap-axis-align-center($rwd);
+  @include wrap-axis-align-end($rwd);
+  @include wrap-axis-between($rwd);
+  @include wrap-axis-align-around($rwd);
+
+  @include child-cross-align-start($rwd);
+  @include child-cross-align-center($rwd);
+  @include child-cross-align-end($rwd);
+  @include child-cross-align-stretch($rwd);
+}
+
+@include rwd {
+  @include build-flex-align($rwd);
+}
+
+@include rwd-xs {
+  @include build-flex-align($rwd-xs);
+}
+
+@include rwd-sm {
+  @include build-flex-align($rwd-sm);
+}
+
+@include rwd-md {
+  @include build-flex-align($rwd-md);
+}
+
+@include rwd-lg {
+  @include build-flex-align($rwd-lg);
+}
+
+@include rwd-xl {
+  @include build-flex-align($rwd-xl);
+}

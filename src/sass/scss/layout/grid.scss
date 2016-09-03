@@ -1,0 +1,72 @@
+@import '../base/rwd';
+@import '../base/default';
+@import '../base/util';
+
+@mixin grid-system($grid) {
+  > * {
+    max-width: (100%/$grid);
+    flex-basis: (100%/$grid);
+  }
+}
+
+@mixin trim-wrap-margin-bottom($grid) {
+  &.is-wrap > * {
+    &:nth-last-child(-n+#{$grid}) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin build-wrap-margin-bottom($rwd, $grid, $gutter) {
+  &.is-wrap[acss-rwd#{$rwd}-wrap-gutter="#{$gutter}"] > * {
+    &:nth-last-child(n+#{$grid}) {
+      margin-bottom: px($gutter);
+    }
+  }
+}
+
+@mixin build-grid-layout($rwd,$grid) {
+  .l-row[acss-rwd#{$rwd}="#{$grid}"] {
+    @include grid-system($grid);
+    @include trim-wrap-margin-bottom($grid);
+
+    $wrap-gutter: $wrap-gutter-min;
+    @while $wrap-gutter <= $wrap-gutter-max {
+      @include build-wrap-margin-bottom($rwd, $grid, $wrap-gutter);
+
+      $wrap-gutter: $wrap-gutter+5;
+    }
+  }
+}
+
+.l-row {
+  &[acss-rwd], &[acss-rwd-xs], &[acss-rwd-sm], &[acss-rwd-md], &[acss-rwd-lg], &[acss-rwd-xl] {
+    flex-shrink: 0;
+  }
+}
+
+@for $grid from 1 through $grid-max {
+  @include rwd {
+    @include build-grid-layout($rwd, $grid);
+  }
+
+  @include rwd-xs {
+    @include build-grid-layout($rwd-xs, $grid);
+  }
+
+  @include rwd-sm {
+    @include build-grid-layout($rwd-sm, $grid);
+  }
+
+  @include rwd-md {
+    @include build-grid-layout($rwd-md, $grid);
+  }
+
+  @include rwd-lg {
+    @include build-grid-layout($rwd-lg, $grid);
+  }
+
+  @include rwd-xl {
+    @include build-grid-layout($rwd-xl, $grid);
+  }
+}

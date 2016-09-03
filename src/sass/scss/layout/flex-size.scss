@@ -1,0 +1,21 @@
+.l-row, .l-col, .l-center {
+  > .is-full-parent {
+    flex: 0 0 100%;
+  }
+
+  &.no-shrink > * {
+    flex-shrink: 0;
+  }
+
+  > .no-shrink {
+    flex-shrink: 0;
+  }
+
+  &.is-wrap {
+    flex-wrap: wrap;
+  }
+
+  > .is-fill {
+    flex: 1;
+  }
+}

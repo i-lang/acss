@@ -1,0 +1,82 @@
+@import '../layout/flex-divider';
+
+$cached-colors: ();
+
+@mixin cache-colors($colors) {
+  $cached-colors: map-merge($cached-colors, $colors) !global;
+}
+
+$gray-colors: (
+        gray-0: #000,
+        gray-1: #111,
+        gray-2: #222,
+        gray-3: #333,
+        gray-4: #444,
+        gray-5: #555,
+        gray-6: #666,
+        gray-7: #777,
+        gray-8: #888,
+        gray-9: #999,
+        gray-a: #aaa,
+        gray-b: #bbb,
+        gray-c: #ccc,
+        gray-d: #ddd,
+        gray-e: #eee,
+        gray-f: #fff);
+
+$black-colors: (
+        black-o1: rgba(0, 0, 0, 0.1),
+        black-o2: rgba(0, 0, 0, 0.2),
+        black-o3: rgba(0, 0, 0, 0.3),
+        black-o4: rgba(0, 0, 0, 0.4),
+        black-o5: rgba(0, 0, 0, 0.5),
+        black-o6: rgba(0, 0, 0, 0.6),
+        black-o7: rgba(0, 0, 0, 0.7),
+        black-o8: rgba(0, 0, 0, 0.8),
+        black-o9: rgba(0, 0, 0, 0.9),
+        black: #000);
+
+$white-colors: (
+        white-o1: rgba(255, 255, 255, 0.1),
+        white-o2: rgba(255, 255, 255, 0.2),
+        white-o3: rgba(255, 255, 255, 0.3),
+        white-o4: rgba(255, 255, 255, 0.4),
+        white-o5: rgba(255, 255, 255, 0.5),
+        white-o6: rgba(255, 255, 255, 0.6),
+        white-o7: rgba(255, 255, 255, 0.7),
+        white-o8: rgba(255, 255, 255, 0.8),
+        white-o9: rgba(255, 255, 255, 0.9),
+        white: #fff);
+
+@mixin build-color-attributes($colors) {
+  @include cache-colors($colors);
+
+  @each $color-name, $color in $colors {
+    [acss-color="#{$color-name}"] {
+      color: $color;
+    }
+
+    [acss-bg-color="#{$color-name}"] {
+      background-color: $color;
+    }
+
+    [acss-border-color="#{$color-name}"] {
+      border-color: $color;
+    }
+
+    @include row-divider-between-color($color);
+    @include row-divider-around-color($color);
+    @include col-divider-between-color($color);
+    @include col-divider-around-color($color);
+  }
+}
+
+@function color($colorName) {
+  $returnColor: null;
+  @each $color-name, $color in $cached-colors {
+    @if $color-name==$colorName {
+      $returnColor: $color;
+    }
+  }
+  @return $returnColor;
+}

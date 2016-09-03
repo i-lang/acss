@@ -1,0 +1,38 @@
+// rwd
+$rwd-mobile-max-width: 991px;
+$rwd-pc-max-width: 992px;
+$rwd-xs-max-width: 374px;
+$rwd-sm-min-width: 375px;
+$rwd-sm-max-width: 767px;
+$rwd-md-min-width: 768px;
+$rwd-md-max-width: 991px;
+$rwd-lg-min-width: 992px;
+$rwd-lg-max-width: 1199px;
+$rwd-xl-min-width: 1200px;
+
+// flex gutter
+$gutter-min: 0;
+$gutter-max: 100;
+
+// flex-divider
+$divider-thickness-min: 0;
+$divider-thickness-max: 10;
+
+// grid
+$grid-max: 12;
+
+// grid wrap gutter
+$wrap-gutter-min: 0;
+$wrap-gutter-max: 100;
+
+// pad
+$padding-min: 0;
+$padding-max: 200;
+
+// position
+$position-min: -200;
+$position-max: 200;
+
+// border
+$border-width-min: 0;
+$border-width-max: 10;

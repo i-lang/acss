@@ -1,0 +1,21 @@
+.acss-texture {
+  // don't optimize unless you won't use background attribute
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &[acss-texture-mapping="width"] {
+    background-size: 100% auto;
+  }
+
+  &[acss-texture-mapping="height"] {
+    background-size: auto 100%;
+  }
+
+  &[acss-texture-mapping="cover"] {
+    background-size: cover;
+  }
+
+  &[acss-texture-mapping="contain"] {
+    background-size: contain;
+  }
+}
