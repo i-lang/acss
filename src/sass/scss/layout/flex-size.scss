@@ -47,17 +47,17 @@
 }
 
 @include rwd-sm {
-  @include build-flex-grow-attribute($rwd-xs);
+  @include build-flex-grow-attribute($rwd-sm);
 }
 
 @include rwd-md {
-  @include build-flex-grow-attribute($rwd-xs);
+  @include build-flex-grow-attribute($rwd-md);
 }
 
 @include rwd-lg {
-  @include build-flex-grow-attribute($rwd-xs);
+  @include build-flex-grow-attribute($rwd-lg);
 }
 
 @include rwd-xl {
-  @include build-flex-grow-attribute($rwd-xs);
+  @include build-flex-grow-attribute($rwd-xl);
 }
