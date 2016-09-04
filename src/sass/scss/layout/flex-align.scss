@@ -234,11 +234,11 @@
 }
 
 @mixin child-cross-align-end($rwd) {
-  .l-row > [acss#{$rwd}-child-align~=right] {
+  .l-row > [acss#{$rwd}-child-align~=bottom] {
     align-self: flex-end;
   }
 
-  .l-col > [acss#{$rwd}-child-align~=bottom] {
+  .l-col > [acss#{$rwd}-child-align~=right] {
     align-self: flex-end;
   }
 }
