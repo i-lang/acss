@@ -1,3 +1,5 @@
+@import '../base/rwd';
+
 .l-row, .l-col, .l-center {
   > .is-full-parent {
     flex: 0 0 100%;
@@ -18,4 +20,44 @@
   > .is-fill {
     flex: 1;
   }
+}
+
+@mixin build-flex-grow($rwd, $size) {
+  [acss#{$rwd}-flex-grow="#{$size}"] {
+    flex-grow: $size;
+  }
+}
+
+@mixin build-flex-grow-attribute($rwd) {
+  $min-flex-grow: 1;
+  $max-flex-grow: 10;
+  $flex-grow: $min-flex-grow;
+  @while $flex-grow <= $max-flex-grow {
+    @include build-flex-grow($rwd, $flex-grow);
+    $flex-grow: $flex-grow + 1;
+  }
+}
+
+@include rwd {
+  @include build-flex-grow-attribute($rwd);
+}
+
+@include rwd-xs {
+  @include build-flex-grow-attribute($rwd-xs);
+}
+
+@include rwd-sm {
+  @include build-flex-grow-attribute($rwd-xs);
+}
+
+@include rwd-md {
+  @include build-flex-grow-attribute($rwd-xs);
+}
+
+@include rwd-lg {
+  @include build-flex-grow-attribute($rwd-xs);
+}
+
+@include rwd-xl {
+  @include build-flex-grow-attribute($rwd-xs);
 }
