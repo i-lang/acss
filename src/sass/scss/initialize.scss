@@ -4,7 +4,7 @@
 
 // the file is optional build
 // you can extends your color via this mixin
-@include build-color-attributes((transparent: transparent));
+@include build-color-attributes(('transparent': transparent));
 @include build-color-attributes($gray-colors);
 @include build-color-attributes($black-colors);
 @include build-color-attributes($white-colors);
