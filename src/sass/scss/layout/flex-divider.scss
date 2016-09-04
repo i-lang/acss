@@ -89,8 +89,8 @@
   }
 }
 
-@mixin row-divider-between-color($color) {
-  .l-row[acss-divider-color="#{$color}"] {
+@mixin row-divider-between-color($color-name, $color) {
+  .l-row[acss-divider-color="#{$color-name}"] {
     > *:nth-child(n+2) {
       &:before {
         border-left-color: $color;
@@ -141,9 +141,9 @@
   }
 }
 
-@mixin row-divider-around-color($color) {
+@mixin row-divider-around-color($color-name, $color) {
   .l-row {
-    &[acss-divider-color="#{$color}"] {
+    &[acss-divider-color="#{$color-name}"] {
       > *:last-child:after {
         border-right-color: $color;
       }
@@ -178,8 +178,8 @@
   }
 }
 
-@mixin col-divider-between-color($color) {
-  .l-col[acss-divider-color="#{$color}"] {
+@mixin col-divider-between-color($color-name, $color) {
+  .l-col[acss-divider-color="#{$color-name}"] {
     > *:nth-child(n+2):before {
       border-top-color: $color;
     }
@@ -224,8 +224,8 @@
   }
 }
 
-@mixin col-divider-around-color($color) {
-  .l-col[acss-divider-color="#{$color}"] {
+@mixin col-divider-around-color($color-name, $color) {
+  .l-col[acss-divider-color="#{$color-name}"] {
     > *:last-child:after {
       border-bottom-color: $color;
     }
