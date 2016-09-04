@@ -23,193 +23,149 @@
   }
 }
 
-@mixin row-y-align($rwd, $y-align) {
+@mixin row-y-align($rwd, $y-align, $attribute-name, $attribute-value) {
   .l-row[acss#{$rwd}-y-align~=#{$y-align}] {
-    @content;
-
-    &[acss#{$rwd}-y-align~=deep] {
-      @include row-col {
-        @content;
-      }
+    #{$attribute-name} : #{$attribute-value} !important;
+  }
+  .l-row[acss#{$rwd}-y-align~=#{$y-align}][acss#{$rwd}-y-align~=deep] {
+    @include row-col {
+      #{$attribute-name} : #{$attribute-value};
     }
   }
 }
 
-@mixin row-x-align($rwd, $x-align) {
+@mixin row-x-align($rwd, $x-align, $attribute-name, $attribute-value) {
   .l-row[acss#{$rwd}-x-align~=#{$x-align}] {
-    @content;
-
-    &[acss#{$rwd}-x-align~=deep] {
-      @include row-col {
-        @content;
-      }
+    #{$attribute-name} : #{$attribute-value} !important;
+  }
+  .l-row[acss#{$rwd}-x-align~=#{$x-align}][acss#{$rwd}-x-align~=deep] {
+    @include row-col {
+      #{$attribute-name} : #{$attribute-value};
     }
   }
 }
 
-@mixin row-wrap-align($rwd, $wrap-align) {
+@mixin row-wrap-align($rwd, $wrap-align,$attribute-value) {
   .l-row[acss#{$rwd}-wrap-align~=#{$wrap-align}] {
-    @content;
+    align-content: #{$attribute-value} !important;
+  }
 
-    &[acss#{$rwd}-wrap-align~=deep] {
-      @include row-col {
-        @content;
-      }
+  .l-row[acss#{$rwd}-wrap-align~=#{$wrap-align}][acss#{$rwd}-wrap-align~=deep] {
+    @include row-col {
+      align-content: #{$attribute-value};
     }
   }
 }
 
-@mixin col-x-align($rwd, $x-align) {
+@mixin col-x-align($rwd, $x-align, $attribute-name, $attribute-value) {
   .l-col[acss#{$rwd}-x-align~=#{$x-align}] {
-    @content;
+    #{$attribute-name} : #{$attribute-value} !important;
+  }
 
-    &[acss#{$rwd}-x-align~=deep] {
-      @include row-col {
-        @content;
-      }
+  .l-col[acss#{$rwd}-x-align~=#{$x-align}][acss#{$rwd}-x-align~=deep] {
+    @include row-col {
+      #{$attribute-name} : #{$attribute-value};
     }
   }
 }
 
-@mixin col-y-align($rwd, $y-align) {
+@mixin col-y-align($rwd, $y-align, $attribute-name, $attribute-value) {
   .l-col[acss#{$rwd}-y-align~=#{$y-align}] {
-    @content;
+    #{$attribute-name} : #{$attribute-value} !important;
+  }
 
-    &[acss#{$rwd}-y-align~=deep] {
-      @include row-col {
-        @content;
-      }
+  .l-col[acss#{$rwd}-y-align~=#{$y-align}][acss#{$rwd}-y-align~=deep] {
+    @include row-col {
+      #{$attribute-name} : #{$attribute-value};
     }
   }
 }
 
-@mixin col-wrap-align($rwd, $wrap-align) {
+@mixin col-wrap-align($rwd, $wrap-align,$attribute-value) {
   .l-col[acss#{$rwd}-wrap-align~=#{$wrap-align}] {
-    @content;
+    align-content: #{$attribute-value} !important;
+  }
 
-    &[acss#{$rwd}-wrap-align~=deep] {
-      @include row-col {
-        @content;
-      }
+  .l-col[acss#{$rwd}-wrap-align~=#{$wrap-align}][acss#{$rwd}-wrap-align~=deep] {
+    @include row-col {
+      align-content: #{$attribute-value};
     }
   }
 }
 
 // main axis aligns
-@mixin row-col-main-axis-align($rwd, $row-attribute-value, $col-attribute-value) {
-  @include row-x-align($rwd, $row-attribute-value) {
-    @content;
-  }
-
-  @include col-y-align($rwd, $col-attribute-value) {
-    @content;
-  }
+@mixin row-col-main-axis-align($rwd, $row-attribute-value, $col-attribute-value, $attribute-name, $attribute-value) {
+  @include row-x-align($rwd, $row-attribute-value, $attribute-name, $attribute-value);
+  @include col-y-align($rwd, $col-attribute-value, $attribute-name, $attribute-value);
 }
 
 @mixin main-axis-align-start($rwd) {
-  @include row-col-main-axis-align($rwd, left, top) {
-    justify-content: flex-start;
-  }
+  @include row-col-main-axis-align($rwd, left, top, justify-content, flex-start);
 }
 
 @mixin main-axis-align-center($rwd) {
-  @include row-col-main-axis-align($rwd, center, center) {
-    justify-content: center;
-  }
+  @include row-col-main-axis-align($rwd, center, center, justify-content, center);
 }
 
 @mixin main-axis-align-end($rwd) {
-  @include row-col-main-axis-align($rwd, right, bottom) {
-    justify-content: flex-end;
-  }
+  @include row-col-main-axis-align($rwd, right, bottom, justify-content, flex-end);
 }
 
 @mixin main-axis-between($rwd) {
-  @include row-col-main-axis-align($rwd, between, between) {
-    justify-content: space-between;
-  }
+  @include row-col-main-axis-align($rwd, between, between, justify-content, space-between);
 }
 
 @mixin main-axis-align-around($rwd) {
-  @include row-col-main-axis-align($rwd, around, around) {
-    justify-content: space-around;
-  }
+  @include row-col-main-axis-align($rwd, around, around, justify-content, space-around);
 }
 
 // cross axis aligns
-@mixin row-col-cross-axis-align($rwd, $row-attribute-value, $col-attribute-value) {
-  @include row-y-align($rwd, $row-attribute-value) {
-    @content;
-  }
-
-  @include col-x-align($rwd, $col-attribute-value) {
-    @content;
-  }
+@mixin row-col-cross-axis-align($rwd, $row-attribute-value, $col-attribute-value, $attribute-name, $attribute-value) {
+  @include row-y-align($rwd, $row-attribute-value, $attribute-name, $attribute-value);
+  @include col-x-align($rwd, $col-attribute-value, $attribute-name, $attribute-value);
 }
 
 @mixin cross-axis-align-start($rwd) {
-  @include row-col-cross-axis-align($rwd, top, left) {
-    align-items: flex-start;
-  }
+  @include row-col-cross-axis-align($rwd, top, left, align-items, flex-start);
 }
 
 @mixin cross-axis-align-center($rwd) {
-  @include row-col-cross-axis-align($rwd, center, center) {
-    align-items: center;
-  }
+  @include row-col-cross-axis-align($rwd, center, center, align-items, center);
 }
 
 @mixin cross-axis-align-end($rwd) {
-  @include row-col-cross-axis-align($rwd, bottom, right) {
-    align-items: flex-end;
-  }
+  @include row-col-cross-axis-align($rwd, bottom, right, align-items, flex-end)
 }
 
 @mixin cross-axis-align-stretch($rwd) {
-  @include row-col-cross-axis-align($rwd, stretch, stretch) {
-    align-items: stretch;
-  }
+  @include row-col-cross-axis-align($rwd, stretch, stretch, align-items, stretch);
 }
 
 // wrap axis aligns
-@mixin row-col-wrap-axis-align($rwd, $row-attribute-value, $col-attribute-value) {
-  @include row-wrap-align($rwd, $row-attribute-value) {
-    @content;
-  }
+@mixin row-col-wrap-axis-align($rwd, $row-attribute-value, $col-attribute-value, $attribute-value) {
+  @include row-wrap-align($rwd, $row-attribute-value, $attribute-value);
 
-  @include col-wrap-align($rwd, $col-attribute-value) {
-    @content;
-  }
+  @include col-wrap-align($rwd, $col-attribute-value, $attribute-value);
 }
 
 @mixin wrap-axis-align-start($rwd) {
-  @include row-col-wrap-axis-align($rwd, top, left) {
-    align-content: flex-start;
-  }
+  @include row-col-wrap-axis-align($rwd, top, left, flex-start);
 }
 
 @mixin wrap-axis-align-center($rwd) {
-  @include row-col-wrap-axis-align($rwd, center, center) {
-    align-content: center;
-  }
+  @include row-col-wrap-axis-align($rwd, center, center, center);
 }
 
 @mixin wrap-axis-align-end($rwd) {
-  @include row-col-wrap-axis-align($rwd, bottom, right) {
-    align-content: flex-end;
-  }
+  @include row-col-wrap-axis-align($rwd, bottom, right, flex-end);
 }
 
 @mixin wrap-axis-between($rwd) {
-  @include row-col-wrap-axis-align($rwd, between, between) {
-    align-content: space-between;
-  }
+  @include row-col-wrap-axis-align($rwd, between, between, space-between);
 }
 
 @mixin wrap-axis-align-around($rwd) {
-  @include row-col-wrap-axis-align($rwd, around, around) {
-    align-content: space-around;
-  }
+  @include row-col-wrap-axis-align($rwd, around, around, space-around);
 }
 
 // children align
