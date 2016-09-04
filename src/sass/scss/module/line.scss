@@ -1,0 +1,17 @@
+@import '../base/util';
+@import '../base/default';
+
+.scss-line {
+  width: 100%;
+}
+
+@mixin build-line-module {
+  $thickness: $line-thickness-min;
+  @while $thickness <=$line-thickness-max {
+    .acss-line[acss-line-thickness="#{$thickness}"] {
+      height: px($thickness);
+    }
+  }
+}
+
+@include build-line-module;
