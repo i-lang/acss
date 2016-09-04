@@ -7,12 +7,12 @@
   position: relative;
 
   > [acss-position~=dock] {
-    position: absolute;
+    position: absolute !important;
   }
 }
 
 [acss-position~=fixed] {
-  position: fixed;
+  position: fixed !important;
 }
 
 [acss-position~=offset] {
