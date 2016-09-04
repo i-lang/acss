@@ -6,6 +6,10 @@
   > * {
     max-width: (100%/$grid);
     flex-basis: (100%/$grid);
+
+    &[acss-flex-basis=auto] {
+      flex-basis: auto;
+    }
   }
 }
 
