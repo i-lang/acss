@@ -75,12 +75,27 @@ $eng-fonts: (
   }
 }
 
+@mixin build-text-align($rwd, $align) {
+  [acss#{$rwd}-text-align="#{$align}"] {
+    text-align: $align;
+  }
+}
+
+@mixin build-text-align-attribute($rwd) {
+  $aligns: (left, center, right, justify);
+
+  @each $align in $aligns {
+    @include build-text-align($rwd, $align);
+  }
+}
+
 @mixin build-text-attributes($rwd) {
   @include build-line-height-attribute($rwd);
   @include build-font-size-attribute($rwd);
   @include build-font-weight-attribute($rwd);
   @include build-font-attribute($cht-fonts);
   @include build-font-attribute($eng-fonts);
+  @include build-text-align-attribute($rwd);
 }
 
 @include rwd {
