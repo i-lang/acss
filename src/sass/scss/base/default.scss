@@ -1,3 +1,6 @@
+// compare float number
+$float-threshold: 0.01;
+
 // rwd
 $rwd-mobile-max-width: 991px;
 $rwd-pc-max-width: 992px;
@@ -40,3 +43,11 @@ $border-width-max: 10;
 // line thickness
 $line-thickness-min: 0;
 $line-thickness-max: 10;
+
+// line height
+$min-line-height: 1;
+$max-line-height: 3.0;
+
+// font size
+$min-font-size: 12;
+$max-font-size: 40;

@@ -1,0 +1,108 @@
+@import 'default';
+@import 'rwd';
+@import 'util';
+
+$cached-fonts: ();
+
+@mixin cache-fonts($colors) {
+  $cached-fonts: map-merge($cached-fonts, $colors) !global;
+}
+
+$cht-fonts: (
+        'mjh': Microsoft JhengHei);
+$eng-fonts: (
+        'ss': sans-serif);
+
+@function font($font-name) {
+  $return-font: null;
+  @each $fontName, $font in $cached-fonts {
+    @if $font-name==$fontName {
+      $return-font: $font;
+    }
+  }
+  @return $return-font;
+}
+
+@mixin build-line-height($rwd, $line-height) {
+  [acss#{$rwd}-line-height="#{$line-height}"] {
+    line-height: $line-height;
+  }
+}
+
+@mixin build-line-height-attribute($rwd) {
+  $line-height: $min-line-height;
+  @while $line-height <= $max-line-height + $float-threshold {
+    @include build-line-height($rwd, $line-height);
+    $line-height: $line-height + 0.1;
+  }
+}
+
+@mixin build-font-size($rwd, $font-size) {
+  [acss#{$rwd}-font-size="#{$font-size}"] {
+    font-size: px($font-size);
+  }
+}
+
+@mixin build-font-size-attribute($rwd) {
+  $font-size: $min-font-size;
+  @while $font-size <= $max-font-size {
+    @include build-font-size($rwd, $font-size);
+    $font-size: $font-size + 2;
+  }
+}
+
+@mixin build-font-weight($rwd, $weight) {
+  [acss#{$rwd}-font-weight="#{$weight}"] {
+    font-weight: $weight;
+  }
+}
+
+@mixin build-font-weight-attribute($rwd) {
+  $weights: (normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+  @each $weight in $weights {
+    @include build-font-weight($rwd, $weight);
+  }
+}
+
+@mixin build-font-attribute($fonts) {
+  @include cache-fonts($fonts);
+
+  @each $font-name, $font in $fonts {
+    [acss-font="#{unquote($font-name)}"] {
+      font-family: $font;
+    }
+  }
+}
+
+@mixin build-text-attributes($rwd) {
+  @include build-line-height-attribute($rwd);
+  @include build-font-size-attribute($rwd);
+  @include build-font-weight-attribute($rwd);
+  @include build-font-attribute($cht-fonts);
+  @include build-font-attribute($eng-fonts);
+}
+
+@include rwd {
+  @include build-text-attributes($rwd);
+}
+
+@include rwd-xs {
+  @include build-text-attributes($rwd-xs);
+}
+
+@include rwd-sm {
+  @include build-text-attributes($rwd-sm);
+}
+
+@include rwd-md {
+  @include build-text-attributes($rwd-md);
+}
+
+@include rwd-lg {
+  @include build-text-attributes($rwd-lg);
+}
+
+@include rwd-xl {
+  @include build-text-attributes($rwd-xl);
+}
