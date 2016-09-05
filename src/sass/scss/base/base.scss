@@ -2,6 +2,7 @@
 @import 'color';
 @import 'rwd';
 @import 'text';
+@import 'scroll';
 @import 'size';
 
 * {
@@ -14,8 +15,4 @@ a {
   &.is-underline {
     text-decoration: underline;
   }
-}
-
-.acss-reset {
-  @import 'compass/reset';
 }
