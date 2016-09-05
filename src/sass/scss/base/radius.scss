@@ -1,0 +1,43 @@
+@import 'rwd';
+@import 'util';
+@import 'compass/css3';
+
+@mixin build-radius($rwd, $radius) {
+  [acss#{$rwd}-radius="#{$radius}"] {
+    @include border-radius(px($radius));
+  }
+}
+
+@mixin build-radius-attribute($rwd) {
+  $radius-min: 0;
+  $radius-max: 10;
+  $radius: $radius-min;
+  @while $radius <= $radius-max {
+    @include build-radius($rwd, $radius);
+    $radius: $radius + 1;
+  }
+}
+
+@include rwd {
+  @include build-radius-attribute($rwd);
+}
+
+@include rwd-xs {
+  @include build-radius-attribute($rwd-xs);
+}
+
+@include rwd-sm {
+  @include build-radius-attribute($rwd-sm);
+}
+
+@include rwd-md {
+  @include build-radius-attribute($rwd-md);
+}
+
+@include rwd-lg {
+  @include build-radius-attribute($rwd-lg);
+}
+
+@include rwd-xl {
+  @include build-radius-attribute($rwd-xl);
+}
