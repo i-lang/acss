@@ -67,6 +67,98 @@ $rwd-xl: '-xl';
   }
 }
 
+.is-xs {
+  @include rwd-sm {
+    display: none;
+  }
+
+  @include rwd-md {
+    display: none;
+  }
+
+  @include rwd-pc {
+    display: none;
+  }
+}
+
+.is-not-xs {
+  @include rwd-xs {
+    display: none;
+  }
+}
+
+.is-sm {
+  @include rwd-xs {
+    display: none;
+  }
+
+  @include rwd-md {
+    display: none;
+  }
+
+  @include rwd-pc {
+    display: none;
+  }
+}
+
+.is-not-sm {
+  @include rwd-sm {
+    display: none;
+  }
+}
+
+.is-md {
+  @include rwd-xs {
+    display: none;
+  }
+
+  @include rwd-sm {
+    display: none;
+  }
+
+  @include rwd-pc {
+    display: none;
+  }
+}
+
+.is-not-md {
+  @include rwd-md {
+    display: none;
+  }
+}
+
+.is-lg {
+  @include rwd-mobile {
+    display: none;
+  }
+
+  @include rwd-xl {
+    display: none;
+  }
+}
+
+.is-not-lg {
+  @include rwd-lg {
+    display: none;
+  }
+}
+
+.is-xl {
+  @include rwd-mobile {
+    display: none;
+  }
+
+  @include rwd-lg {
+    display: none;
+  }
+}
+
+.is-xl {
+  @include rwd-xl {
+    display: none;
+  }
+}
+
 .rwd-test {
   position: relative;
 
