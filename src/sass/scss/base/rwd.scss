@@ -153,7 +153,7 @@ $rwd-xl: '-xl';
   }
 }
 
-.is-xl {
+.is-not-xl {
   @include rwd-xl {
     display: none;
   }
