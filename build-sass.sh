@@ -1,4 +1,4 @@
-cd src/
+cd src/sass/scss/acss
 
 printf "start to compile sass..."
 
