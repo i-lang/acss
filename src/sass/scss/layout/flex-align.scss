@@ -1,25 +1,8 @@
 @import '../base/rwd';
 
-%is-center {
-  justify-content: center;
-  align-items: center;
-}
-
 @mixin row-col {
   .l-row, .l-col {
     @content;
-  }
-}
-
-.l-row.is-center, .l-col.is-center {
-  @extend %is-center;
-}
-
-.l-row.is-deep-center, .l-col.is-deep-center {
-  @extend %is-center;
-
-  @include row-col {
-    @extend %is-center;
   }
 }
 
