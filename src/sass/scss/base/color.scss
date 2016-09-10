@@ -1,4 +1,4 @@
-@import '../layout/flex-divider';
+@import '../layout/flex-divider-color';
 
 $cached-colors: ();
 
@@ -64,10 +64,10 @@ $white-colors: (
       border-color: $color;
     }
 
-    @include row-divider-between-color(unquote($color-name), $color);
-    @include row-divider-around-color(unquote($color-name), $color);
-    @include col-divider-between-color(unquote($color-name), $color);
-    @include col-divider-around-color(unquote($color-name), $color);
+    @include build-row-divider-between-color(unquote($color-name), $color);
+    @include build-row-divider-around-color(unquote($color-name), $color);
+    @include build-col-divider-between-color(unquote($color-name), $color);
+    @include build-col-divider-around-color(unquote($color-name), $color);
   }
 }
 
