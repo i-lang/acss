@@ -17,6 +17,7 @@
 
     > *:not(:first-child):before {
       @include row-divider-style;
+      left: 0;
     }
   }
 }
@@ -41,11 +42,13 @@
 
     > *:before {
       @include row-divider-style;
+      left: 0;
     }
 
     > *:last-child {
       &:after {
         @include row-divider-style;
+        right: 0;
       }
     }
   }
@@ -93,6 +96,7 @@
 
       &:before {
         @include col-divider-style;
+        top: 0;
       }
     }
   }
@@ -118,10 +122,12 @@
 
     > *:before {
       @include col-divider-style;
+      top: 0;
     }
 
     > *:last-child:after {
       @include col-divider-style;
+      bottom: 0;
     }
   }
 }
