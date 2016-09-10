@@ -1,0 +1,59 @@
+@import '../base/util';
+@import '../base/default';
+
+@mixin build-row-divider-between-thickness($thickness) {
+  &[acss-divider-width="#{$thickness}"] {
+    > *:not(:first-child):before {
+      width: px($thickness);
+    }
+  }
+}
+
+@mixin build-row-divider-around-thickness($thickness) {
+  &[acss-divider-width="#{$thickness}"] {
+    > *:before {
+      width: px($thickness);
+    }
+
+    > *:last-child:after {
+      width: px($thickness);
+    }
+  }
+}
+
+@mixin build-col-divider-between-thickness($thickness) {
+  &[acss-divider-width="#{$thickness}"] {
+    > *:not(:first-child):before {
+      height: px($thickness);
+    }
+  }
+}
+
+@mixin build-col-divider-around-thickness($thickness) {
+  &[acss-divider-width="#{$thickness}"] {
+    > *:before {
+      height: px($thickness);
+    }
+
+    > *:last-child:after {
+      height: px($thickness);
+    }
+  }
+}
+
+@mixin build-flex-divider-width-attribute($rwd) {
+  $thickness: $divider-thickness-min;
+  @while $thickness <= $divider-thickness-max {
+    .l-row {
+      @include build-row-divider-between-thickness($thickness);
+      @include build-row-divider-around-thickness($thickness);
+    }
+
+    .l-col {
+      @include build-col-divider-between-thickness($thickness);
+      @include build-col-divider-around-thickness($thickness);
+    }
+
+    $thickness: $thickness + 1;
+  }
+}

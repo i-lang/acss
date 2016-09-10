@@ -1,6 +1,6 @@
 @import '../base/rwd';
-@import '../base/default';
 @import '../base/util';
+@import 'flex-divider-thickness';
 
 @mixin row-divider-style {
   content: '';
@@ -154,88 +154,7 @@
   }
 }
 
-@mixin row-divider-between-width($thickness) {
-  &[acss-divider-width="#{$thickness}"] {
-    > *:not(:first-child):before {
-      width: px($thickness);
-    }
-  }
-}
-
-@mixin row-divider-around-width($thickness) {
-  &[acss-divider-width="#{$thickness}"] {
-    > *:before {
-      width: px($thickness);
-    }
-
-    > *:last-child:after {
-      width: px($thickness);
-    }
-  }
-}
-
-@mixin col-divider-between-width($thickness) {
-  &[acss-divider-width="#{$thickness}"] {
-    > *:not(:first-child):before {
-      height: px($thickness);
-    }
-  }
-}
-
-@mixin col-divider-around-width($thickness) {
-  &[acss-divider-width="#{$thickness}"] {
-    > *:before {
-      height: px($thickness);
-    }
-
-    > *:last-child:after {
-      height: px($thickness);
-    }
-  }
-}
-
-@mixin row-divider-between-color($color-name, $color) {
-  .l-row[acss-divider-color="#{$color-name}"] {
-    > *:not(:first-child):before {
-      background-color: $color;
-    }
-  }
-}
-
-@mixin row-divider-around-color($color-name, $color) {
-  .l-row[acss-divider-color="#{$color-name}"] {
-    > *:before {
-      background-color: $color;
-    }
-
-    > *:last-child:after {
-      background-color: $color;
-    }
-  }
-}
-
-@mixin col-divider-between-color($color-name, $color) {
-  .l-col[acss-divider-color="#{$color-name}"] {
-    > *:not(:first-child):before {
-      background-color: $color;
-    }
-  }
-}
-
-@mixin col-divider-around-color($color-name, $color) {
-  .l-col[acss-divider-color="#{$color-name}"] {
-    > *:before {
-      background-color: $color;
-    }
-
-    > *:last-child:after {
-      background-color: $color;
-    }
-  }
-}
-
-// rwd
-@mixin build-flex-divider-attributes {
+@mixin build-flex-divider($rwd) {
   .l-row {
     position: relative;
     @include build-row-divider-between-attribute($rwd);
@@ -248,18 +167,32 @@
     @include build-col-divider-around-attribute($rwd);
   }
 
-  $thickness: $divider-thickness-min;
-  @while $thickness <= $divider-thickness-max {
-    .l-row {
-      @include row-divider-between-width($thickness);
-      @include row-divider-around-width($thickness);
-    }
+  @include build-flex-divider-width-attribute($rwd);
+}
 
-    .l-col {
-      @include col-divider-between-width($thickness);
-      @include col-divider-around-width($thickness);
-    }
+// rwd
+@mixin build-flex-divider-attributes {
+  @include rwd {
+    @include build-flex-divider($rwd)
+  }
 
-    $thickness: $thickness + 1;
+  @include rwd-xs {
+    @include build-flex-divider($rwd-xs)
+  }
+
+  @include rwd-sm {
+    @include build-flex-divider($rwd-sm)
+  }
+
+  @include rwd-md {
+    @include build-flex-divider($rwd-md)
+  }
+
+  @include rwd-lg {
+    @include build-flex-divider($rwd-lg)
+  }
+
+  @include rwd-xl {
+    @include build-flex-divider($rwd-xl)
   }
 }
