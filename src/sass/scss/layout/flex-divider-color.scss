@@ -1,0 +1,39 @@
+@mixin build-row-divider-between-color($color-name, $color) {
+  .l-row[acss-divider-color="#{$color-name}"] {
+    > *:not(:first-child):before {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin build-row-divider-around-color($color-name, $color) {
+  .l-row[acss-divider-color="#{$color-name}"] {
+    > *:before {
+      background-color: $color;
+    }
+
+    > *:last-child:after {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin build-col-divider-between-color($color-name, $color) {
+  .l-col[acss-divider-color="#{$color-name}"] {
+    > *:not(:first-child):before {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin build-col-divider-around-color($color-name, $color) {
+  .l-col[acss-divider-color="#{$color-name}"] {
+    > *:before {
+      background-color: $color;
+    }
+
+    > *:last-child:after {
+      background-color: $color;
+    }
+  }
+}

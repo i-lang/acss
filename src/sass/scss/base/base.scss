@@ -1,10 +1,12 @@
 @import 'compass/css3';
 @import 'color';
+@import 'opacity';
+@import 'overflow';
 @import 'radius';
 @import 'rwd';
-@import 'text';
-@import 'scroll';
 @import 'size';
+@import 'text';
+@import 'translate';
 
 * {
   @include box-sizing();

@@ -1,24 +1,24 @@
 @import 'rwd';
 
 @mixin build-overflow-attributes($rwd) {
-  [acss#{$rwd}-overflow=hidden] {
-    overflow: hidden;
+  [acss#{$rwd}-overflow="hidden"] {
+    overflow: hidden !important;
   }
 
-  [acss#{$rwd}-overflow=visible] {
-    overflow: visible;
+  [acss#{$rwd}-overflow="visible"] {
+    overflow: visible !important;
   }
 
-  [acss#{$rwd}-overflow=scroll] {
-    overflow: scroll;
+  [acss#{$rwd}-overflow="scroll"] {
+    overflow: scroll !important;
   }
 
-  [acss#{$rwd}-overflow=scroll-x] {
-    overflow-x: scroll;
+  [acss#{$rwd}-overflow="scroll-x"] {
+    overflow-x: scroll !important;
   }
 
-  [acss#{$rwd}-overflow=scroll-y] {
-    overflow-y: scroll;
+  [acss#{$rwd}-overflow="scroll-y"] {
+    overflow-y: scroll !important;
   }
 }
 

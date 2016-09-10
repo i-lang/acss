@@ -1,6 +1,9 @@
-@import 'base/color';
-@import 'layout/flex-divider';
-@import 'layout/position';
+@import '../base/base';
+@import '../layout/layout';
+@import '../module/module';
+@import '../base/color';
+@import '../layout/flex-divider';
+@import '../layout/position';
 
 // the file is optional build
 // you can extends your color via this mixin
@@ -9,5 +12,5 @@
 @include build-color-attributes($black-colors);
 @include build-color-attributes($white-colors);
 
-@include build-flex-divider-layout;
-@include build-position-layout;
+@include build-flex-divider-attributes;
+@include build-position-attributes;

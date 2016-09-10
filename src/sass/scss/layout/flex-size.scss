@@ -22,42 +22,42 @@
   }
 }
 
-@mixin build-flex-grow($rwd, $size) {
-  [acss#{$rwd}-flex-grow="#{$size}"] {
-    flex-grow: $size;
+@mixin build-flex($rwd, $flex) {
+  [acss#{$rwd}-flex="#{$flex}"] {
+    flex-grow: $flex;
   }
 }
 
-@mixin build-flex-grow-attribute($rwd) {
-  $min-flex-grow: 1;
-  $max-flex-grow: 10;
-  $flex-grow: $min-flex-grow;
-  @while $flex-grow <= $max-flex-grow {
-    @include build-flex-grow($rwd, $flex-grow);
-    $flex-grow: $flex-grow + 1;
+@mixin build-flex-attribute($rwd) {
+  $min-flex: 1;
+  $max-flex: 12;
+  $flex: $min-flex;
+  @while $flex <= $max-flex {
+    @include build-flex($rwd, $flex);
+    $flex: $flex + 1;
   }
 }
 
 @include rwd {
-  @include build-flex-grow-attribute($rwd);
+  @include build-flex-attribute($rwd);
 }
 
 @include rwd-xs {
-  @include build-flex-grow-attribute($rwd-xs);
+  @include build-flex-attribute($rwd-xs);
 }
 
 @include rwd-sm {
-  @include build-flex-grow-attribute($rwd-sm);
+  @include build-flex-attribute($rwd-sm);
 }
 
 @include rwd-md {
-  @include build-flex-grow-attribute($rwd-md);
+  @include build-flex-attribute($rwd-md);
 }
 
 @include rwd-lg {
-  @include build-flex-grow-attribute($rwd-lg);
+  @include build-flex-attribute($rwd-lg);
 }
 
 @include rwd-xl {
-  @include build-flex-grow-attribute($rwd-xl);
+  @include build-flex-attribute($rwd-xl);
 }

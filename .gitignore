@@ -1,6 +1,5 @@
 .idea/
 bower_components/
 node_modules/
-src/.sass-cache/
 src/stylesheets/
 .sass-cache
