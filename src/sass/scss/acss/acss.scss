@@ -12,5 +12,5 @@
 @include build-color-attributes($black-colors);
 @include build-color-attributes($white-colors);
 
-@include build-flex-divider-layout;
+@include build-flex-divider-attributes;
 @include build-position-layout;
