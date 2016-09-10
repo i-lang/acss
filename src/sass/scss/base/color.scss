@@ -80,3 +80,7 @@ $white-colors: (
   }
   @return $returnColor;
 }
+
+@include cache-colors($gray-colors);
+@include cache-colors($black-colors);
+@include cache-colors($white-colors);
