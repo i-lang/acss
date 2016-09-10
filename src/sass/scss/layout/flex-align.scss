@@ -1,8 +1,23 @@
 @import '../base/rwd';
 
+%is-center {
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin row-col {
   .l-row, .l-col {
     @content;
+  }
+}
+
+@include row-col {
+  &.is-deep-center {
+    @extend %is-center;
+
+    @include row-col {
+      @extend %is-center;
+    }
   }
 }
 
@@ -223,22 +238,22 @@
   @include build-flex-align($rwd);
 }
 
-@include rwd-xs {
-  @include build-flex-align($rwd-xs);
-}
-
-@include rwd-sm {
-  @include build-flex-align($rwd-sm);
-}
-
-@include rwd-md {
-  @include build-flex-align($rwd-md);
-}
-
-@include rwd-lg {
-  @include build-flex-align($rwd-lg);
-}
-
-@include rwd-xl {
-  @include build-flex-align($rwd-xl);
-}
+//@include rwd-xs {
+//  @include build-flex-align($rwd-xs);
+//}
+//
+//@include rwd-sm {
+//  @include build-flex-align($rwd-sm);
+//}
+//
+//@include rwd-md {
+//  @include build-flex-align($rwd-md);
+//}
+//
+//@include rwd-lg {
+//  @include build-flex-align($rwd-lg);
+//}
+//
+//@include rwd-xl {
+//  @include build-flex-align($rwd-xl);
+//}

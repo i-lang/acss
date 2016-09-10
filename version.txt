@@ -1,3 +1,7 @@
+[v0.4.2]
+fix divider position affect by child padding when no acss-gutter
+add is-deep-center for l-row, l-col
+
 [v0.4.1]
 add reset css file
 
