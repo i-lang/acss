@@ -1,3 +1,9 @@
+[v0.4.3]
+[acss-flex] flex-grow -> flex (css property changed)
+add [acss-flex-grow]
+add [acss-flex-shrink]
+[acss-gutter-between][acss-gutter-around] 0 ~ 100 (step 5) to 0 ~ 200 (step 5)
+
 [v0.4.2]
 fix divider position affect by child padding when no acss-gutter
 add is-deep-center for l-row, l-col
