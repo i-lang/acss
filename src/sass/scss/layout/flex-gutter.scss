@@ -88,22 +88,22 @@
   @include build-flex-gutter ($rwd);
 }
 
-//@include rwd-xs {
-//  @include build-flex-gutter($rwd-xs);
-//}
-//
-//@include rwd-sm {
-//  @include build-flex-gutter($rwd-sm);
-//}
-//
-//@include rwd-md {
-//  @include build-flex-gutter($rwd-md);
-//}
-//
-//@include rwd-lg {
-//  @include build-flex-gutter($rwd-lg);
-//}
-//
-//@include rwd-xl {
-//  @include build-flex-gutter($rwd-xl);
-//}
+@include rwd-xs {
+  @include build-flex-gutter($rwd-xs);
+}
+
+@include rwd-sm {
+  @include build-flex-gutter($rwd-sm);
+}
+
+@include rwd-md {
+  @include build-flex-gutter($rwd-md);
+}
+
+@include rwd-lg {
+  @include build-flex-gutter($rwd-lg);
+}
+
+@include rwd-xl {
+  @include build-flex-gutter($rwd-xl);
+}
