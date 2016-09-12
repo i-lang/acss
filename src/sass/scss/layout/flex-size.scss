@@ -24,7 +24,19 @@
 
 @mixin build-flex($rwd, $flex) {
   [acss#{$rwd}-flex="#{$flex}"] {
+    flex: $flex;
+  }
+}
+
+@mixin build-flex-grow($rwd, $flex) {
+  [acss#{$rwd}-flex-grow="#{$flex}"] {
     flex-grow: $flex;
+  }
+}
+
+@mixin build-flex-shrink($rwd, $flex) {
+  [acss#{$rwd}-flex-shrink="#{$flex}"] {
+    flex-shrink: $flex;
   }
 }
 
@@ -34,6 +46,8 @@
   $flex: $min-flex;
   @while $flex <= $max-flex {
     @include build-flex($rwd, $flex);
+    @include build-flex-grow($rwd, $flex);
+    @include build-flex-shrink($rwd, $flex);
     $flex: $flex + 1;
   }
 }
