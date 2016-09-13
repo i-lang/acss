@@ -1,6 +1,8 @@
 @mixin build-table-align-x($rwd, $attributeValue, $propertyValue) {
   &[acss#{$rwd}-align-x="#{$attributeValue}"] {
-    text-align: $propertyValue;
+    th, td {
+      text-align: $propertyValue;
+    }
   }
 }
 
@@ -12,7 +14,9 @@
 
 @mixin build-table-align-y($rwd, $attributeValue, $propertyValue) {
   &[acss#{$rwd}-align-y="#{$attributeValue}"] {
-    vertical-align: $propertyValue;
+    th, td {
+      vertical-align: $propertyValue;
+    }
   }
 }
 
