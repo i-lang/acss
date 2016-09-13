@@ -1,0 +1,18 @@
+@import "table-align";
+@import "table-divider";
+@import "table-pad";
+
+.acss-table {
+  border-collapse: collapse;
+}
+
+@mixin build-table-module($rwd) {
+  .acss-table {
+    @include build-table-pad-attribute($rwd);
+    @include build-table-align-x-attribute($rwd);
+    @include build-table-align-y-attribute($rwd);
+    @include build-table-h-divider-attributes($rwd);
+  }
+}
+
+@include build-table-module($rwd);
