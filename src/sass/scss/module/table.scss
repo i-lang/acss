@@ -1,6 +1,7 @@
 @import "table-align";
 @import "table-divider";
 @import "table-pad";
+@import "table-size";
 
 .acss-table {
   border-collapse: collapse;
@@ -12,6 +13,7 @@
     @include build-table-align-x-attribute($rwd);
     @include build-table-align-y-attribute($rwd);
     @include build-table-h-divider-attributes($rwd);
+    @include build-table-size-attributes($rwd);
   }
 }
 
