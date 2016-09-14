@@ -1,3 +1,15 @@
+[v0.4.5]
+add .acss-table module
+add .acss-table.is-weighted for weighted column
+add table module [acss-column-weight] 0 ~ 12 (step 1)
+add table module [acss-h-divider-between], [acss-h-divider-around]
+add table module [acss-table-pad] 0 ~ 50 (step 5)
+
+add .acss-rounded module
+
+[v0.4.4]
+fix flex align, flex gutter rwd
+
 [v0.4.3]
 [acss-flex] flex-grow -> flex (css property changed)
 add [acss-flex-grow]
