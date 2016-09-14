@@ -1,4 +1,5 @@
 @import '../layout/flex-divider-color';
+@import '../module/table-divider-color';
 
 $cached-colors: ();
 
@@ -68,6 +69,7 @@ $white-colors: (
     @include build-row-divider-around-color(unquote($color-name), $color);
     @include build-col-divider-between-color(unquote($color-name), $color);
     @include build-col-divider-around-color(unquote($color-name), $color);
+    @include build-table-divider-color(unquote($color-name), $color);
   }
 }
 

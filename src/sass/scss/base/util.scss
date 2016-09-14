@@ -8,7 +8,15 @@
   @if $px==0 {
     @return 0;
   } @else {
-    $px-string: "#{$px}px";
     @return #{$px}px;
+  }
+}
+
+@function pct($pct) {
+  @if $pct==0 {
+    @return 0;
+  } @else {
+    $pct-string: "#{$pct}%";
+    @return unquote($pct-string);
   }
 }
