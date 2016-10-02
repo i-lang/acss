@@ -1,3 +1,13 @@
+[v0.4.7]
+add .is-full-max-width, .is-full-max-height
+add .is-pointer, .is-underline, .no-select, .no-outline
+add [acss-position=center]
+add [acss-texture-mapping=full-size]
+add [acss-texture-position] "left top" "top" "right top" "right" "right bottom" "bottom" "left bottom" "center"
+add .acss-button module
+add [acss-overflow-x] "hidden", "visible", "scroll"
+add [acss-overflow-y] "hidden", "visible", "scroll"
+
 [v0.4.6]
 rebuild acss.css
 
