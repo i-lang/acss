@@ -1,8 +1,6 @@
-.acss-texture {
-  // don't optimize unless you won't use background attribute
-  background-position: center;
-  background-repeat: no-repeat;
+@import "../../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3";
 
+.acss-texture {
   &[acss-texture-mapping="width"] {
     background-size: 100% auto;
   }
