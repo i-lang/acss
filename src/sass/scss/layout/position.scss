@@ -65,6 +65,12 @@
     top: 50%;
     @include transform(translateY(-50%));
   }
+
+  [acss#{$rwd}-position~="center"] {
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+  }
 }
 
 @mixin build-position-attribute-default($rwd) {

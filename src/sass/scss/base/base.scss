@@ -14,8 +14,23 @@
 
 a {
   text-decoration: none;
+}
 
-  &.is-underline {
-    text-decoration: underline;
-  }
+.is-pointer {
+  cursor: pointer;
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no-outline {
+  outline: none;
 }
