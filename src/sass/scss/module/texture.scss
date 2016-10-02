@@ -18,4 +18,8 @@
   &[acss-texture-mapping="contain"] {
     background-size: contain;
   }
+
+  &[acss-texture-mapping="full-size"] {
+    background-size: 100% 100%;
+  }
 }
