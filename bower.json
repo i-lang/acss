@@ -3,7 +3,7 @@
   "authors": [
     "KellyYang <housemeow@gmail.com>"
   ],
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "Attributed CSS",
   "main": [
     "dist/css/acss.css"
