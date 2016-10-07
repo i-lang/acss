@@ -1,3 +1,6 @@
+[v0.4.9]
+add [acss-h-divider-between], [acss-h-divider-between] support table
+
 [v0.4.8]
 change [acss-radius] 0 ~ 20 (step 1)
 
