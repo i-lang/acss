@@ -4,7 +4,7 @@
 @mixin default-h-divider-style {
   &[acss-h-divider-between], [acss-h-divider-between],
   &[acss-h-divider-around], [acss-h-divider-around] {
-    tr {
+    > * {
       border-style: solid;
     }
   }
@@ -12,7 +12,7 @@
 
 @mixin build-h-divider-between($rwd, $thickness) {
   &[acss-h-divider-between="#{$thickness}"], [acss-h-divider-between="#{$thickness}"] {
-    tr:not(:first-child) {
+    > *:not(:first-child) {
       border-top-width: px($thickness);
     }
   }
@@ -20,11 +20,11 @@
 
 @mixin build-h-divider-around($rwd, $thickness) {
   &[acss-h-divider-around="#{$thickness}"], [acss-h-divider-around="#{$thickness}"] {
-    tr {
+    > * {
       border-top-width: px($thickness);
     }
 
-    tr:last-child {
+    > *:last-child {
       border-bottom-width: px($thickness);
     }
   }
