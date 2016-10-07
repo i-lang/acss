@@ -1,3 +1,6 @@
+[v0.4.8]
+change [acss-radius] 0 ~ 20 (step 1)
+
 [v0.4.7]
 add .is-full-max-width, .is-full-max-height
 add .is-pointer, .is-underline, .no-select, .no-outline
