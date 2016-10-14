@@ -5,7 +5,7 @@
 
 @mixin build-row-gutter-between($rwd, $row-gutter) {
   &[acss#{$rwd}-gutter-between="#{$row-gutter}"] {
-    > *:first-child {
+    > *:first-child:not(:last-child) {
       margin-right: px($row-gutter/2);
     }
 
@@ -14,7 +14,7 @@
       margin-right: px($row-gutter/2);
     }
 
-    > *:last-child {
+    > *:last-child:not(:first-child) {
       margin-left: px($row-gutter/2);
     }
 
@@ -37,7 +37,7 @@
 
 @mixin build-col-gutter-between($rwd, $col-gutter) {
   &[acss#{$rwd}-gutter-between="#{$col-gutter}"] {
-    > *:first-child {
+    > *:first-child:not(:last-child) {
       margin-bottom: px($col-gutter/2);
     }
 
@@ -46,7 +46,7 @@
       margin-bottom: px($col-gutter/2);
     }
 
-    > *:last-child {
+    > *:last-child:not(:first-child) {
       margin-top: px($col-gutter/2);
     }
 
