@@ -3,7 +3,7 @@ $float-threshold: 0.01;
 
 // rwd
 $rwd-mobile-max-width: 991px;
-$rwd-pc-max-width: 992px;
+$rwd-pc-min-width: 992px;
 $rwd-xs-max-width: 374px;
 $rwd-sm-min-width: 375px;
 $rwd-sm-max-width: 767px;
@@ -59,3 +59,7 @@ $max-table-pad: 50;
 // table divider thickness
 $min-divider-thickness: 1;
 $max-divider-thickness: 10;
+
+// radius
+$radius-min: 0;
+$radius-max: 20;

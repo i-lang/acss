@@ -1,3 +1,4 @@
+@import 'compass/css3';
 @import "flex-align";
 @import "flex-divider";
 @import "flex-gutter";
@@ -10,26 +11,18 @@
 }
 
 .l-row, .l-col, .l-center {
-  display: flex;
+  @include display-flex;
 }
 
 .l-row {
-  flex-direction: row;
-
-  &.is-reverse {
-    flex-direction: row-reverse;
-  }
+  @include flex-direction(row);
 }
 
 .l-col {
-  flex-direction: column;
-
-  &.is-reverse {
-    flex-direction: column-reverse;
-  }
+  @include flex-direction(column);
 }
 
 .l-center {
-  justify-content: center;
-  align-items: center;
+  @include justify-content(center);
+  @include align-items(center);
 }
