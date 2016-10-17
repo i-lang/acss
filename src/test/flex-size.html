@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <link rel="stylesheet" href="../stylesheets/scss/base/reset.css">
+    <link rel="stylesheet" href="../stylesheets/scss/acss/acss.css">
+</head>
+<body>
+<div class="l-col" acss-gutter-between="30">
+    <h1 acss-font-size="20">Flex-size</h1>
+    <div class="l-col" acss-gutter-between="20">
+        <h1 acss-font-size="24">is-full-parent</h1>
+        <div class="l-col" acss-bg-color="gray-9" acss-pad="10" style="width: 100px; height: 100px;">
+            <div class="l-center is-full-parent" acss-bg-color="black" acss-font-size="14" acss-color="white">is-full-parent</div>
+        </div>
+    </div>
+    <div class="l-col" acss-gutter-between="20">
+        <h1 acss-font-size="24">is-fill</h1>
+        <div class="l-row" acss-bg-color="gray-9" acss-pad="10" style="width: 300px; height: 100px;">
+            <div class="l-center" acss-bg-color="gray-4" acss-color="white" style="width: 80px;">80w</div>
+            <div class="l-center is-fill" acss-bg-color="gray-3" acss-color="white">is-fill</div>
+            <div class="l-center" acss-bg-color="gray-4" acss-color="white" style="width: 80px;">80w</div>
+        </div>
+    </div>
+    <div class="l-col" acss-gutter-between="20">
+        <h1 acss-font-size="24">no-shrink</h1>
+        <div class="l-col" acss-gutter-between="10">
+            <div class="l-col">
+                <h2>child no-shrink</h2>
+                <div class="l-row" style="width: 300px;">
+                    <div class="no-shrink" acss-font-size="30" acss-color="white" acss-bg-color="gray-3">This text is no shrink</div>
+                    <div acss-color="white" acss-font-size="18" acss-bg-color="gray-5">This is shrink text</div>
+                </div>
+            </div>
+            <div class="l-col">
+                <h2>parent no-shrink</h2>
+                <div class="l-row no-shrink" acss-bg-color="gray-8" style="width: 300px; height: 60px;">
+                    <div class="l-center" acss-border="1" acss-border-color="gray-3" style="width: 200px; height: 40px;">child1</div>
+                    <div class="l-center" acss-border="1" acss-border-color="gray-5" style="width: 200px; height: 40px;">child2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-col" acss-gutter-between="20">
+        <h1 acss-font-size="24">is-wrap</h1>
+        <div class="l-row is-wrap" acss-bg-color="gray-9" acss-pad="10" style="width: 300px; height: 200px;">
+            <div acss-bg-color="gray-3" style="width: 120px; height: 70px;"></div>
+            <div acss-bg-color="gray-4" style="width: 120px; height: 70px;"></div>
+            <div acss-bg-color="gray-5" style="width: 120px; height: 70px;"></div>
+            <div acss-bg-color="gray-6" style="width: 120px; height: 70px;"></div>
+        </div>
+        <div class="l-col">
+            <h2>no wrap and no-shrink</h2>
+            <div class="l-row no-shrink" acss-bg-color="gray-9" acss-pad="10" style="width: 300px; height: 200px;">
+                <div acss-bg-color="gray-3" style="width: 120px; height: 70px;"></div>
+                <div acss-bg-color="gray-4" style="width: 120px; height: 70px;"></div>
+                <div acss-bg-color="gray-5" style="width: 120px; height: 70px;"></div>
+                <div acss-bg-color="gray-6" style="width: 120px; height: 70px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="l-col" acss-gutter-between="20">
+        <h1 acss-font-size="24">flex</h1>
+        <div class="l-row" acss-bg-color="gray-9" acss-pad="10" style="height: 100px;">
+            <div class="l-center" acss-flex="1" acss-bg-color="gray-3">1</div>
+            <div class="l-center" acss-flex="2" acss-bg-color="gray-4">flex2</div>
+            <div class="l-center" acss-flex="3" acss-bg-color="gray-5">flex3</div>
+            <div class="l-center" acss-flex="4" acss-bg-color="gray-6">flex4</div>
+            <div class="l-center" acss-flex="5" acss-bg-color="gray-7">flex5</div>
+            <div class="l-center" acss-flex="6" acss-bg-color="gray-8">flex6</div>
+            <div class="l-center" acss-flex="7" acss-bg-color="gray-2">flex7</div>
+            <div class="l-center" acss-flex="8" acss-bg-color="gray-3">flex8</div>
+            <div class="l-center" acss-flex="9" acss-bg-color="gray-4">flex9</div>
+            <div class="l-center" acss-flex="10" acss-bg-color="gray-5">flex10</div>
+            <div class="l-center" acss-flex="11" acss-bg-color="gray-6">flex11</div>
+            <div class="l-center" acss-flex="12" acss-bg-color="gray-7">flex12</div>
+        </div>
+    </div>
+    <div class="l-col" acss-gutter-between="20">
+        <h1 acss-font-size="24">flex, flex-grow, flex-shrink</h1>
+        <div class="l-col">
+            <h1>flex:占父容器寬度的比例</h1>
+            <div class="l-row" acss-bg-color="gray-9" acss-pad="10" style="width: 500px; height: 100px;">
+                <div class="l-center" acss-flex="1" acss-bg-color="gray-3">flex1</div>
+                <div class="l-center" acss-flex="2" acss-bg-color="gray-4">flex2</div>
+                <div class="l-center" acss-flex="3" acss-bg-color="gray-5">flex3</div>
+            </div>
+        </div>
+        <div class="l-col">
+            <h1>flex-grow:索取父容器剩餘空間的比例</h1>
+            <div class="l-row" acss-bg-color="gray-9" acss-pad="10" style="width: 500px; height: 100px;">
+                <div class="l-center" acss-flex-grow="1" acss-bg-color="gray-3" style="width: 100px;">flex1</div>
+                <div class="l-center" acss-flex-grow="2" acss-bg-color="gray-4" style="width: 100px;">flex2</div>
+                <div class="l-center" acss-flex-grow="3" acss-bg-color="gray-5" style="width: 100px;">flex3</div>
+            </div>
+        </div>
+        <div class="l-col">
+            <h1>flex-shrink:子容器超出父容器的壓縮比用來壓縮超出父容器的子容器</h1>
+            <div class="l-row" acss-bg-color="gray-9" acss-pad="10" style="width: 500px; height: 100px;">
+                <div class="l-center" acss-flex-shrink="1" acss-bg-color="gray-3" style="width: 200px;">flex1</div>
+                <div class="l-center" acss-flex-shrink="2" acss-bg-color="gray-4" style="width: 200px;">flex2</div>
+                <div class="l-center" acss-flex-shrink="3" acss-bg-color="gray-5" style="width: 200px;">flex3</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
