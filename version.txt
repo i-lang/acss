@@ -1,3 +1,7 @@
+[v0.5.1]
+[acss-texture-mapping] support rwd
+[acss-texture-position] support rwd
+
 [v0.5.0]
 rename [acss-rwd] to [acss-grid]
 [acss-grid] support rwd
