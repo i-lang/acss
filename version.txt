@@ -1,3 +1,6 @@
+[v0.5.2]
+fix .is-pc, .is-mobile ...etc override bug
+
 [v0.5.1]
 [acss-texture-mapping] support rwd
 [acss-texture-position] support rwd
