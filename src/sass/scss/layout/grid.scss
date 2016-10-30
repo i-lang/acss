@@ -13,17 +13,9 @@
   }
 }
 
-@mixin trim-wrap-margin-bottom($grid) {
-  &.is-wrap > * {
-    &:nth-last-child(-n+#{$grid}) {
-      margin-bottom: 0;
-    }
-  }
-}
-
 @mixin build-wrap-margin-bottom($rwd, $grid, $gutter) {
   &.is-wrap[acss#{$rwd}-grid-wrap-gutter="#{$gutter}"] > * {
-    &:nth-last-child(n+#{$grid}) {
+    &:nth-last-child(n+#{$grid+1}) {
       margin-bottom: px($gutter);
     }
   }
@@ -32,7 +24,6 @@
 @mixin build-grid-layout($rwd,$grid) {
   .l-row[acss#{$rwd}-grid="#{$grid}"] {
     @include grid-system($grid);
-    @include trim-wrap-margin-bottom($grid);
 
     $wrap-gutter: $wrap-gutter-min;
     @while $wrap-gutter <= $wrap-gutter-max {
