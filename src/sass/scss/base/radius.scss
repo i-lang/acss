@@ -1,3 +1,4 @@
+@import 'default';
 @import 'rwd';
 @import 'util';
 @import 'compass/css3';
@@ -9,8 +10,6 @@
 }
 
 @mixin build-radius-attribute($rwd) {
-  $radius-min: 0;
-  $radius-max: 20;
   $radius: $radius-min;
   @while $radius <= $radius-max {
     @include build-radius($rwd, $radius);

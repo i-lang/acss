@@ -22,7 +22,7 @@
 }
 
 @mixin build-wrap-margin-bottom($rwd, $grid, $gutter) {
-  &.is-wrap[acss-rwd#{$rwd}-wrap-gutter="#{$gutter}"] > * {
+  &.is-wrap[acss#{$rwd}-grid-wrap-gutter="#{$gutter}"] > * {
     &:nth-last-child(n+#{$grid}) {
       margin-bottom: px($gutter);
     }
@@ -30,7 +30,7 @@
 }
 
 @mixin build-grid-layout($rwd,$grid) {
-  .l-row[acss-rwd#{$rwd}="#{$grid}"] {
+  .l-row[acss#{$rwd}-grid="#{$grid}"] {
     @include grid-system($grid);
     @include trim-wrap-margin-bottom($grid);
 

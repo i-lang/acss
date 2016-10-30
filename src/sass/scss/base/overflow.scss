@@ -1,18 +1,29 @@
 @import 'rwd';
 
+@mixin build-overflow($rwd, $attribute-value, $property-value) {
+  [acss#{$rwd}-overflow="#{$attribute-value}"] {
+    overflow: $property-value !important;
+  }
+}
+
+@mixin build-overflow-x($rwd, $attribute-value, $property-value) {
+  [acss#{$rwd}-overflow-x="#{$attribute-value}"] {
+    overflow-x: $property-value !important;
+  }
+}
+
+@mixin build-overflow-y($rwd, $attribute-value, $property-value) {
+  [acss#{$rwd}-overflow-y="#{$attribute-value}"] {
+    overflow-y: $property-value !important;
+  }
+}
+
 @mixin build-overflow-attribute($rwd) {
-  [acss#{$rwd}-overflow="hidden"] {
-    overflow: hidden !important;
-  }
+  @include build-overflow($rwd, "hidden", hidden);
+  @include build-overflow($rwd, "visible", visible);
+  @include build-overflow($rwd, "scroll", scroll);
 
-  [acss#{$rwd}-overflow="visible"] {
-    overflow: visible !important;
-  }
-
-  [acss#{$rwd}-overflow="scroll"] {
-    overflow: scroll !important;
-  }
-
+  // will be deprecated
   [acss#{$rwd}-overflow="scroll-x"] {
     overflow-x: scroll !important;
   }
@@ -22,38 +33,22 @@
   }
 }
 
-@mixin build-overflow-attribute-x($rwd) {
-  [acss#{$rwd}-overflow-x="hidden"] {
-    overflow-x: hidden !important;
-  }
-
-  [acss#{$rwd}-overflow-x="visible"] {
-    overflow-x: visible !important;
-  }
-
-  [acss#{$rwd}-overflow-x="scroll"] {
-    overflow-x: scroll !important;
-  }
+@mixin build-overflow-x-attribute($rwd) {
+  @include build-overflow-x($rwd, "hidden", hidden);
+  @include build-overflow-x($rwd, "visible", visible);
+  @include build-overflow-x($rwd, "scroll", scroll);
 }
 
-@mixin build-overflow-attribute-y($rwd) {
-  [acss#{$rwd}-overflow-y="hidden"] {
-    overflow-y: hidden !important;
-  }
-
-  [acss#{$rwd}-overflow-y="visible"] {
-    overflow-y: visible !important;
-  }
-
-  [acss#{$rwd}-overflow-y="scroll"] {
-    overflow-y: scroll !important;
-  }
+@mixin build-overflow-y-attribute($rwd) {
+  @include build-overflow-y($rwd,"hidden", hidden);
+  @include build-overflow-y($rwd,"visible", visible);
+  @include build-overflow-y($rwd,"scroll", scroll);
 }
 
 @mixin build-overflow-attributes($rwd) {
   @include build-overflow-attribute($rwd);
-  @include build-overflow-attribute-x($rwd);
-  @include build-overflow-attribute-y($rwd);
+  @include build-overflow-x-attribute($rwd);
+  @include build-overflow-y-attribute($rwd);
 }
 
 @include rwd {

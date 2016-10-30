@@ -5,7 +5,7 @@
 
 @mixin build-row-gutter-between($rwd, $row-gutter) {
   &[acss#{$rwd}-gutter-between="#{$row-gutter}"] {
-    > *:first-child {
+    > *:first-child:not(:last-child) {
       margin-right: px($row-gutter/2);
     }
 
@@ -14,7 +14,7 @@
       margin-right: px($row-gutter/2);
     }
 
-    > *:last-child {
+    > *:last-child:not(:first-child) {
       margin-left: px($row-gutter/2);
     }
 
@@ -23,7 +23,7 @@
   }
 }
 
-@mixin row-gutter-around($rwd, $row-gutter) {
+@mixin build-row-gutter-around($rwd, $row-gutter) {
   &[acss#{$rwd}-gutter-around="#{$row-gutter}"] {
     > * {
       margin-left: px($row-gutter/2);
@@ -35,9 +35,9 @@
   }
 }
 
-@mixin col-gutter-between($rwd, $col-gutter) {
+@mixin build-col-gutter-between($rwd, $col-gutter) {
   &[acss#{$rwd}-gutter-between="#{$col-gutter}"] {
-    > *:first-child {
+    > *:first-child:not(:last-child) {
       margin-bottom: px($col-gutter/2);
     }
 
@@ -46,7 +46,7 @@
       margin-bottom: px($col-gutter/2);
     }
 
-    > *:last-child {
+    > *:last-child:not(:first-child) {
       margin-top: px($col-gutter/2);
     }
 
@@ -55,7 +55,7 @@
   }
 }
 
-@mixin col-gutter-around($rwd, $col-gutter) {
+@mixin build-col-gutter-around($rwd, $col-gutter) {
   &[acss#{$rwd}-gutter-around="#{$col-gutter}"] {
     > * {
       margin-top: px($col-gutter/2);
@@ -67,17 +67,17 @@
   }
 }
 
-@mixin build-flex-gutter($rwd) {
+@mixin build-flex-gutter-attributes($rwd) {
   $gutter: $gutter-min;
   @while $gutter <= $gutter-max {
     .l-row {
       @include build-row-gutter-between($rwd, $gutter);
-      @include row-gutter-around($rwd, $gutter);
+      @include build-row-gutter-around($rwd, $gutter);
     }
 
     .l-col {
-      @include col-gutter-between($rwd, $gutter);
-      @include col-gutter-around($rwd, $gutter);
+      @include build-col-gutter-between($rwd, $gutter);
+      @include build-col-gutter-around($rwd, $gutter);
     }
 
     $gutter: $gutter + 5;
@@ -85,25 +85,25 @@
 }
 
 @include rwd {
-  @include build-flex-gutter ($rwd);
+  @include build-flex-gutter-attributes($rwd);
 }
 
 @include rwd-xs {
-  @include build-flex-gutter($rwd-xs);
+  @include build-flex-gutter-attributes($rwd-xs);
 }
 
 @include rwd-sm {
-  @include build-flex-gutter($rwd-sm);
+  @include build-flex-gutter-attributes($rwd-sm);
 }
 
 @include rwd-md {
-  @include build-flex-gutter($rwd-md);
+  @include build-flex-gutter-attributes($rwd-md);
 }
 
 @include rwd-lg {
-  @include build-flex-gutter($rwd-lg);
+  @include build-flex-gutter-attributes($rwd-lg);
 }
 
 @include rwd-xl {
-  @include build-flex-gutter($rwd-xl);
+  @include build-flex-gutter-attributes($rwd-xl);
 }
