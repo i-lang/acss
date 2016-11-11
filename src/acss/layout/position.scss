@@ -1,0 +1,123 @@
+@import "../base/rwd-base";
+@import "../base/default";
+@import "../base/util";
+@import "compass/css3/transform";
+
+[acss-position] {
+  top: 0;
+  left: 0;
+}
+
+.l-dock {
+  position: relative;
+}
+
+@mixin build-position-layout-attribute($rwd) {
+  [acss-position~="dock#{$rwd}"] {
+    position: absolute !important;
+  }
+
+  [acss-position~="fixed#{$rwd}"] {
+    position: fixed !important;
+  }
+
+  [acss-position~="offset#{$rwd}"] {
+    position: relative;
+  }
+}
+
+@mixin build-position($rwd, $position) {
+  [acss-position~="top=#{$position}#{$rwd}"] {
+    top: px($position);
+  }
+
+  [acss-position~="right=#{$position}#{$rwd}"] {
+    right: px($position);
+  }
+
+  [acss-position~="bottom=#{$position}#{$rwd}"] {
+    bottom: px($position);
+  }
+
+  [acss-position~="left=#{$position}#{$rwd}"] {
+    left: px($position);
+  }
+}
+
+@mixin build-position-center($rwd) {
+  [acss-position~="center-x#{$rwd}"] {
+    left: 50%;
+    @include translateX(-50%);
+  }
+
+  [acss-position~="center-y#{$rwd}"] {
+    top: 50%;
+    @include translateY(-50%);
+  }
+
+  [acss-position~="center#{$rwd}"] {
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+  }
+}
+
+@mixin build-default-position-box($rwd) {
+  [acss-position~="top#{$rwd}"] {
+    top: 0;
+  }
+
+  [acss-position~="right#{$rwd}"] {
+    right: 0;
+  }
+
+  [acss-position~="bottom#{$rwd}"] {
+    bottom: 0;
+  }
+
+  [acss-position~="left#{$rwd}"] {
+    left: 0;
+  }
+}
+
+@mixin build-position-box-attribute($rwd) {
+  @include build-default-position-box($rwd);
+
+  $position: $position-min;
+  @while $position <= $position-max {
+    @include build-position($rwd, $position);
+
+    $position: $position + 5;
+  }
+
+  @include build-position-center($rwd);
+}
+
+@mixin build-position-attributes($rwd) {
+  @include build-position-layout-attribute($rwd);
+  @include build-position-box-attribute($rwd);
+}
+
+@include rwd {
+  @include build-position-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-position-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-position-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-position-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-position-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-position-attributes($rwd-xs);
+}

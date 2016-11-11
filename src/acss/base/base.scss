@@ -1,0 +1,38 @@
+@import 'color';
+@import 'gap';
+@import 'opacity';
+@import 'overflow';
+@import 'pad';
+@import 'radius';
+@import 'rwd';
+@import 'size';
+@import 'text';
+@import 'compass/css3';
+
+* {
+  @include box-sizing();
+}
+
+a {
+  text-decoration: none;
+}
+
+.is-pointer {
+  cursor: pointer;
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+.no-select {
+  @include user-select(none);
+}
+
+.no-outline {
+  outline: none;
+}
+
+.no-resize {
+  resize: none;
+}

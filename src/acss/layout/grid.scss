@@ -1,0 +1,85 @@
+@import '../base/default';
+@import '../base/rwd-base';
+@import '../base/util';
+
+@mixin build-grid($rwd, $grid) {
+  [acss-grid~="#{$grid}#{$rwd}"] {
+    & > * {
+      flex-basis: (100%/$grid);
+    }
+  }
+}
+
+@mixin build-grid-gap-x($rwd, $grid, $gap) {
+  [acss-grid~="#{$grid}#{$rwd}"][acss-gap-x~="#{$gap}#{$rwd}"] > * {
+    flex-basis: calc(#{(100%/$grid)} - #{px($gap*($grid - 1)/$grid)});
+  }
+}
+
+@mixin build-grid-gap-x-attribute($rwd, $grid) {
+  $gap: $min-grid-gap;
+
+  [acss-grid~="#{$grid}#{$rwd}"][acss-gap-x] {
+    > :nth-child(#{$grid}n) {
+      margin-right: 0;
+    }
+  }
+
+  @while ($gap <= $max-grid-gap) {
+    @include build-grid-gap-x($rwd, $grid, $gap);
+    $gap: $gap + 5;
+  }
+}
+
+@mixin build-grid-gap-y($rwd, $grid) {
+  [acss-grid~="#{$grid}#{$rwd}"][acss-gap-y] {
+    & > *:not(:nth-last-child(n+#{$grid+1})) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin build-grid-gap-attribute($rwd, $grid) {
+  @include build-grid-gap-x-attribute($rwd, $grid);
+  @include build-grid-gap-y($rwd, $grid);
+}
+
+@mixin build-grid-attributes($rwd) {
+  [acss#{$rwd}-grid] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  $grid: $min-grid;
+  @while ($grid <= $max-grid) {
+    @include build-grid($rwd, $grid);
+    @include build-grid-gap-attribute($rwd, $grid);
+
+    $grid: $grid + 1;
+  }
+}
+
+@include rwd {
+  @include build-grid-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-grid-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-grid-attributes($rwd-lg);
+}
+//
+@include rwd-md {
+  @include build-grid-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-grid-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-grid-attributes($rwd-xs);
+}

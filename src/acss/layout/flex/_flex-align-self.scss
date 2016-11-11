@@ -1,0 +1,48 @@
+@import '../../base/rwd-base';
+
+@mixin build-flex-row-align-self($rwd, $attributeValue, $propertyValue) {
+  [acss#{$rwd}-row] > [acss-align-self~="#{$attributeValue}#{$rwd}"] {
+    align-self: $propertyValue;
+  }
+}
+
+@mixin build-flex-col-align-self($rwd, $attributeValue, $propertyValue) {
+  [acss#{$rwd}-col] > [acss-align-self~="#{$attributeValue}#{$rwd}"] {
+    align-self: $propertyValue;
+  }
+}
+
+@mixin build-flex-align-self-left-attribute($rwd) {
+  @include build-flex-col-align-self($rwd, "left", flex-start);
+}
+
+@mixin build-flex-align-self-right-attribute($rwd) {
+  @include build-flex-col-align-self($rwd, "right", flex-end);
+}
+
+@mixin build-flex-align-self-top-attribute($rwd) {
+  @include build-flex-row-align-self($rwd, "top", flex-start);
+}
+
+@mixin build-flex-align-self-bottom-attribute($rwd) {
+  @include build-flex-row-align-self($rwd, "bottom", flex-end);
+}
+
+@mixin build-flex-align-self-center-attribute($rwd) {
+  @include build-flex-row-align-self($rwd, "center", center);
+  @include build-flex-col-align-self($rwd, "center", center);
+}
+
+@mixin build-flex-align-self-stretch-attribute($rwd) {
+  @include build-flex-row-align-self($rwd, "stretch", stretch);
+  @include build-flex-col-align-self($rwd, "stretch", stretch);
+}
+
+@mixin build-flex-align-self-attributes($rwd) {
+  @include build-flex-align-self-left-attribute($rwd);
+  @include build-flex-align-self-right-attribute($rwd);
+  @include build-flex-align-self-top-attribute($rwd);
+  @include build-flex-align-self-center-attribute($rwd);
+  @include build-flex-align-self-bottom-attribute($rwd);
+  @include build-flex-align-self-stretch-attribute($rwd);
+}

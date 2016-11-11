@@ -1,0 +1,86 @@
+@import "../base/rwd-base";
+@import "compass/css3";
+
+@mixin build-translate-attribute($rwd) {
+  [acss-translate~="half#{$rwd}"] {
+    @include translate(50%, 50%);
+  }
+
+  [acss-translate~="full#{$rwd}"] {
+    @include translate(100%, 100%);
+  }
+
+  [acss-translate~="-half#{$rwd}"] {
+    @include translate(-50%, -50%);
+  }
+
+  [acss-translate~="-full#{$rwd}"] {
+    @include translate(-100%, -100%);
+  }
+}
+
+@mixin build-translate-x-attribute($rwd) {
+  [acss-translate-x~="half#{$rwd}"] {
+    @include translateX(50%);
+  }
+
+  [acss-translate-x~="full#{$rwd}"] {
+    @include translateX(100%);
+  }
+
+  [acss-translate-x~="-half#{$rwd}"] {
+    @include translateX(-50%);
+  }
+
+  [acss-translate-x~="-full#{$rwd}"] {
+    @include translateX(-100%);
+  }
+}
+
+@mixin build-translate-y-attribute($rwd) {
+  [acss-translate-y~="half#{$rwd}"] {
+    @include translateY(50%);
+  }
+
+  [acss-translate-y~="full#{$rwd}"] {
+    @include translateY(100%);
+  }
+
+  [acss-translate-y~="-half#{$rwd}"] {
+    @include translateY(-50%);
+  }
+
+  [acss-translate-y~="-full#{$rwd}"] {
+    @include translateY(-100%);
+  }
+}
+
+@mixin build-translate-attributes($rwd) {
+  @include build-translate-attribute($rwd);
+  @include build-translate-x-attribute($rwd);
+  @include build-translate-y-attribute($rwd);
+}
+
+@include rwd {
+  @include build-translate-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-translate-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-translate-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-translate-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-translate-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-translate-attributes($rwd-xs);
+}

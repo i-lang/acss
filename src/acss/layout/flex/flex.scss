@@ -1,0 +1,60 @@
+@import '../../base/rwd-base';
+@import 'flex-align';
+@import 'flex-divider';
+@import 'flex-size';
+
+@mixin build-flex-row-attribute($rwd) {
+  [acss#{$rwd}-row] {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@mixin build-flex-col-attribute($rwd) {
+  [acss#{$rwd}-col] {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@mixin build-flex-center-attribute($rwd) {
+  [acss#{$rwd}-center] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@mixin build-flex-attributes($rwd) {
+  @include build-flex-row-attribute($rwd);
+  @include build-flex-col-attribute($rwd);
+  @include build-flex-center-attribute($rwd);
+
+  @include build-flex-align-attributes($rwd);
+  @include build-flex-divider-attributes($rwd);
+  @include build-flex-size-attribute($rwd);
+}
+
+@include rwd {
+  @include build-flex-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-flex-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-flex-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-flex-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-flex-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-flex-attributes($rwd-xs);
+}

@@ -1,0 +1,114 @@
+@import '../base/rwd-base';
+
+@mixin build-full-size-attributes($rwd) {
+  [acss#{$rwd}-full-size] {
+    width: 100%;
+    height: 100%;
+  }
+
+  [acss#{$rwd}-full-width] {
+    width: 100%;
+  }
+
+  [acss#{$rwd}-full-height] {
+    height: 100%;
+  }
+
+  [acss#{$rwd}-full-min-size] {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  [acss#{$rwd}-full-min-width] {
+    min-width: 100%;
+  }
+
+  [acss#{$rwd}-full-min-height] {
+    min-height: 100%;
+  }
+
+  [acss#{$rwd}-full-max-size] {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  [acss#{$rwd}-full-max-width] {
+    max-width: 100%;
+  }
+
+  [acss#{$rwd}-full-max-height] {
+    max-height: 100%;
+  }
+}
+
+@mixin build-full-screen-attributes($rwd) {
+  [acss#{$rwd}-full-screen] {
+    .is-full-screen {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    [acss#{$rwd}-full-screen-width] {
+      width: 100vw;
+    }
+
+    [acss#{$rwd}-full-screen-height] {
+      height: 100vh;
+    }
+
+    [acss#{$rwd}-full-min-screen] {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+
+    [acss#{$rwd}-full-min-screen-width] {
+      min-width: 100vw;
+    }
+
+    [acss#{$rwd}-full-min-screen-height] {
+      min-height: 100vh;
+    }
+
+    [acss#{$rwd}-full-max-screen] {
+      max-width: 100vw;
+      max-height: 100vh;
+    }
+
+    [acss#{$rwd}-full-max-screen-width] {
+      max-width: 100vw;
+    }
+
+    [acss#{$rwd}-full-max-screen-height] {
+      max-height: 100vh;
+    }
+  }
+}
+
+@mixin build-size-attributes($rwd) {
+  @include build-full-size-attributes($rwd);
+  @include build-full-screen-attributes($rwd);
+}
+
+@include rwd {
+  @include build-size-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-size-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-size-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-size-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-size-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-size-attributes($rwd-xs);
+}

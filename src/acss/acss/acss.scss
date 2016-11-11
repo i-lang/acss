@@ -1,0 +1,8 @@
+@import '../base/base';
+@import '../layout/layout';
+@import '../module/module';
+
+@include build-color-attributes(('transparent': transparent));
+@include build-color-attributes($gray-colors);
+@include build-color-attributes($black-colors);
+@include build-color-attributes($white-colors);

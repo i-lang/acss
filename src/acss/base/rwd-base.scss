@@ -1,0 +1,56 @@
+@import '_default';
+
+$rwd: '';
+$rwd-xs: '-xs';
+$rwd-sm: '-sm';
+$rwd-md: '-md';
+$rwd-lg: '-lg';
+$rwd-xl: '-xl';
+
+@mixin rwd {
+  @media screen {
+    @content;
+  }
+}
+
+@mixin rwd-mobile {
+  @media screen and (max-width: $rwd-mobile-max-width) {
+    @content;
+  }
+}
+
+@mixin rwd-pc {
+  @media screen and (min-width: $rwd-pc-min-width) {
+    @content;
+  }
+}
+
+@mixin rwd-xs {
+  @media screen and (max-width: $rwd-xs-max-width) {
+    @content;
+  }
+}
+
+@mixin rwd-sm {
+  @media screen and (min-width: $rwd-sm-min-width) and (max-width: $rwd-sm-max-width) {
+    @content;
+  }
+}
+
+@mixin rwd-md {
+  @media screen and (min-width: $rwd-md-min-width) and (max-width: $rwd-md-max-width) {
+    @content;
+  }
+}
+
+@mixin rwd-lg {
+  @media screen and (min-width: $rwd-lg-min-width) and (max-width: $rwd-lg-max-width) {
+    @content;
+  }
+}
+
+@mixin rwd-xl {
+  @media screen and (min-width: $rwd-xl-min-width) {
+    @content;
+  }
+}

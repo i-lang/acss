@@ -1,0 +1,53 @@
+@import '../base/rwd-base';
+@import '../base/util';
+@import '../base/default';
+
+@mixin build-line-thickness($rwd, $thickness) {
+  [acss#{$rwd}-line-x][acss-line-thickness="#{$thickness}"] {
+    height: px($thickness);
+  }
+
+  [acss#{$rwd}-line-y][acss-line-thickness="#{$thickness}"] {
+    width: px($thickness);
+  }
+}
+
+@mixin build-line-thickness-attribute($rwd) {
+  [acss#{$rwd}-line-x] {
+    width: 100%;
+  }
+
+  [acss#{$rwd}-line-y] {
+    height: 100%;
+  }
+
+  $thickness: $line-thickness-min;
+  @while $thickness <= $line-thickness-max {
+    @include build-line-thickness($rwd, $thickness);
+    $thickness: $thickness + 1;
+  }
+}
+
+@include rwd {
+  @include build-line-thickness-attribute($rwd);
+}
+
+@include rwd-xl {
+  @include build-line-thickness-attribute($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-line-thickness-attribute($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-line-thickness-attribute($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-line-thickness-attribute($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-line-thickness-attribute($rwd-xs);
+}
