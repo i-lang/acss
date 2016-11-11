@@ -1,0 +1,39 @@
+@import 'default';
+@import 'rwd-base';
+
+@mixin build-opacity($rwd, $opacity) {
+  [acss-opacity~="#{$opacity}#{$rwd}"] {
+    opacity: unquote($opacity);
+  }
+}
+
+@mixin build-opacity-attribute($rwd) {
+  $opacities: ("0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1");
+  @each $opacity in $opacities {
+    @include build-opacity($rwd, $opacity);
+  }
+}
+
+@include rwd {
+  @include build-opacity-attribute($rwd);
+}
+
+@include rwd-xl {
+  @include build-opacity-attribute($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-opacity-attribute($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-opacity-attribute($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-opacity-attribute($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-opacity-attribute($rwd-xs);
+}

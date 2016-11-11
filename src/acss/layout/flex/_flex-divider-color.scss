@@ -1,0 +1,11 @@
+@mixin build-divider-color($color-name, $color) {
+  [acss-divider-color="#{$color-name}"] {
+    > :before {
+      background-color: $color;
+    }
+
+    > :last-child:before {
+      background-color: $color;
+    }
+  }
+}

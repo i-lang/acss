@@ -1,0 +1,7 @@
+@import 'flex-divider-x';
+@import 'flex-divider-y';
+
+@mixin build-flex-divider-attributes($rwd) {
+  @include build-divider-x-attributes($rwd);
+  @include build-divider-y-attributes($rwd);
+}

@@ -1,0 +1,34 @@
+@import 'default';
+@import 'rwd';
+@import 'util';
+
+$cached-fonts: ();
+
+@mixin cache-fonts($colors) {
+  $cached-fonts: map-merge($cached-fonts, $colors) !global;
+}
+
+$cht-fonts: (
+        'mjh': Microsoft JhengHei);
+$eng-fonts: (
+        'ss': sans-serif);
+
+@function font($font-name) {
+  $return-font: null;
+  @each $fontName, $font in $cached-fonts {
+    @if $font-name==$fontName {
+      $return-font: $font;
+    }
+  }
+  @return $return-font;
+}
+
+@mixin build-font-attribute($fonts) {
+  @include cache-fonts($fonts);
+
+  @each $font-name, $font in $fonts {
+    [acss-font="#{unquote($font-name)}"] {
+      font-family: $font;
+    }
+  }
+}

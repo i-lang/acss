@@ -1,0 +1,93 @@
+@import '../base/rwd-base';
+@import '../base/util';
+@import '../base/default';
+
+@mixin build-pad($pad) {
+  padding: px($pad);
+}
+
+@mixin build-pad-x($pad) {
+  padding-left: px($pad);
+  padding-right: px($pad);
+}
+
+@mixin build-pad-y($pad) {
+  padding-top: px($pad);
+  padding-bottom: px($pad);
+}
+
+@mixin build-pad-attribute($rwd, $pad) {
+  [acss#{$rwd}-pad="#{$pad}"] {
+    @include build-pad($pad);
+  }
+
+  [acss#{$rwd}-pad^="#{$pad} "] {
+    @include build-pad-y($pad);
+  }
+
+  [acss#{$rwd}-pad$=" #{$pad}"] {
+    @include build-pad-x($pad);
+  }
+}
+
+@mixin build-pad-x-attribute($rwd, $pad) {
+  [acss#{$rwd}-pad-x="#{$pad}"] {
+    @include build-pad-x($pad);
+  }
+
+  [acss#{$rwd}-pad-x^="#{$pad} "] {
+    padding-left: px($pad);
+  }
+
+  [acss#{$rwd}-pad-x$=" #{$pad}"] {
+    padding-right: px($pad);
+  }
+}
+
+@mixin build-pad-y-attribute($rwd, $pad) {
+  [acss#{$rwd}-pad-y="#{$pad}"] {
+    @include build-pad-y($pad);
+  }
+
+  [acss#{$rwd}-pad-y^="#{$pad} "] {
+    padding-top: px($pad);
+  }
+
+  [acss#{$rwd}-pad-y$=" #{$pad}"] {
+    padding-bottom: px($pad);
+  }
+}
+
+@mixin build-pad-attributes($rwd) {
+  $pad: $min-pad;
+  @while ($pad <= $max-pad) {
+    @include build-pad-attribute($rwd, $pad);
+    @include build-pad-x-attribute($rwd, $pad);
+    @include build-pad-y-attribute($rwd, $pad);
+    $pad: $pad + 5;
+  }
+}
+
+@include rwd {
+  @include build-pad-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-pad-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-pad-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-pad-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-pad-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-pad-attributes($rwd-xs);
+}

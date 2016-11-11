@@ -1,0 +1,15 @@
+@import 'compass/css3/user-interface';
+
+@mixin build-font-color($color-name, $color) {
+  [acss-color="#{$color-name}"] {
+    color: $color;
+  }
+}
+
+@mixin build-placeholder-color($color-name, $color) {
+  [acss-placeholder-color="#{$color-name}"] {
+    @include input-placeholder {
+      color: $color;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import '../base/default';
+@import '../base/util';
+
+@mixin build-border-width($width) {
+  [acss-border-width="#{$width}"] {
+    border-width: px($width);
+  }
+}
+
+@mixin build-border-width-attribute {
+  $border-width: $border-width-min;
+  @while $border-width <= $border-width-max {
+    @include build-border-width($border-width);
+    $border-width: $border-width + 1;
+  }
+}
+
+@mixin build-border-color($color-name, $color) {
+  [acss-border-color="#{$color-name}"] {
+    border-color: $color;
+  }
+}
+
+@mixin build-border-attribute {
+  [acss-border-width] {
+    border-style: solid;
+  }
+
+  @include build-border-width-attribute;
+}
+
+@include build-border-attribute;

@@ -1,0 +1,16 @@
+@import '../../base/rwd-base';
+@import 'flex-align-cross';
+@import 'flex-align-main';
+@import 'flex-align-self';
+@import 'flex-align-wrap';
+@import 'flex-align-x';
+@import 'flex-align-y';
+
+@mixin build-flex-align-attributes($rwd) {
+  @include build-flex-align-x-attributes($rwd);
+  @include build-flex-align-y-attributes($rwd);
+  @include build-flex-align-self-attributes($rwd);
+  @include build-flex-align-main-attributes($rwd);
+  @include build-flex-align-cross-attributes($rwd);
+  @include build-flex-align-wrap-attributes($rwd);
+}

@@ -1,0 +1,58 @@
+$float-threshold: 0.01;
+
+// PC RWD
+$rwd-mobile-max-width: 991px;
+$rwd-xs-max-width: 374px;
+$rwd-sm-min-width: 375px;
+$rwd-sm-max-width: 767px;
+$rwd-md-min-width: 768px;
+$rwd-md-max-width: 991px;
+// Mobile RWD
+$rwd-pc-min-width: 992px;
+$rwd-lg-min-width: 992px;
+$rwd-lg-max-width: 1199px;
+$rwd-xl-min-width: 1200px;
+
+// Gap
+$min-gap: 0;
+$max-gap: 100;
+
+// Grid
+$min-grid: 1;
+$max-grid: 12;
+
+// Grid gap
+$min-grid-gap: 0;
+$max-grid-gap: 50;
+
+// Pad
+$min-pad: 0;
+$max-pad: 100;
+
+// Radius
+$radius-min: 0;
+$radius-max: 30;
+
+// Line thickness
+$line-thickness-min: 0;
+$line-thickness-max: 10;
+
+// Line height
+$min-line-height: 1;
+$max-line-height: 3.0;
+
+// Font size
+$min-font-size: 12;
+$max-font-size: 40;
+
+// Flex
+$min-flex: 0;
+$max-flex: 12;
+
+// Position
+$position-min: -100;
+$position-max: 100;
+
+// Border
+$border-width-min: 0;
+$border-width-max: 20;
