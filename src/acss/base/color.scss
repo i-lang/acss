@@ -63,6 +63,7 @@ $white-colors: (
     @include build-placeholder-color($color-name, $color);
     @include build-border-color($color-name, $color);
     @include build-divider-color($color-name, $color);
+    @include build-bg-color($color-name, $color);
     //@include build-table-divider-color(unquote($color-name), $color);
   }
 }
