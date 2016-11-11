@@ -1,0 +1,44 @@
+@import '../../base/rwd-base';
+@import '../../base/default';
+
+[acss-row], [acss-col], [acss-center] {
+  &.no-shrink > * {
+    flex-shrink: 0;
+  }
+
+  > .no-shrink {
+    flex-shrink: 0;
+  }
+
+  > .is-fill {
+    flex: 1;
+  }
+}
+
+@mixin build-flex($rwd, $flex) {
+  [acss#{$rwd}-flex="#{$flex}"] {
+    flex: $flex;
+  }
+}
+
+@mixin build-flex-grow($rwd, $flex) {
+  [acss#{$rwd}-flex-grow="#{$flex}"] {
+    flex-grow: $flex;
+  }
+}
+
+@mixin build-flex-shrink($rwd, $flex) {
+  [acss#{$rwd}-flex-shrink="#{$flex}"] {
+    flex-shrink: $flex;
+  }
+}
+
+@mixin build-flex-size-attribute($rwd) {
+  $flex: $min-flex;
+  @while $flex <= $max-flex {
+    @include build-flex($rwd, $flex);
+    @include build-flex-grow($rwd, $flex);
+    @include build-flex-shrink($rwd, $flex);
+    $flex: $flex + 1;
+  }
+}

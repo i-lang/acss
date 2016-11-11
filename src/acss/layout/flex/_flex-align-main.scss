@@ -1,0 +1,15 @@
+@import '../../base/rwd-base';
+
+@mixin build-flex-align-main($rwd, $attributeValue, $propertyValue) {
+  [acss#{$rwd}-align-main="#{$attributeValue}"] {
+    justify-content: $propertyValue;
+  }
+}
+
+@mixin build-flex-align-main-attributes($rwd) {
+  @include build-flex-align-main($rwd, "start", flex-start);
+  @include build-flex-align-main($rwd, "center", center);
+  @include build-flex-align-main($rwd, "end", flex-end);
+  @include build-flex-align-main($rwd, "between", space-between);
+  @include build-flex-align-main($rwd, "around", space-around);
+}

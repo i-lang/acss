@@ -1,0 +1,76 @@
+@import '../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3';
+@import '../../base/util';
+
+@mixin divider-y-style {
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+@mixin build-divider-y($rwd, $divider-gap) {
+  [acss#{$rwd}-divider-y~="#{$divider-gap}"] {
+    > :before {
+      left: px(-$divider-gap / 2);
+      @include translateX(50%);
+    }
+
+    > :last-child:after {
+      left: px(-$divider-gap / 2);
+      @include translateX(50%);
+    }
+  }
+}
+
+@mixin build-divider-y-attribute($rwd) {
+  $min-divider-gap: 0;
+  $max-divider-gap: 100;
+  $divider-gap: $min-divider-gap;
+  @while ($divider-gap <= $max-divider-gap) {
+    @include build-divider-y($rwd, $divider-gap);
+    $divider-gap: $divider-gap + 5;
+  }
+}
+
+@mixin build-divider-height($rwd, $height) {
+  [acss#{$rwd}-divider-height="#{$height}"] {
+    height: px($height);
+  }
+}
+
+@mixin build-divider-height-attribute($rwd) {
+  $min-divider-height: 0;
+  $max-divider-height: 10;
+  $divider-height: $min-divider-height;
+  @while ($divider-height <= $max-divider-height) {
+    @include build-divider-height($rwd, $divider-height);
+    $divider-height: $divider-height + 1;
+  }
+}
+
+@mixin build-divider-y-attributes($rwd) {
+  [acss#{$rwd}-divider-y] {
+    position: relative;
+
+    > :before {
+      @include divider-y-style;
+    }
+
+    > :last-child:after {
+      @include divider-y-style;
+    }
+
+    &:not([acss#{$rwd}-divider-y~="around"]) {
+      > :first-child:before {
+        content: none;
+      }
+
+      > :last-child:after {
+        content: none;
+      }
+    }
+  }
+
+  @include build-divider-y-attribute($rwd);
+  @include build-divider-height-attribute($rwd);
+}

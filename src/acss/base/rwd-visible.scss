@@ -1,0 +1,142 @@
+@import "rwd-base";
+
+@mixin build-rwd() {
+  .is-mobile {
+    @include rwd-pc {
+      display: none !important;
+    }
+  }
+
+  .is-pc {
+    @include rwd-mobile {
+      display: none !important;
+    }
+  }
+
+  .is-xl {
+    @include rwd-lg {
+      display: none !important;
+    }
+
+    @include rwd-mobile {
+      display: none !important;
+    }
+  }
+
+  .is-not-xl {
+    @include rwd-xl {
+      display: none !important;
+    }
+  }
+
+  .is-lg {
+    @include rwd-xl {
+      display: none !important;
+    }
+
+    @include rwd-mobile {
+      display: none !important;
+    }
+  }
+
+  .is-not-lg {
+    @include rwd-lg {
+      display: none !important;
+    }
+  }
+
+  .is-md {
+    @include rwd-pc {
+      display: none !important;
+    }
+
+    @include rwd-sm {
+      display: none !important;
+    }
+
+    @include rwd-xs {
+      display: none !important;
+    }
+  }
+
+  .is-not-md {
+    @include rwd-md {
+      display: none !important;
+    }
+  }
+
+  .is-sm {
+    @include rwd-pc {
+      display: none !important;
+    }
+
+    @include rwd-md {
+      display: none !important;
+    }
+
+    @include rwd-xs {
+      display: none !important;
+    }
+  }
+
+  .is-not-sm {
+    @include rwd-sm {
+      display: none !important;
+    }
+  }
+
+  .is-xs {
+    @include rwd-pc {
+      display: none !important;
+    }
+
+    @include rwd-md {
+      display: none !important;
+    }
+
+    @include rwd-sm {
+      display: none !important;
+    }
+  }
+
+  .is-not-xs {
+    @include rwd-xs {
+      display: none !important;
+    }
+  }
+
+  .rwd-test {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include rwd {
+        content: 'rwd' + $rwd;
+      }
+
+      @include rwd-xl {
+        content: 'rwd' + $rwd-xl;
+      }
+
+      @include rwd-lg {
+        content: 'rwd' + $rwd-lg;
+      }
+
+      @include rwd-md {
+        content: 'rwd' + $rwd-md;
+      }
+
+      @include rwd-sm {
+        content: 'rwd' + $rwd-sm;
+      }
+
+      @include rwd-xs {
+        content: 'rwd' + $rwd-xs;
+      }
+    }
+  }
+}

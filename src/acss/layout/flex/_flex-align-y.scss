@@ -1,0 +1,49 @@
+@import '../../base/rwd-base';
+
+@mixin build-flex-row-align-y($rwd, $attributeValue, $propertyValue) {
+  [acss#{$rwd}-row][acss#{$rwd}-align-y="#{$attributeValue}"] {
+    align-items: $propertyValue;
+  }
+}
+
+@mixin build-flex-col-align-y($rwd, $attributeValue, $propertyValue) {
+  [acss#{$rwd}-col][acss#{$rwd}-align-y="#{$attributeValue}"] {
+    justify-content: $propertyValue;
+  }
+}
+
+@mixin build-flex-align-y-top-attribute($rwd) {
+  @include build-flex-row-align-y($rwd, "top", flex-start);
+  @include build-flex-col-align-y($rwd, "top", flex-start);
+}
+
+@mixin build-flex-align-y-center-attribute($rwd) {
+  @include build-flex-row-align-y($rwd, "center", center);
+  @include build-flex-col-align-y($rwd, "center", center);
+}
+
+@mixin build-flex-align-y-bottom-attribute($rwd) {
+  @include build-flex-row-align-y($rwd, "bottom", flex-end);
+  @include build-flex-col-align-y($rwd, "bottom", flex-end);
+}
+
+@mixin build-flex-align-y-stretch-attribute($rwd) {
+  @include build-flex-row-align-y($rwd, "stretch", stretch);
+}
+
+@mixin build-flex-align-y-between-attribute($rwd) {
+  @include build-flex-col-align-y($rwd, "between", space-between);
+}
+
+@mixin build-flex-align-y-around-attribute($rwd) {
+  @include build-flex-col-align-y($rwd, "around", space-around);
+}
+
+@mixin build-flex-align-y-attributes($rwd) {
+  @include build-flex-align-y-top-attribute($rwd);
+  @include build-flex-align-y-center-attribute($rwd);
+  @include build-flex-align-y-bottom-attribute($rwd);
+  @include build-flex-align-y-stretch-attribute($rwd);
+  @include build-flex-align-y-between-attribute($rwd);
+  @include build-flex-align-y-around-attribute($rwd);
+}

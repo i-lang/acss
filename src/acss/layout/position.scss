@@ -1,0 +1,128 @@
+@import "../base/rwd-base";
+@import "../base/default";
+@import "../base/util";
+@import "compass/css3/transform";
+
+@mixin build-position-layout-attribute($rwd) {
+  .l-dock {
+    position: relative;
+
+    > [acss#{$rwd}-position~="dock"] {
+      position: absolute !important;
+    }
+  }
+
+  [acss#{$rwd}-position~="fixed"] {
+    position: fixed !important;
+  }
+
+  [acss#{$rwd}-position~="offset"] {
+    position: relative;
+  }
+}
+
+@mixin build-position($rwd, $position) {
+  [acss#{$rwd}-position~="top=#{$position}"] {
+    top: px($position);
+  }
+
+  [acss#{$rwd}-position~="right=#{$position}"] {
+    right: px($position);
+  }
+
+  [acss#{$rwd}-position~="bottom=#{$position}"] {
+    bottom: px($position);
+  }
+
+  [acss#{$rwd}-position~="left=#{$position}"] {
+    left: px($position);
+  }
+}
+
+@mixin build-position-center($rwd) {
+  [acss#{$rwd}-position~="center-x"] {
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+
+  [acss#{$rwd}-position~="center-y"] {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+
+  [acss#{$rwd}-position~="center"] {
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+}
+
+@mixin build-default-position-box($rwd) {
+  [acss#{$rwd}-position~="top"] {
+    top: 0;
+  }
+
+  [acss#{$rwd}-position~="right"] {
+    right: 0;
+  }
+
+  [acss#{$rwd}-position~="bottom"] {
+    bottom: 0;
+  }
+
+  [acss#{$rwd}-position~="left"] {
+    left: 0;
+  }
+
+  [acss#{$rwd}-position~="top"]:not([acss#{$rwd}-position~="right="]):not([acss#{$rwd}-position~="center-x"]),
+  [acss#{$rwd}-position~="bottom"]:not([acss#{$rwd}-position~="right="]):not([acss#{$rwd}-position~="center-x"]) {
+    left: 0;
+  }
+
+  [acss#{$rwd}-position~="left"]:not([acss#{$rwd}-position~="bottom="]):not([acss#{$rwd}-position~="center-y"]),
+  [acss#{$rwd}-position~="right"]:not([acss#{$rwd}-position~="bottom="]):not([acss#{$rwd}-position~="center-y"]) {
+    top: 0;
+  }
+}
+
+@mixin build-position-box-attribute($rwd) {
+  @include build-default-position-box($rwd);
+
+  $position: $position-min;
+  @while $position <= $position-max {
+    @include build-position($rwd, $position);
+
+    $position: $position + 5;
+  }
+
+  @include build-position-center($rwd);
+}
+
+@mixin build-position-attributes($rwd) {
+  @include build-position-layout-attribute($rwd);
+  @include build-position-box-attribute($rwd);
+}
+
+@include rwd {
+  @include build-position-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-position-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-position-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-position-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-position-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-position-attributes($rwd-xs);
+}

@@ -1,0 +1,58 @@
+@import "../../base/rwd";
+@import "compass/css3";
+
+@mixin build-texture-position-attributes($rwd) {
+  .acss-texture {
+    &[acss#{$rwd}-texture-position="center"] {
+      background-position: center;
+    }
+
+    &[acss#{$rwd}-texture-position="top"] {
+      background-position: top;
+    }
+
+    &[acss#{$rwd}-texture-position="right"] {
+      background-position: right;
+    }
+
+    &[acss#{$rwd}-texture-position="bottom"] {
+      background-position: bottom;
+    }
+
+    &[acss#{$rwd}-texture-position="left"] {
+      background-position: left;
+    }
+
+    &[acss#{$rwd}-texture-position~="left"][acss#{$rwd}-texture-position~="top"] {
+      background-position: left top;
+    }
+
+    &[acss#{$rwd}-texture-position~="left"][acss#{$rwd}-texture-position~="center"] {
+      background-position: left center;
+    }
+
+    &[acss#{$rwd}-texture-position~="left"][acss#{$rwd}-texture-position~="bottom"] {
+      background-position: left bottom;
+    }
+
+    &[acss#{$rwd}-texture-position~="right"][acss#{$rwd}-texture-position~="top"] {
+      background-position: right top;
+    }
+
+    &[acss#{$rwd}-texture-position~="right"][acss#{$rwd}-texture-position~="center"] {
+      background-position: right center;
+    }
+
+    &[acss#{$rwd}-texture-position~="right"][acss#{$rwd}-texture-position~="bottom"] {
+      background-position: right bottom;
+    }
+
+    &[acss#{$rwd}-texture-position~="center"][acss#{$rwd}-texture-position~="top"] {
+      background-position: center top;
+    }
+
+    &[acss#{$rwd}-texture-position~="center"][acss#{$rwd}-texture-position~="bottom"] {
+      background-position: center bottom;
+    }
+  }
+}

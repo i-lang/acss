@@ -1,0 +1,14 @@
+@import '../../base/rwd-base';
+
+@mixin build-flex-align-cross($rwd, $attributeValue, $propertyValue) {
+  [acss#{$rwd}-align-cross="#{$attributeValue}"] {
+    align-items: $propertyValue;
+  }
+}
+
+@mixin build-flex-align-cross-attributes($rwd) {
+  @include build-flex-align-cross($rwd, "start", flex-start);
+  @include build-flex-align-cross($rwd, "center", center);
+  @include build-flex-align-cross($rwd, "end", flex-end);
+  @include build-flex-align-cross($rwd, "stretch", stretch);
+}

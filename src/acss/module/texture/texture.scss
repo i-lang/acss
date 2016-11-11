@@ -1,0 +1,42 @@
+@import "compass/css3";
+@import "texture-mapping";
+@import "texture-position";
+
+.acss-texture {
+  //don't optimize unless you won't use background attribute
+  background-position: center;
+
+  &:not(.is-repeat) {
+    background-repeat: no-repeat;
+  }
+}
+
+@include rwd {
+  @include build-texture-position-attributes($rwd);
+  @include build-texture-mapping-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-texture-position-attributes($rwd-xl);
+  @include build-texture-mapping-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-texture-position-attributes($rwd-lg);
+  @include build-texture-mapping-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-texture-position-attributes($rwd-md);
+  @include build-texture-mapping-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-texture-position-attributes($rwd-sm);
+  @include build-texture-mapping-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-texture-position-attributes($rwd-xs);
+  @include build-texture-mapping-attributes($rwd-xs);
+}

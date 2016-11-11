@@ -1,0 +1,76 @@
+@import '../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3';
+@import '../../base/util';
+
+@mixin divider-x-style {
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+@mixin build-divider-x($rwd, $divider-gap) {
+  [acss#{$rwd}-divider-x~="#{$divider-gap}"] {
+    > :before {
+      left: px(-$divider-gap / 2);
+      @include translateX(50%);
+    }
+
+    > :last-child:after {
+      right: px($divider-gap / 2);
+      @include translateX(-50%);
+    }
+  }
+}
+
+@mixin build-divider-x-attribute($rwd) {
+  $min-divider-gap: 0;
+  $max-divider-gap: 100;
+  $divider-gap: $min-divider-gap;
+  @while ($divider-gap <= $max-divider-gap) {
+    @include build-divider-x($rwd, $divider-gap);
+    $divider-gap: $divider-gap + 5;
+  }
+}
+
+@mixin build-divider-width($rwd, $width) {
+  [acss#{$rwd}-divider-width="#{$width}"] {
+    width: px($width);
+  }
+}
+
+@mixin build-divider-width-attribute($rwd) {
+  $min-divider-width: 0;
+  $max-divider-width: 10;
+  $divider-width: $min-divider-width;
+  @while ($divider-width <= $max-divider-width) {
+    @include build-divider-width($rwd, $divider-width);
+    $divider-width: $divider-width + 1;
+  }
+}
+
+@mixin build-divider-x-attributes($rwd) {
+  [acss#{$rwd}-divider-x] {
+    position: relative;
+
+    > :before {
+      @include divider-x-style;
+    }
+
+    > :last-child:after {
+      @include divider-x-style;
+    }
+
+    &:not([acss#{$rwd}-divider-x~="around"]) {
+      > :first-child:before {
+        content: none !important;
+      }
+
+      > :last-child:after {
+        content: none !important;
+      }
+    }
+  }
+
+  @include build-divider-x-attribute($rwd);
+  @include build-divider-width-attribute($rwd);
+}

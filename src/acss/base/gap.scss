@@ -1,0 +1,61 @@
+@import 'util';
+@import '../base/rwd-base';
+@import 'default';
+@import 'gap';
+
+@mixin build-gap-x($rwd, $gap) {
+  [acss#{$rwd}-gap-x~="#{$gap}"] > *:not(:last-child) {
+    margin-right: px($gap);
+  }
+}
+
+@mixin build-gap-x-attribute($rwd) {
+  $gap: 0;
+  @while ($gap <= $max-gap) {
+    @include build-gap-x($rwd, $gap);
+    $gap: $gap + 5;
+  }
+}
+
+@mixin build-gap-y($rwd, $gap) {
+  [acss#{$rwd}-gap-y~="#{$gap}"] > *:not(:last-child) {
+    margin-bottom: px($gap);
+  }
+}
+
+@mixin build-gap-y-attribute($rwd) {
+  $gap: $min-gap;
+  @while ($gap <= $max-gap) {
+    @include build-gap-y($rwd, $gap);
+    $gap: $gap + 5;
+  }
+}
+
+@mixin build-gap-attributes($rwd) {
+  @include build-gap-x-attribute($rwd);
+  @include build-gap-y-attribute($rwd);
+}
+
+@include rwd {
+  @include build-gap-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-gap-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-gap-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-gap-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-gap-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-gap-attributes($rwd-xs);
+}
