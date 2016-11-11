@@ -26,13 +26,13 @@
 @mixin build-divider-y($rwd, $divider-gap) {
   [acss-divider-y~="#{$divider-gap}#{$rwd}"] {
     > :before {
-      left: px(-$divider-gap / 2);
-      @include translateX(50%);
+      top: px(-$divider-gap / 2);
+      @include translateY(50%);
     }
 
     > :last-child:after {
-      left: px(-$divider-gap / 2);
-      @include translateX(50%);
+      top: px(-$divider-gap / 2);
+      @include translateY(50%);
     }
   }
 }
@@ -59,7 +59,9 @@
 
 @mixin build-divider-height($rwd, $height) {
   [acss-divider-height~="#{$height}#{$rwd}"] {
-    height: px($height);
+    > :before, > :after {
+      height: px($height);
+    }
   }
 }
 
