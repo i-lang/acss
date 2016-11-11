@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>flex</title>
-    <link rel="stylesheet" href="../stylesheets/scss/base/reset.css">
-    <link rel="stylesheet" href="../stylesheets/scss/acss/acss.css">
+    <link rel="stylesheet" href="../acss/stylesheets/acss/reset.css">
+    <link rel="stylesheet" href="../acss/stylesheets/acss/acss.css">
 </head>
 <body>
-<div class="l-col" acss-gutter-between="30">
-    <div class="l-col" acss-gutter-between="10">
+<div acss-col acss-gap-y="30">
+    <div acss-col acss-gap-y="10">
         <h1 acss-font-size="20">Flex-divider</h1>
-        <p>3 data-settings: gutter-divider, acss-divider-width, acss-divider-color</p>
+        <p>3 data-settings: acss-divider-x, acss-divider-thickness, acss-divider-color</p>
     </div>
-    <div class="l-col" acss-gutter-between="30" style="width: 330px;">
-        <div class="l-col" acss-gutter-between="20">
+    <div acss-col acss-gap-y="30" style="width: 330px;">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider=between</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="1" acss-divider-color="black"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="1" acss-divider-color="black"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider=around</h1>
-            <div class="l-row" acss-divider="around" acss-divider-width="1" acss-divider-color="black"
-                 acss-gutter-around="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10 around" acss-divider-thickness="1" acss-divider-color="black"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-col acss-divider=between</h1>
-            <div class="l-col" acss-divider="between" acss-divider-width="1" acss-divider-color="black"
-                 acss-gutter-between="15" acss-child-align="center"
+            <div acss-col acss-divider-y="15" acss-divider-thickness="1" acss-divider-color="black"
+                 acss-gap-y="15" acss-align-self="center"
                  style="height: 100px;">
                 <div>Hi</div>
                 <div>Hi</div>
@@ -44,133 +44,133 @@
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-col acss-divider=around</h1>
-            <div class="l-col" acss-divider="around" acss-divider-width="1" acss-divider-color="black"
-                 acss-gutter-around="10" acss-child-align="center">
+            <div acss-col acss-divider-y="10 around" acss-divider-thickness="1" acss-divider-color="black"
+                 acss-gap-y="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
-            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-width=1 (min)</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="1" acss-divider-color="black"
-                 acss-gutter-between="10" acss-child-align="center">
+        <div acss-col acss-gap-y="20">
+            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-thickness=1 (min)</h1>
+            <div acss-row acss-divider-x="10" acss-divider-thickness="1" acss-divider-color="black"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
-            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-width=2</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="2" acss-divider-color="black"
-                 acss-gutter-between="10" acss-child-align="center">
+        <div acss-col acss-gap-y="20">
+            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-thickness=2</h1>
+            <div acss-row acss-divider-x="10" acss-divider-thickness="2" acss-divider-color="black"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
-            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-width=3</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="black"
-                 acss-gutter-between="10" acss-child-align="center">
+        <div acss-col acss-gap-y="20">
+            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-thickness=3</h1>
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="black"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
-            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-width=5</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="5" acss-divider-color="black"
-                 acss-gutter-between="10" acss-child-align="center">
+        <div acss-col acss-gap-y="20">
+            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-thickness=5</h1>
+            <div acss-row acss-divider-x="10" acss-divider-thickness="5" acss-divider-color="black"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
-            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-width=10 (max)</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="10" acss-divider-color="black"
-                 acss-gutter-between="20" acss-child-align="center">
+        <div acss-col acss-gap-y="20">
+            <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-thickness=10 (max)</h1>
+            <div acss-row acss-divider-x="20" acss-divider-thickness="10" acss-divider-color="black"
+                 acss-gap-x="20" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-color=black</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="black"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="black"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
-            <div class="l-col">
+        <div acss-col acss-gap-y="20">
+            <div acss-col>
                 <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-color=gray-1</h1>
                 <h1 acss-font-size="18">(gray-1~gray-9 available)</h1>
             </div>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="gray-1"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="gray-1"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-color=gray-2</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="gray-2"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="gray-2"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-color=gray-3</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="gray-3"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="gray-3"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-color=gray-5</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="gray-5"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="gray-5"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20">
+        <div acss-col acss-gap-y="20">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-color=gray-9</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="gray-9"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="gray-9"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
             </div>
         </div>
-        <div class="l-col" acss-gutter-between="20" acss-bg-color="gray-9">
+        <div acss-col acss-gap-y="20" acss-bg-color="gray-9">
             <h1 acss-font-size="24" acss-bg-color="gray-9">l-row acss-divider-color=white</h1>
-            <div class="l-row" acss-divider="between" acss-divider-width="3" acss-divider-color="white"
-                 acss-gutter-between="10" acss-child-align="center">
+            <div acss-row acss-divider-x="10" acss-divider-thickness="3" acss-divider-color="white"
+                 acss-gap-x="10" acss-align-self="center">
                 <div>Hi</div>
                 <div>Hi</div>
                 <div>Hi</div>
