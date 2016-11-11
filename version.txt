@@ -1,3 +1,6 @@
+[v1.0.0]
+...
+
 [v0.5.3]
 fix [acss-grid-wrap-gutter] ghost margin
 
