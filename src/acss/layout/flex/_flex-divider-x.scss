@@ -1,4 +1,4 @@
-@import '../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/css3';
+@import 'compass/css3';
 @import '../../base/util';
 
 @mixin divider-x-style {
@@ -7,18 +7,18 @@
   top: 0;
 }
 
-[acss-divider-x] {
+[acss-divider-x] > * {
   position: relative;
 
-  > :before {
+  &:before {
     @include divider-x-style;
   }
 
-  > :last-child:after {
+  &:last-child:after {
     @include divider-x-style;
   }
 
-  > :not(:first-child):before {
+  &:not(:first-child):before {
     content: '';
   }
 }
@@ -27,12 +27,10 @@
   [acss-divider-x~="#{$divider-gap}#{$rwd}"] {
     > :before {
       left: px(-$divider-gap / 2);
-      @include translateX(50%);
     }
 
     > :last-child:after {
-      right: px($divider-gap / 2);
-      @include translateX(-50%);
+      right: px(-$divider-gap / 2);
     }
   }
 }
@@ -53,29 +51,31 @@
 
     > :last-child:after {
       content: '' !important;
+
     }
   }
 }
 
-@mixin build-divider-width($rwd, $width) {
-  [acss-divider-width~="#{$width}#{$rwd}"] {
-    > :before, > :after {
-      width: px($width);
+@mixin build-divider-x-thickness($rwd, $thickness) {
+  [acss-divider-x][acss-divider-thickness~="#{$thickness}#{$rwd}"] {
+    > :before, > :last-child:after {
+      width: px($thickness);
+      @include translateX(px(round(-$thickness/2)));
     }
   }
 }
 
-@mixin build-divider-width-attribute($rwd) {
-  $min-divider-width: 0;
-  $max-divider-width: 10;
-  $divider-width: $min-divider-width;
-  @while ($divider-width <= $max-divider-width) {
-    @include build-divider-width($rwd, $divider-width);
-    $divider-width: $divider-width + 1;
+@mixin build-divider-x-thickness-attribute($rwd) {
+  $min-divider-thickness: 0;
+  $max-divider-thickness: 10;
+  $divider-thickness: $min-divider-thickness;
+  @while ($divider-thickness <= $max-divider-thickness) {
+    @include build-divider-x-thickness($rwd, $divider-thickness);
+    $divider-thickness: $divider-thickness + 1;
   }
 }
 
 @mixin build-divider-x-attributes($rwd) {
   @include build-divider-x-attribute($rwd);
-  @include build-divider-width-attribute($rwd);
+  @include build-divider-x-thickness-attribute($rwd);
 }
