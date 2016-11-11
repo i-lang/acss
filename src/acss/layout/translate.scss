@@ -2,55 +2,55 @@
 @import "compass/css3";
 
 @mixin build-translate-attribute($rwd) {
-  [acss#{$rwd}-translate="half"] {
+  [acss-translate~="half#{$rwd}"] {
     @include translate(50%, 50%);
   }
 
-  [acss#{$rwd}-translate="full"] {
+  [acss-translate~="full#{$rwd}"] {
     @include translate(100%, 100%);
   }
 
-  [acss#{$rwd}-translate="-half"] {
+  [acss-translate~="-half#{$rwd}"] {
     @include translate(-50%, -50%);
   }
 
-  [acss#{$rwd}-translate="-full"] {
+  [acss-translate~="-full#{$rwd}"] {
     @include translate(-100%, -100%);
   }
 }
 
 @mixin build-translate-x-attribute($rwd) {
-  [acss#{$rwd}-translate-x="half"] {
+  [acss-translate-x~="half#{$rwd}"] {
     @include translateX(50%);
   }
 
-  [acss#{$rwd}-translate-x="full"] {
+  [acss-translate-x~="full#{$rwd}"] {
     @include translateX(100%);
   }
 
-  [acss#{$rwd}-translate-x="-half"] {
+  [acss-translate-x~="-half#{$rwd}"] {
     @include translateX(-50%);
   }
 
-  [acss#{$rwd}-translate-x="-full"] {
+  [acss-translate-x~="-full#{$rwd}"] {
     @include translateX(-100%);
   }
 }
 
 @mixin build-translate-y-attribute($rwd) {
-  [acss#{$rwd}-translate-y="half"] {
+  [acss-translate-y~="half#{$rwd}"] {
     @include translateY(50%);
   }
 
-  [acss#{$rwd}-translate-y="full"] {
+  [acss-translate-y~="full#{$rwd}"] {
     @include translateY(100%);
   }
 
-  [acss#{$rwd}-translate-y="-half"] {
+  [acss-translate-y~="-half#{$rwd}"] {
     @include translateY(-50%);
   }
 
-  [acss#{$rwd}-translate-y="-full"] {
+  [acss-translate-y~="-full#{$rwd}"] {
     @include translateY(-100%);
   }
 }

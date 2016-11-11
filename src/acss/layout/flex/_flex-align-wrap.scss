@@ -1,7 +1,7 @@
 @import '../../base/rwd-base';
 
 @mixin build-flex-align-wrap($rwd, $attributeValue, $propertyValue) {
-  [acss#{$rwd}-align-wrap="#{$attributeValue}"] {
+  [acss-align-wrap~="#{$attributeValue}#{$rwd}"] {
     align-content: $propertyValue;
   }
 }

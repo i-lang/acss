@@ -1,13 +1,13 @@
 @import '../../base/rwd-base';
 
 @mixin build-flex-row-align-self($rwd, $attributeValue, $propertyValue) {
-  [acss#{$rwd}-row] > [acss#{$rwd}-align-self="#{$attributeValue}"] {
+  [acss#{$rwd}-row] > [acss-align-self~="#{$attributeValue}#{$rwd}"] {
     align-self: $propertyValue;
   }
 }
 
 @mixin build-flex-col-align-self($rwd, $attributeValue, $propertyValue) {
-  [acss#{$rwd}-col] > [acss#{$rwd}-align-self="#{$attributeValue}"] {
+  [acss#{$rwd}-col] > [acss-align-self~="#{$attributeValue}#{$rwd}"] {
     align-self: $propertyValue;
   }
 }

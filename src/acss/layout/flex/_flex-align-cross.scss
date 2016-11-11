@@ -1,7 +1,7 @@
 @import '../../base/rwd-base';
 
 @mixin build-flex-align-cross($rwd, $attributeValue, $propertyValue) {
-  [acss#{$rwd}-align-cross="#{$attributeValue}"] {
+  [acss-align-cross~="#{$attributeValue}#{$rwd}"] {
     align-items: $propertyValue;
   }
 }

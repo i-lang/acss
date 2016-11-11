@@ -1,7 +1,7 @@
 @import '../../base/rwd-base';
 
 @mixin build-flex-align-main($rwd, $attributeValue, $propertyValue) {
-  [acss#{$rwd}-align-main="#{$attributeValue}"] {
+  [acss-align-main~="#{$attributeValue}#{$rwd}"] {
     justify-content: $propertyValue;
   }
 }

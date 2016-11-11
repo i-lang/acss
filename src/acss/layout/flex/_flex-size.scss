@@ -16,19 +16,19 @@
 }
 
 @mixin build-flex($rwd, $flex) {
-  [acss#{$rwd}-flex="#{$flex}"] {
+  [acss-flex~="#{$flex}#{$rwd}"] {
     flex: $flex;
   }
 }
 
 @mixin build-flex-grow($rwd, $flex) {
-  [acss#{$rwd}-flex-grow="#{$flex}"] {
+  [acss-flex-grow~="#{$flex}#{$rwd}"] {
     flex-grow: $flex;
   }
 }
 
 @mixin build-flex-shrink($rwd, $flex) {
-  [acss#{$rwd}-flex-shrink="#{$flex}"] {
+  [acss-flex-shrink~="#{$flex}#{$rwd}"] {
     flex-shrink: $flex;
   }
 }

@@ -1,19 +1,19 @@
 @import 'rwd';
 
 @mixin build-overflow($rwd, $attribute-value, $property-value) {
-  [acss#{$rwd}-overflow="#{$attribute-value}"] {
+  [acss-overflow~="#{$attribute-value}#{$rwd}"] {
     overflow: $property-value !important;
   }
 }
 
 @mixin build-overflow-x($rwd, $attribute-value, $property-value) {
-  [acss#{$rwd}-overflow-x="#{$attribute-value}"] {
+  [acss-overflow-x~="#{$attribute-value}#{$rwd}"] {
     overflow-x: $property-value !important;
   }
 }
 
 @mixin build-overflow-y($rwd, $attribute-value, $property-value) {
-  [acss#{$rwd}-overflow-y="#{$attribute-value}"] {
+  [acss-overflow-y~="#{$attribute-value}#{$rwd}"] {
     overflow-y: $property-value !important;
   }
 }

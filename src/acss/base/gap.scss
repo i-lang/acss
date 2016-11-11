@@ -4,7 +4,7 @@
 @import 'gap';
 
 @mixin build-gap-x($rwd, $gap) {
-  [acss#{$rwd}-gap-x~="#{$gap}"] > *:not(:last-child) {
+  [acss-gap-x~="#{$gap}#{$rwd}"] > *:not(:last-child) {
     margin-right: px($gap);
   }
 }
@@ -18,7 +18,7 @@
 }
 
 @mixin build-gap-y($rwd, $gap) {
-  [acss#{$rwd}-gap-y~="#{$gap}"] > *:not(:last-child) {
+  [acss-gap-y~="#{$gap}#{$rwd}"] > *:not(:last-child) {
     margin-bottom: px($gap);
   }
 }

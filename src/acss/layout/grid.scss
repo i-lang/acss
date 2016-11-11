@@ -3,7 +3,7 @@
 @import '../base/util';
 
 @mixin build-grid($rwd, $grid) {
-  [acss#{$rwd}-grid="#{$grid}"] {
+  [acss-grid~="#{$grid}#{$rwd}"] {
     & > * {
       flex-basis: (100%/$grid);
     }
@@ -11,7 +11,7 @@
 }
 
 @mixin build-grid-gap-x($rwd, $grid, $gap) {
-  [acss#{$rwd}-grid="#{$grid}"][acss#{$rwd}-gap-x="#{$gap}"] > * {
+  [acss-grid~="#{$grid}#{$rwd}"][acss-gap-x~="#{$gap}#{$rwd}"] > * {
     flex-basis: calc(#{(100%/$grid)} - #{px($gap*($grid - 1)/$grid)});
   }
 }
@@ -19,7 +19,7 @@
 @mixin build-grid-gap-x-attribute($rwd, $grid) {
   $gap: $min-grid-gap;
 
-  [acss#{$rwd}-grid="#{$grid}"][acss#{$rwd}-gap-x] {
+  [acss-grid~="#{$grid}#{$rwd}"][acss-gap-x] {
     > :nth-child(#{$grid}n) {
       margin-right: 0;
     }
@@ -32,7 +32,7 @@
 }
 
 @mixin build-grid-gap-y($rwd, $grid) {
-  [acss#{$rwd}-grid="#{$grid}"][acss#{$rwd}-gap-y] {
+  [acss-grid~="#{$grid}#{$rwd}"][acss-gap-y] {
     & > *:not(:nth-last-child(n+#{$grid+1})) {
       margin-bottom: 0;
     }

@@ -3,13 +3,28 @@
 
 @mixin divider-x-style {
   height: 100%;
-  content: '';
   position: absolute;
   top: 0;
 }
 
+[acss-divider-x] {
+  position: relative;
+
+  > :before {
+    @include divider-x-style;
+  }
+
+  > :last-child:after {
+    @include divider-x-style;
+  }
+
+  > :before:not(:first-child) {
+    content: '';
+  }
+}
+
 @mixin build-divider-x($rwd, $divider-gap) {
-  [acss#{$rwd}-divider-x~="#{$divider-gap}"] {
+  [acss-divider-x~="#{$divider-gap}#{$rwd}"] {
     > :before {
       left: px(-$divider-gap / 2);
       @include translateX(50%);
@@ -30,10 +45,20 @@
     @include build-divider-x($rwd, $divider-gap);
     $divider-gap: $divider-gap + 5;
   }
+
+  [acss-divider-x][acss-divider-x~="around#{$rwd}"] {
+    > :first-child:before {
+      content: '' !important;
+    }
+
+    > :last-child:after {
+      content: '' !important;
+    }
+  }
 }
 
 @mixin build-divider-width($rwd, $width) {
-  [acss#{$rwd}-divider-width="#{$width}"] {
+  [acss-divider-width~="#{$width}#{$rwd}"] {
     width: px($width);
   }
 }
@@ -49,28 +74,6 @@
 }
 
 @mixin build-divider-x-attributes($rwd) {
-  [acss#{$rwd}-divider-x] {
-    position: relative;
-
-    > :before {
-      @include divider-x-style;
-    }
-
-    > :last-child:after {
-      @include divider-x-style;
-    }
-
-    &:not([acss#{$rwd}-divider-x~="around"]) {
-      > :first-child:before {
-        content: none !important;
-      }
-
-      > :last-child:after {
-        content: none !important;
-      }
-    }
-  }
-
   @include build-divider-x-attribute($rwd);
   @include build-divider-width-attribute($rwd);
 }

@@ -2,7 +2,7 @@
 @import 'rwd-base';
 
 @mixin build-opacity($rwd, $opacity) {
-  [acss#{$rwd}-opacity="#{$opacity}"] {
+  [acss-opacity~="#{$opacity}#{$rwd}"] {
     opacity: unquote($opacity);
   }
 }

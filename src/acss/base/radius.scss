@@ -4,7 +4,7 @@
 @import 'compass/css3';
 
 @mixin build-radius($rwd, $radius) {
-  [acss#{$rwd}-radius="#{$radius}"] {
+  [acss-radius~="#{$radius}#{$rwd}"] {
     @include border-radius(px($radius));
   }
 }

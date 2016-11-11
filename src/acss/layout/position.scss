@@ -3,85 +3,80 @@
 @import "../base/util";
 @import "compass/css3/transform";
 
-@mixin build-position-layout-attribute($rwd) {
-  .l-dock {
-    position: relative;
+[acss-position] {
+  top: 0;
+  left: 0;
+}
 
-    > [acss#{$rwd}-position~="dock"] {
-      position: absolute !important;
-    }
+.l-dock {
+  position: relative;
+}
+
+@mixin build-position-layout-attribute($rwd) {
+  [acss-position~="dock#{$rwd}"] {
+    position: absolute !important;
   }
 
-  [acss#{$rwd}-position~="fixed"] {
+  [acss-position~="fixed#{$rwd}"] {
     position: fixed !important;
   }
 
-  [acss#{$rwd}-position~="offset"] {
+  [acss-position~="offset#{$rwd}"] {
     position: relative;
   }
 }
 
 @mixin build-position($rwd, $position) {
-  [acss#{$rwd}-position~="top=#{$position}"] {
+  [acss-position~="top=#{$position}#{$rwd}"] {
     top: px($position);
   }
 
-  [acss#{$rwd}-position~="right=#{$position}"] {
+  [acss-position~="right=#{$position}#{$rwd}"] {
     right: px($position);
   }
 
-  [acss#{$rwd}-position~="bottom=#{$position}"] {
+  [acss-position~="bottom=#{$position}#{$rwd}"] {
     bottom: px($position);
   }
 
-  [acss#{$rwd}-position~="left=#{$position}"] {
+  [acss-position~="left=#{$position}#{$rwd}"] {
     left: px($position);
   }
 }
 
 @mixin build-position-center($rwd) {
-  [acss#{$rwd}-position~="center-x"] {
+  [acss-position~="center-x#{$rwd}"] {
     left: 50%;
-    @include transform(translateX(-50%));
+    @include translateX(-50%);
   }
 
-  [acss#{$rwd}-position~="center-y"] {
+  [acss-position~="center-y#{$rwd}"] {
     top: 50%;
-    @include transform(translateY(-50%));
+    @include translateY(-50%);
   }
 
-  [acss#{$rwd}-position~="center"] {
+  [acss-position~="center#{$rwd}"] {
     left: 50%;
     top: 50%;
-    @include transform(translate(-50%, -50%));
+    @include translate(-50%, -50%);
   }
 }
 
 @mixin build-default-position-box($rwd) {
-  [acss#{$rwd}-position~="top"] {
+  [acss-position~="top#{$rwd}"] {
     top: 0;
   }
 
-  [acss#{$rwd}-position~="right"] {
+  [acss-position~="right#{$rwd}"] {
     right: 0;
   }
 
-  [acss#{$rwd}-position~="bottom"] {
+  [acss-position~="bottom#{$rwd}"] {
     bottom: 0;
   }
 
-  [acss#{$rwd}-position~="left"] {
+  [acss-position~="left#{$rwd}"] {
     left: 0;
-  }
-
-  [acss#{$rwd}-position~="top"]:not([acss#{$rwd}-position~="right="]):not([acss#{$rwd}-position~="center-x"]),
-  [acss#{$rwd}-position~="bottom"]:not([acss#{$rwd}-position~="right="]):not([acss#{$rwd}-position~="center-x"]) {
-    left: 0;
-  }
-
-  [acss#{$rwd}-position~="left"]:not([acss#{$rwd}-position~="bottom="]):not([acss#{$rwd}-position~="center-y"]),
-  [acss#{$rwd}-position~="right"]:not([acss#{$rwd}-position~="bottom="]):not([acss#{$rwd}-position~="center-y"]) {
-    top: 0;
   }
 }
 
