@@ -59,7 +59,9 @@
 
 @mixin build-divider-width($rwd, $width) {
   [acss-divider-width~="#{$width}#{$rwd}"] {
-    width: px($width);
+    > :before, > :after {
+      width: px($width);
+    }
   }
 }
 

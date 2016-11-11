@@ -51,9 +51,13 @@ $white-colors: (
         'white-o9': rgba(255, 255, 255, 0.9),
         'white': #fff);
 
-@mixin build-color-attributes($colors) {
-  @include cache-colors($colors);
+@mixin build-bg-color($color-name, $color) {
+  [acss-bg-color="#{$color-name}"] {
+    background-color: $color;
+  }
+}
 
+@mixin build-color-attributes($colors) {
   @each $color-name, $color in $colors {
     @include build-font-color($color-name, $color);
     @include build-placeholder-color($color-name, $color);
