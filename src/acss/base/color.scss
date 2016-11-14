@@ -1,6 +1,8 @@
+@import '_default';
 @import 'text-color';
 @import '../layout/flex/flex-divider-color';
 @import '../module/border';
+@import '../module/line';
 //@import '../module/table-divider-color';
 
 $cached-colors: ();
@@ -8,48 +10,6 @@ $cached-colors: ();
 @mixin cache-colors($colors) {
   $cached-colors: map-merge($cached-colors, $colors) !global;
 }
-
-$gray-colors: (
-        'gray-0': #000,
-        'gray-1': #111,
-        'gray-2': #222,
-        'gray-3': #333,
-        'gray-4': #444,
-        'gray-5': #555,
-        'gray-6': #666,
-        'gray-7': #777,
-        'gray-8': #888,
-        'gray-9': #999,
-        'gray-a': #aaa,
-        'gray-b': #bbb,
-        'gray-c': #ccc,
-        'gray-d': #ddd,
-        'gray-e': #eee,
-        'gray-f': #fff);
-
-$black-colors: (
-        'black-o1': rgba(0, 0, 0, 0.1),
-        'black-o2': rgba(0, 0, 0, 0.2),
-        'black-o3': rgba(0, 0, 0, 0.3),
-        'black-o4': rgba(0, 0, 0, 0.4),
-        'black-o5': rgba(0, 0, 0, 0.5),
-        'black-o6': rgba(0, 0, 0, 0.6),
-        'black-o7': rgba(0, 0, 0, 0.7),
-        'black-o8': rgba(0, 0, 0, 0.8),
-        'black-o9': rgba(0, 0, 0, 0.9),
-        'black': #000);
-
-$white-colors: (
-        'white-o1': rgba(255, 255, 255, 0.1),
-        'white-o2': rgba(255, 255, 255, 0.2),
-        'white-o3': rgba(255, 255, 255, 0.3),
-        'white-o4': rgba(255, 255, 255, 0.4),
-        'white-o5': rgba(255, 255, 255, 0.5),
-        'white-o6': rgba(255, 255, 255, 0.6),
-        'white-o7': rgba(255, 255, 255, 0.7),
-        'white-o8': rgba(255, 255, 255, 0.8),
-        'white-o9': rgba(255, 255, 255, 0.9),
-        'white': #fff);
 
 @mixin build-bg-color($color-name, $color) {
   [acss-bg-color="#{$color-name}"] {
@@ -64,6 +24,7 @@ $white-colors: (
     @include build-border-color($color-name, $color);
     @include build-divider-color($color-name, $color);
     @include build-bg-color($color-name, $color);
+    @include build-line-color($color-name, $color);
     //@include build-table-divider-color(unquote($color-name), $color);
   }
 }
@@ -78,7 +39,7 @@ $white-colors: (
   }
 }
 
-@include cache-colors(('transparent': transparent));
+@include cache-colors($transparent-color);
 @include cache-colors($gray-colors);
 @include cache-colors($black-colors);
 @include cache-colors($white-colors);

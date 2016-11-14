@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gap</title>
-    <link rel="stylesheet" href="../acss/stylesheets/acss.css">
+    <link rel="stylesheet" href="../acss/stylesheets/acss/acss.css">
 </head>
 <body>
 <style>
@@ -19,7 +19,14 @@
     }
 </style>
 
-<div class="container" acss-row acss-gap-x="10">
+<div class="container"
+     acss-xl-row
+     acss-lg-col
+     acss-md-row
+     acss-sm-col
+     acss-xs-row
+     acss-gap-x="30-xl 20-md 10-xs"
+     acss-gap-y="30-lg 10-sm">
     <div class="item">001</div>
     <div class="item">002</div>
     <div class="item">003</div>

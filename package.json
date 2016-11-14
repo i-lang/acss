@@ -1,13 +1,13 @@
 {
   "name": "acss",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Attributed CSS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "./build-sass.sh",
     "build": "./build-sass.sh",
-    "watch": "compass watch src/"
+    "watch": "compass watch src/acss"
   },
   "repository": {
     "type": "git",

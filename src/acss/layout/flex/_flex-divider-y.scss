@@ -1,5 +1,6 @@
 @import 'compass/css3';
 @import '../../base/util';
+@import '../../base/_default';
 
 @mixin divider-y-style {
   width: 100%;
@@ -36,8 +37,6 @@
 }
 
 @mixin build-divider-y-attribute($rwd) {
-  $min-divider-gap: 0;
-  $max-divider-gap: 100;
   $divider-gap: $min-divider-gap;
   @while ($divider-gap <= $max-divider-gap) {
     @include build-divider-y($rwd, $divider-gap);
@@ -65,8 +64,6 @@
 }
 
 @mixin build-divider-y-thickness-attribute($rwd) {
-  $min-divider-thickness: 0;
-  $max-divider-thickness: 10;
   $divider-thickness: $min-divider-thickness;
   @while ($divider-thickness <= $max-divider-thickness) {
     @include build-divider-y-thickness($rwd, $divider-thickness);

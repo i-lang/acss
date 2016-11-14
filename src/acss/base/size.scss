@@ -43,44 +43,42 @@
 
 @mixin build-full-screen-attributes($rwd) {
   [acss#{$rwd}-full-screen] {
-    .is-full-screen {
-      width: 100vw;
-      height: 100vh;
-    }
+    width: 100vw;
+    height: 100vh;
+  }
 
-    [acss#{$rwd}-full-screen-width] {
-      width: 100vw;
-    }
+  [acss#{$rwd}-full-screen-width] {
+    width: 100vw;
+  }
 
-    [acss#{$rwd}-full-screen-height] {
-      height: 100vh;
-    }
+  [acss#{$rwd}-full-screen-height] {
+    height: 100vh;
+  }
 
-    [acss#{$rwd}-full-min-screen] {
-      min-width: 100vw;
-      min-height: 100vh;
-    }
+  [acss#{$rwd}-full-min-screen] {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
 
-    [acss#{$rwd}-full-min-screen-width] {
-      min-width: 100vw;
-    }
+  [acss#{$rwd}-full-min-screen-width] {
+    min-width: 100vw;
+  }
 
-    [acss#{$rwd}-full-min-screen-height] {
-      min-height: 100vh;
-    }
+  [acss#{$rwd}-full-min-screen-height] {
+    min-height: 100vh;
+  }
 
-    [acss#{$rwd}-full-max-screen] {
-      max-width: 100vw;
-      max-height: 100vh;
-    }
+  [acss#{$rwd}-full-max-screen] {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
 
-    [acss#{$rwd}-full-max-screen-width] {
-      max-width: 100vw;
-    }
+  [acss#{$rwd}-full-max-screen-width] {
+    max-width: 100vw;
+  }
 
-    [acss#{$rwd}-full-max-screen-height] {
-      max-height: 100vh;
-    }
+  [acss#{$rwd}-full-max-screen-height] {
+    max-height: 100vh;
   }
 }
 
