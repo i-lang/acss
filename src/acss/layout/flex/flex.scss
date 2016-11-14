@@ -6,22 +6,22 @@
 @mixin build-flex-row-attribute($rwd) {
   [acss#{$rwd}-row] {
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
   }
 }
 
 @mixin build-flex-col-attribute($rwd) {
   [acss#{$rwd}-col] {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
   }
 }
 
 @mixin build-flex-center-attribute($rwd) {
   [acss#{$rwd}-center] {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }
 
