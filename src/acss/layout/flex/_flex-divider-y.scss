@@ -25,7 +25,7 @@
 }
 
 @mixin build-divider-y($rwd, $divider-gap) {
-  [acss-divider-y~="#{$divider-gap}#{$rwd}"] {
+  [acss-gap-y~="#{$divider-gap}#{$rwd}"][acss-divider-y] {
     > :before {
       top: px(-$divider-gap / 2);
     }
@@ -43,7 +43,7 @@
     $divider-gap: $divider-gap + 5;
   }
 
-  [acss-divider-y][acss-divider-y~="around#{$rwd}"] {
+  [acss-divider-y~="around#{$rwd}"] {
     > :first-child:before {
       content: '' !important;
     }
@@ -55,7 +55,7 @@
 }
 
 @mixin build-divider-y-thickness($rwd, $thickness) {
-  [acss-divider-y][acss-divider-thickness~="#{$thickness}#{$rwd}"] {
+  [acss-divider-y~="#{$thickness}#{$rwd}"] {
     > :before, > :after {
       height: px($thickness);
       @include translateY(px(round(-$thickness/2)));
