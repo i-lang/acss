@@ -12,6 +12,12 @@
   }
 }
 
+@mixin build-line-color($color-name, $color) {
+  [acss-line-color="#{$color-name}"] {
+    background-color: $color;
+  }
+}
+
 @mixin build-line-thickness-attribute($rwd) {
   [acss#{$rwd}-line-x] {
     width: 100%;
