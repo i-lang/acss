@@ -1,3 +1,4 @@
+@import '../../base/_default';
 @import 'compass/css3';
 @import '../../base/util';
 
@@ -36,8 +37,6 @@
 }
 
 @mixin build-divider-x-attribute($rwd) {
-  $min-divider-gap: 0;
-  $max-divider-gap: 100;
   $divider-gap: $min-divider-gap;
   @while ($divider-gap <= $max-divider-gap) {
     @include build-divider-x($rwd, $divider-gap);
@@ -66,8 +65,6 @@
 }
 
 @mixin build-divider-x-thickness-attribute($rwd) {
-  $min-divider-thickness: 0;
-  $max-divider-thickness: 10;
   $divider-thickness: $min-divider-thickness;
   @while ($divider-thickness <= $max-divider-thickness) {
     @include build-divider-x-thickness($rwd, $divider-thickness);

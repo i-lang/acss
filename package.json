@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "./build-sass.sh",
     "build": "./build-sass.sh",
-    "watch": "compass watch src/"
+    "watch": "compass watch src/acss"
   },
   "repository": {
     "type": "git",

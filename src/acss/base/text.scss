@@ -38,9 +38,7 @@
 }
 
 @mixin build-font-weight-attribute($rwd) {
-  $weights: (normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900);
-
-  @each $weight in $weights {
+  @each $weight in $font-weights {
     @include build-font-weight($rwd, $weight);
   }
 }
