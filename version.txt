@@ -1,5 +1,51 @@
+[v1.0.7]
+fix image extrude grid layout bug
+
+[v1.0.6]
+change [acss-divider-x], [acss-divider-x] value from gap to thickness
+add [acss-gap-x][acss-divider-x], [acss-gap-x][acss-divider-y]
+
+[v1.0.5]
+add [acss-line-color]
+remove [acss-position] default value
+fix [acss-full-screen]
+change [acss-row], [acss-col], [acss-center] weight to important
+
+[v1.0.4]
+fix flex divider
+
+[v1.0.3]
+fix [acss-bg-color]
+
+[v1.0.2]
+change .l-dock to [acss-dock]
+fix flex divider
+
+[v1.0.1]
+fix flex divider color
+
 [v1.0.0]
-...
+change .l-row to [acss-row]
+change .l-col to [acss-col]
+change .l-center to [acss-center]
+change .is-full-* to [acss-full-*]
+change [acss-pad="PAD_XxPAD_Y"] to [acss-pad="PAD_Y PAD_X"]
+change [acss-pad-x="PAD_LEFT-PAD_RIGHT] to [acss-pad-x="PAD_LEFT PAD_RIGHT"]
+change [acss-pad-y="PAD_TOP-PAD_BOTTOM] to [acss-pad-y="PAD_TOP PAD_BOTTOM"]
+change [acss-border] to [acss-border-width]
+change [acss-gutter-between] from 0 ~ 200 (step 5) to 0 ~ 100 (step 5)
+replace [acss-gutter-between] to [acss-gap-x], [acss-gap-y]
+support [acss-row], [acss-col], [acss-center] attribute-name type rwd
+add [acss-align-main], [acss-align-cross]
+replace [acss-align-child] to [acss-align-self]
+fix [acss-opacity] bug
+remove [acss-gutter-around]
+remove .acss-table
+change
+add attribute-value type rwd
+remove [acss-h-divider], [acss-v-divider]
+add [acss-divider-x], [acss-divider-y]
+
 
 [v0.5.3]
 fix [acss-grid-wrap-gutter] ghost margin
