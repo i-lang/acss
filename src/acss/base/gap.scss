@@ -1,7 +1,6 @@
 @import 'util';
 @import '../base/rwd-base';
 @import 'default';
-@import 'gap';
 
 @mixin build-gap-x($rwd, $gap) {
   [acss-gap-x~="#{$gap}#{$rwd}"] > *:not(:last-child) {
