@@ -6,6 +6,7 @@
   [acss-grid~="#{$grid}#{$rwd}"] {
     & > * {
       flex-basis: (100%/$grid);
+      max-width: (100%/$grid);
     }
   }
 }
@@ -13,6 +14,7 @@
 @mixin build-grid-gap-x($rwd, $grid, $gap) {
   [acss-grid~="#{$grid}#{$rwd}"][acss-gap-x~="#{$gap}#{$rwd}"] > * {
     flex-basis: calc(#{(100%/$grid)} - #{px($gap*($grid - 1)/$grid)});
+    max-width: calc(#{(100%/$grid)} - #{px($gap*($grid - 1)/$grid)});
   }
 }
 
@@ -71,6 +73,7 @@
 @include rwd-lg {
   @include build-grid-attributes($rwd-lg);
 }
+
 //
 @include rwd-md {
   @include build-grid-attributes($rwd-md);
