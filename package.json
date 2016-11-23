@@ -1,6 +1,6 @@
 {
   "name": "acss",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Attributed CSS",
   "main": "index.js",
   "scripts": {

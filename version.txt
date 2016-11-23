@@ -1,3 +1,6 @@
+[v1.0.8]
+fix infinite loop import
+
 [v1.0.7]
 fix image extrude grid layout bug
 
