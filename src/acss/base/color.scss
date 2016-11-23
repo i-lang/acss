@@ -32,7 +32,6 @@ $cached-colors: ();
 @function color($color-name) {
   $return-color: null;
   @each $cached-color-name, $color in $cached-colors {
-    @debug 'color-name', $cached-color-name, $color-name;
     @if $cached-color-name==$color-name {
       @return $color;
     }
