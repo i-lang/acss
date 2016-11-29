@@ -1,16 +1,16 @@
 {
-  "name": "acss",
+  "name": "ilang-acss",
   "authors": [
-    "KellyYang <housemeow@gmail.com>"
+    "KelllyYang <housemeow@gmail.com>"
   ],
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "Attributed CSS",
   "main": [
     "dist/css/acss.css"
   ],
   "moduleType": [],
   "license": "MIT",
-  "homepage": "https://bitbucket.org/two_dot/acss#readme",
+  "homepage": "https://github.com/i-lang/acss/blob/master/README.md",
   "ignore": [
     "node_modules",
     "bower_components",
