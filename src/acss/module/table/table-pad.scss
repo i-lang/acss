@@ -1,0 +1,33 @@
+@import '../../base/default';
+@import '../../base/rwd-base';
+@import '../../base/util';
+
+@mixin build-table-pad($rwd, $pad) {
+  &[acss-table-pad="#{$pad}"] {
+    th, td {
+      padding: px($pad);
+    }
+  }
+
+  &[acss-table-pad^="#{$pad} "] {
+    th, td {
+      padding-top: px($pad);
+      padding-bottom: px($pad);
+    }
+  }
+
+  &[acss-table-pad$=" #{$pad}"] {
+    th, td {
+      padding-left: px($pad);
+      padding-right: px($pad);
+    }
+  }
+}
+
+@mixin build-table-pad-attribute($rwd) {
+  $pad: $min-table-pad;
+  @while $pad <= $max-table-pad {
+    @include build-table-pad($rwd, $pad);
+    $pad: $pad + 5;
+  }
+}

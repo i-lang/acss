@@ -3,7 +3,7 @@
 @import '../layout/flex/flex-divider-color';
 @import '../module/border';
 @import '../module/line';
-//@import '../module/table-divider-color';
+@import '../module/table/table-divider-color';
 
 $cached-colors: ();
 
@@ -25,7 +25,7 @@ $cached-colors: ();
     @include build-divider-color($color-name, $color);
     @include build-bg-color($color-name, $color);
     @include build-line-color($color-name, $color);
-    //@include build-table-divider-color(unquote($color-name), $color);
+    @include build-table-divider-color(unquote($color-name), $color);
   }
 }
 
