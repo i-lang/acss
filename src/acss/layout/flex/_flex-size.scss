@@ -1,17 +1,19 @@
 @import '../../base/rwd-base';
 @import '../../base/default';
 
-[acss-row], [acss-col], [acss-center] {
-  &.no-shrink > * {
-    flex-shrink: 0;
-  }
+@mixin build-shrink-attributes($rwd) {
+  [acss#{$rwd}-row], [acss#{$rwd}-col], [acss#{$rwd}-grid] {
+    &.no-shrink > * {
+      flex-shrink: 0;
+    }
 
-  > .no-shrink {
-    flex-shrink: 0;
-  }
+    > .no-shrink {
+      flex-shrink: 0;
+    }
 
-  > .is-fill {
-    flex: 1;
+    > .is-fill {
+      flex: 1;
+    }
   }
 }
 
@@ -34,6 +36,8 @@
 }
 
 @mixin build-flex-size-attribute($rwd) {
+  @include build-shrink-attributes($rwd);
+
   $flex: $min-flex;
   @while $flex <= $max-flex {
     @include build-flex($rwd, $flex);
