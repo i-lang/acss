@@ -1,3 +1,6 @@
+[v1.2.3]
+fix .no-shrink, .is-fill rwd
+
 [v1.1.2]
 support .no-shrink, .is-fill rwd
 
