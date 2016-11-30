@@ -1,0 +1,27 @@
+@mixin build-table-align-x($rwd, $attributeValue, $propertyValue) {
+  &[acss#{$rwd}-align-x="#{$attributeValue}"] {
+    th, td {
+      text-align: $propertyValue;
+    }
+  }
+}
+
+@mixin build-table-align-x-attribute($rwd) {
+  @include build-table-align-x($rwd, left, left);
+  @include build-table-align-x($rwd, center, center);
+  @include build-table-align-x($rwd, right, right);
+}
+
+@mixin build-table-align-y($rwd, $attributeValue, $propertyValue) {
+  &[acss#{$rwd}-align-y="#{$attributeValue}"] {
+    th, td {
+      vertical-align: $propertyValue;
+    }
+  }
+}
+
+@mixin build-table-align-y-attribute($rwd) {
+  @include build-table-align-y($rwd, top, top);
+  @include build-table-align-y($rwd, center, middle);
+  @include build-table-align-y($rwd, bottom, bottom);
+}

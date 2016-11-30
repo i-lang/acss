@@ -1,0 +1,21 @@
+@import '../../base/util';
+
+@mixin build-column-weight($rwd, $weight) {
+  th[acss-column-weight="#{$weight}"] ,td[acss-column-weight="#{$weight}"] {
+    width: pct($weight);
+  }
+}
+
+@mixin build-table-size-attributes($rwd) {
+  &.is-weighted {
+    table-layout: fixed;
+  }
+
+  $min-table-weight: 0;
+  $max-table-weight: 12;
+  $weight: $min-table-weight;
+  @while $weight <= $max-table-weight {
+    @include build-column-weight($rwd, $weight);
+    $weight: $weight + 1;
+  }
+}
