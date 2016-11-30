@@ -2,12 +2,20 @@
 @import '../base/util';
 @import '../base/default';
 
+[acss-line-x] {
+  width: 100%;
+}
+
+[acss-line-y] {
+  height: 100%;
+}
+
 @mixin build-line-thickness($rwd, $thickness) {
-  [acss#{$rwd}-line-x][acss-line-thickness="#{$thickness}"] {
+  [acss-line-x~="#{$thickness}#{$rwd}"] {
     height: px($thickness);
   }
 
-  [acss#{$rwd}-line-y][acss-line-thickness="#{$thickness}"] {
+  [acss-line-y~="#{$thickness}#{$rwd}"] {
     width: px($thickness);
   }
 }
@@ -19,14 +27,6 @@
 }
 
 @mixin build-line-thickness-attribute($rwd) {
-  [acss#{$rwd}-line-x] {
-    width: 100%;
-  }
-
-  [acss#{$rwd}-line-y] {
-    height: 100%;
-  }
-
   $thickness: $line-thickness-min;
   @while $thickness <= $line-thickness-max {
     @include build-line-thickness($rwd, $thickness);
