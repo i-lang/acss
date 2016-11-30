@@ -19,7 +19,7 @@ $cached-colors: ();
 
 @mixin build-color-attributes($colors) {
   @each $color-name, $color in $colors {
-    @include build-font-color($color-name, $color);
+    @include build-color($color-name, $color);
     @include build-placeholder-color($color-name, $color);
     @include build-border-color($color-name, $color);
     @include build-divider-color($color-name, $color);
