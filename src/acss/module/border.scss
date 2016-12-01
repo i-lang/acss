@@ -3,7 +3,7 @@
 @import '../base/rwd-base';
 
 @mixin build-border-width($rwd, $width) {
-  [acss-border-width="#{$width}#{$rwd}"] {
+  [acss-border-width~="#{$width}#{$rwd}"] {
     border-width: px($width);
   }
 }
