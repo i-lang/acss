@@ -1,5 +1,8 @@
+[v1.1.6]
+fix [acss-border-width] rwd
+
 [v1.1.5]
-support [acss-border] rwd
+support [acss-border-width] rwd
 
 [v1.1.4]
 support [acss-line] rwd
