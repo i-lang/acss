@@ -3,7 +3,7 @@
   "authors": [
     "KelllyYang <housemeow@gmail.com>"
   ],
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Attributed CSS",
   "main": [
     "dist/css/reset.css",

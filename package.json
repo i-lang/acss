@@ -1,6 +1,6 @@
 {
   "name": "ilang-acss",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Attributed CSS",
   "main": "index.js",
   "scripts": {
