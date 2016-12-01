@@ -1,16 +1,17 @@
 @import '../base/default';
 @import '../base/util';
+@import '../base/rwd-base';
 
-@mixin build-border-width($width) {
-  [acss-border-width="#{$width}"] {
+@mixin build-border-width($rwd, $width) {
+  [acss-border-width="#{$width}#{$rwd}"] {
     border-width: px($width);
   }
 }
 
-@mixin build-border-width-attribute {
+@mixin build-border-width-attribute($rwd) {
   $border-width: $border-width-min;
   @while $border-width <= $border-width-max {
-    @include build-border-width($border-width);
+    @include build-border-width($rwd, $border-width);
     $border-width: $border-width + 1;
   }
 }
@@ -26,7 +27,29 @@
     border-style: solid;
   }
 
-  @include build-border-width-attribute;
+  @include rwd {
+    @include build-border-width-attribute($rwd);
+  }
+
+  @include rwd-xl {
+    @include build-border-width-attribute($rwd-xl);
+  }
+
+  @include rwd-lg {
+    @include build-border-width-attribute($rwd-lg);
+  }
+
+  @include rwd-md {
+    @include build-border-width-attribute($rwd-md);
+  }
+
+  @include rwd-sm {
+    @include build-border-width-attribute($rwd-sm);
+  }
+
+  @include rwd-xs {
+    @include build-border-width-attribute($rwd-xs);
+  }
 }
 
 @include build-border-attribute;
