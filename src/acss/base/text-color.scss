@@ -1,4 +1,4 @@
-@import 'compass/css3/user-interface';
+@import 'mixins';
 
 @mixin build-color($color-name, $color) {
   [acss-color="#{$color-name}"] {

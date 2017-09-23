@@ -1,4 +1,4 @@
-@import 'compass/css3/border-radius';
+@import '../base/mixins';
 
 .acss-circle {
   @include border-radius(100%);
