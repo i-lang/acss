@@ -2,7 +2,7 @@
 @import 'flex-align-cross';
 @import 'flex-align-main';
 @import 'flex-align-self';
-@import 'flex-align-wrap';
+@import 'flex-align-content';
 @import 'flex-align-x';
 @import 'flex-align-y';
 
@@ -12,5 +12,5 @@
   @include build-flex-align-self-attributes($rwd);
   @include build-flex-align-main-attributes($rwd);
   @include build-flex-align-cross-attributes($rwd);
-  @include build-flex-align-wrap-attributes($rwd);
+  @include build-flex-align-content-attributes($rwd);
 }
