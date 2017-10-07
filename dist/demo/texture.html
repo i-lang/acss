@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEXTURE EXAMPLES</title>
+	<link rel="stylesheet" href="../css/acss.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<style>
+		.texture {
+			background-color: #fbb;
+		}
+
+		.element {
+			height: 200px;
+			background-color: #7fa;
+		}
+	</style>
+</head>
+<body>
+<div acss-col acss-align-x="center">
+	<h1 acss-font-size="40">TEXTURE</h1>
+	<div class="container" acss-col acss-gap-y="100">
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-texture]</h1>
+				<p>acss-texture can set background-image position, mapping.</p>
+				<div acss-grid="3" acss-gap-x="30" acss-gap-y="20">
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">NORMAL</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-texture][acss-texture-position]</h1>
+				<div acss-grid="3" acss-gap-x="30" acss-gap-y="20">
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="top left">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">top left</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="top">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">top</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="top right">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">top right</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="center left">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">center left</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="center">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">center</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="bottom right">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">bottom right</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="bottom left">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">bottom left</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="bottom">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">bottom</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black"
+						style="background-image: url('images/lovely.jpg');" acss-texture-position="bottom right">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">bottom right</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-texture][acss-texture-mapping]</h1>
+				<div acss-grid="3" acss-gap-x="30" acss-gap-y="20">
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black" acss-texture-mapping="width"
+						style="background-image: url('images/lovely.jpg');">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">width</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black" acss-texture-mapping="height"
+						style="background-image: url('images/lovely.jpg');">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">height</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black" acss-texture-mapping="cover"
+						style="background-image: url('images/lovely.jpg');">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">cover</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black" acss-texture-mapping="contain"
+						style="background-image: url('images/lovely.jpg');">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">contain</span>
+					</div>
+					<div class="element" acss-center acss-texture acss-border-width="1" acss-border-color="black" acss-texture-mapping="full-size"
+						style="background-image: url('images/lovely.jpg');">
+						<span acss-color="white" acss-font-size="30" acss-font-weight="bold">full-size</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

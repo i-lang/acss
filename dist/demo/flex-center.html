@@ -2,34 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>CIRCLE EXAMPLES</title>
+	<title>FLEX-MAIN-CROSS-WRAP EXAMPLES</title>
 	<link rel="stylesheet" href="../css/acss.css">
 	<link rel="stylesheet" href="../css/reset.css">
 	<link rel="stylesheet" href="css/demo.css">
 	<style>
-		.circle-element {
-			width: 100px;
-			height: 100px;
-			background-color: #7fa;
+		.element-container {
+			width: 450px;
+			height: 300px;
+			background-color: #fbb;
 		}
-
-		.ellipse-element {
-			width: 200px;
-			height: 100px;
+		.element {
+			width: 100px;
+			height: 200px;
 			background-color: #7fa;
 		}
 	</style>
 </head>
 <body>
 <div acss-col acss-align-x="center">
-	<h1 acss-font-size="40">CIRCLE</h1>
+	<h1 acss-font-size="40">FLEX-MAIN-CROSS-WRAP</h1>
 	<div class="container" acss-col acss-gap-y="100">
 		<div class="examples" acss-col acss-gap-y="30">
 			<div class="example" acss-col acss-gap-y="5">
-				<h1>[acss-circle]</h1>
-				<div acss-row acss-gap-x="10">
-					<div class="circle-element" acss-center acss-circle acss-border-width="1" acss-bordr-color="black">CIRCLE</div>
-					<div class="ellipse-element" acss-center acss-circle acss-border-width="1" acss-bordr-color="black">ELLIPSE</div>
+				<h1>[acss-center]</h1>
+				<div class="element-container" acss-center acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
 				</div>
 			</div>
 		</div>

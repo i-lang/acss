@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BASE EXAMPLES</title>
+	<link rel="stylesheet" href="../css/acss.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<style>
+		.pointer-container {
+			background-color: #fbb;
+			width: 250px;
+			height: 250px;
+		}
+	</style>
+</head>
+<body>
+<div acss-col acss-align-x="center">
+	<h1 acss-font-size="40">BASE</h1>
+	<div class="container" acss-col acss-gap-y="100">
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>.is-pointer</h1>
+				<div class="is-pointer pointer-container" acss-center>
+					<span>HOVER ME</span>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>.is-underline</h1>
+				<div>
+					<span class="is-underline">THIS IS UNDERLINE</span>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>.no-select</h1>
+				<div>
+					<span class="no-select">CANNOT SELECT THIS TEXT</span>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>.no-resize</h1>
+				<div>
+					<textarea class="">NORMAL TEXTAREA</textarea>
+					<textarea class="no-resize">FIXED TEXTAREA</textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

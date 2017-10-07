@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SIZE-SCREEN EXAMPLES</title>
+	<link rel="stylesheet" href="../css/acss.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<style>
+		.element {
+			background-color: #fbb;
+		}
+
+		.full-size-container {
+			width: 750px;
+			height: 150px;
+		}
+
+		.full-min-size-container,.full-max-size-container {
+			width: 150px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+<div acss-col>
+	<h1 acss-font-size="40">SIZE-SCREEN</h1>
+	<p>Use those screen size attributes may cause horizontal scrollbar to appear.</p>
+	<div class="examples" acss-col acss-gap-y="30">
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-screen]</h1>
+			<div id="full-screen" class="element" acss-center acss-full-screen acss-border-color="black" acss-border-width="1">
+				<a href="#full-screen" class="is-underline">CLICK ME</a>
+			</div>
+		</div>
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-screen-width]</h1>
+			<div id="full-screen-width" class="element" acss-center acss-full-screen-width acss-border-color="black" acss-border-width="1">
+				<a href="#full-screen-width" class="is-underline">CLICK ME</a>
+			</div>
+		</div>
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-screen-height]</h1>
+			<div id="full-screen-height" class="element" acss-center acss-full-screen-height acss-border-color="black" acss-border-width="1">
+				<a href="#full-screen-height" class="is-underline">CLICK ME</a>
+			</div>
+		</div>
+		
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-min-screen]</h1>
+			<div id="full-min-screen" class="element" acss-col acss-align-x="center" acss-full-min-screen acss-border-color="black" acss-border-width="1">
+				<a href="#full-min-screen" class="is-underline">CLICK ME</a>
+				<p>THE ELEMENT WILL GROW UP WHEN CONTENT IS OVERFLOW SCREEN.</p>
+			</div>
+		</div>
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-min-screen-width]</h1>
+			<div id="full-min-screen-width" class="element" acss-center acss-full-min-screen-width acss-border-color="black" acss-border-width="1">
+				<a href="#full-min-screen-width" class="is-underline">CLICK ME</a>
+			</div>
+		</div>
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-min-screen-height]</h1>
+			<div id="full-min-screen-height" class="element" acss-col acss-align-x="center" acss-full-min-screen-height acss-border-color="black" acss-border-width="1">
+				<a href="#full-min-screen-height" class="is-underline">CLICK ME</a>
+				<p>IF THERE ARE SOME TEXT OVER SCREEN, THE ELEMENT WILL GROW UP AUTOMATICLY. BUT FULL-SCREEN-HEIGHT WON'T.<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br>
+					LIKE THIS<br></p>
+			</div>
+		</div>
+
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-max-screen]</h1>
+			<div id="full-max-screen" class="element" acss-center acss-full-max-screen acss-border-color="black" acss-border-width="1">
+				<a href="#full-max-screen" class="is-underline">CLICK ME</a>
+			</div>
+		</div>
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-max-screen-width]</h1>
+			<div id="full-max-screen-width" class="element" acss-center acss-full-max-screen-width acss-border-color="black" acss-border-width="1">
+				<a href="#full-max-screen-width" class="is-underline">CLICK ME</a>
+			</div>
+		</div>
+		<div class="example" acss-col acss-gap-y="5">
+			<h1>[acss-full-max-screen-height]</h1>
+			<div id="full-max-screen-height" class="element" acss-center acss-full-max-screen-height acss-border-color="black" acss-border-width="1">
+				<a href="#full-max-screen-height" class="is-underline">CLICK ME</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

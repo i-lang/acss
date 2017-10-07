@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FLEX-MAIN-CROSS-WRAP EXAMPLES</title>
+	<link rel="stylesheet" href="../css/acss.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<style>
+		.row-container {
+			background-color: #fbb;
+		}
+		.col-container {
+			height: 300px;
+			background-color: #fbb;
+		}
+		.wrap-container {
+			width: 300px;
+			height: 300px;
+			background-color: #fbb;
+		}
+		.element {
+			background-color: #7fa;
+		}
+	</style>
+</head>
+<body>
+<div acss-col acss-align-x="center">
+	<h1 acss-font-size="40">FLEX-MAIN-CROSS-WRAP</h1>
+	<div class="container" acss-col acss-gap-y="100">
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-align-main="start"]</h1>
+				<p>This container is acss-row. acss-row will arrange elements left when align-main="start".</p>
+				<div class="row-container" acss-row acss-align-main="start" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-row][acss-align-main="center"]</h1>
+				<div class="row-container" acss-row acss-align-main="center" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-row][acss-align-main="end"]</h1>
+				<p>This container is acss-row. acss-row will arrange elements right when align-main="end".</p>
+				<div class="row-container" acss-row acss-align-main="end" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-row][acss-align-main="between"]</h1>
+				<div class="row-container" acss-row acss-align-main="between" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-row][acss-align-main="around"]</h1>
+				<div class="row-container" acss-row acss-align-main="around" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+		</div>
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-align-main="start"]</h1>
+				<p>This container is acss-col. acss-col will arrange elements top when align-main="start".</p>
+				<div class="col-container" acss-col acss-align-main="start" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-col][acss-align-main="center"]</h1>
+				<div class="col-container" acss-col acss-align-main="center" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-col][acss-align-main="end"]</h1>
+				<p>This container is acss-col. acss-col will arrange elements bottom when align-main="end".</p>
+				<div class="col-container" acss-col acss-align-main="end" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-col][acss-align-main="between"]</h1>
+				<div class="col-container" acss-col acss-align-main="between" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-col][acss-align-main="around"]</h1>
+				<div class="col-container" acss-col acss-align-main="around" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-align-content="top"]</h1>
+				<p>* If you use align-content property, the container will be set flex-wrap:wrap automatic.</p>
+				<div class="wrap-container" acss-row acss-align-content="top" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-align-content="center"]</h1>
+				<div class="wrap-container" acss-row acss-align-content="center" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-align-content="bottom"]</h1>
+				<p>* If you use align-content property, the container will be set flex-wrap:wrap automatic.</p>
+				<div class="wrap-container" acss-row acss-align-content="bottom" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-align-content="between"]</h1>
+				<p>* If you use align-content property, the container will be set flex-wrap:wrap automatic.</p>
+				<div class="wrap-container" acss-row acss-align-content="between" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-align-content="around"]</h1>
+				<p>* If you use align-content property, the container will be set flex-wrap:wrap automatic.</p>
+				<div class="wrap-container" acss-row acss-align-content="around" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-align-content="stretch"]</h1>
+				<p>* If you use align-content property, the container will be set flex-wrap:wrap automatic.</p>
+				<div class="wrap-container" acss-row acss-align-content="stretch" acss-border-color="black" acss-border-width="1"
+					acss-line-height="1">
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+					<div class="element" acss-border-color="black" acss-border-width="1">ELEMENT</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

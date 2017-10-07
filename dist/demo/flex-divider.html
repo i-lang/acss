@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FLEX-DIVIDER EXAMPLES</title>
+	<link rel="stylesheet" href="../css/acss.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<style>
+		.row-container, .col-container {
+			background-color: #fbb;
+		}
+
+		.row-container {
+			height: 150px;
+		}
+
+		.col-container {
+			/*height*/
+		}
+	</style>
+</head>
+<body>
+<div acss-col acss-align-x="center">
+	<h1 acss-font-size="40">FLEX-DIVIDER</h1>
+	<div class="container" acss-col acss-gap-y="100">
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1"][acss-divider-color="black"][acss-gap-x="0"]</h1>
+				<p>acss-divider use :before, :after pseduo element to display divider line.</p>
+				<div class="row-container" acss-row acss-divider-x="1" acss-divider-color="black" acss-gap-x="0" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1"][acss-divider-color="black"][acss-gap-x="5"]</h1>
+				<div class="row-container" acss-row acss-divider-x="1" acss-divider-color="black" acss-gap-x="5" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1"][acss-divider-color="black"][acss-gap-x="95"]</h1>
+				<div class="row-container" acss-row acss-divider-x="1" acss-divider-color="black" acss-gap-x="95" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1"][acss-divider-color="black"][acss-gap-x="100"]</h1>
+				<div class="row-container" acss-row acss-divider-x="1" acss-divider-color="black" acss-gap-x="100" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1"][acss-divider-color="black"][acss-gap-y="0"]</h1>
+				<div class="col-container" acss-col acss-divider-y="1" acss-divider-color="black" acss-gap-y="0" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1"][acss-divider-color="black"][acss-gap-y="5"]</h1>
+				<div class="col-container" acss-col acss-divider-y="1" acss-divider-color="black" acss-gap-y="5" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1"][acss-divider-color="black"][acss-gap-y="95"]</h1>
+				<div class="col-container" acss-col acss-divider-y="1" acss-divider-color="black" acss-gap-y="95" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1"][acss-divider-color="black"][acss-gap-y="100"]</h1>
+				<div class="col-container" acss-col acss-divider-y="1" acss-divider-color="black" acss-gap-y="100" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1 around"][acss-divider-color="black"][acss-gap-x="0"]</h1>
+				<p>If you set acss-divider around, you should add padding value as half gap value</p>
+				<div class="row-container" acss-row acss-divider-x="1 around" acss-divider-color="black" acss-gap-x="0" acss-pad-x="0" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1 around"][acss-divider-color="black"][acss-gap-x="5"][acss-pad-x="5"]</h1>
+				<div class="row-container" acss-row acss-divider-x="1 around" acss-divider-color="black" acss-gap-x="5" acss-pad-x="5" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1 around"][acss-divider-color="black"][acss-gap-x="95"][acss-pad-x="50"]</h1>
+				<div class="row-container" acss-row acss-divider-x="1 around" acss-divider-color="black" acss-gap-x="95" acss-pad-x="50" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-row][acss-divider-x="1 around"][acss-divider-color="black"][acss-gap-x="100"][acss-pad-x="50"]</h1>
+				<div class="row-container" acss-row acss-divider-x="1 around" acss-divider-color="black" acss-gap-x="100" acss-pad-x="50" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1 around"][acss-divider-color="black"][acss-gap-y="0"]</h1>
+				<p>If you set acss-divider around, you should add padding value as half gap value</p>
+				<div class="col-container" acss-col acss-divider-y="1 around" acss-divider-color="black" acss-gap-y="0" acss-pad-x="0" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1 around"][acss-divider-color="black"][acss-gap-y="5"][acss-pad-y="5"]</h1>
+				<div class="col-container" acss-col acss-divider-y="1 around" acss-divider-color="black" acss-gap-y="5" acss-pad-y="5" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1 around"][acss-divider-color="black"][acss-gap-y="95"][acss-pad-y="50"]</h1>
+				<div class="col-container" acss-col acss-divider-y="1 around" acss-divider-color="black" acss-gap-y="95" acss-pad-y="50" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-col][acss-divider-y="1 around"][acss-divider-color="black"][acss-gap-y="100"][acss-pad-y="50"]</h1>
+				<div class="col-container" acss-col acss-divider-y="1 around" acss-divider-color="black" acss-gap-y="100" acss-pad-y="50" acss-align-y="center">
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+					<div class="element">Element</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

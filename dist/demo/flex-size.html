@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FLEX-SIZE EXAMPLES</title>
+	<link rel="stylesheet" href="../css/acss.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<style>
+		.row-container, .col-container {
+			background-color: #fbb;
+		}
+
+		.row-container {
+			/*width: 300px;*/
+		}
+
+		.col-container {
+			/*height*/
+		}
+	</style>
+</head>
+<body>
+<div acss-col acss-align-x="center">
+	<h1 acss-font-size="40">FLEX-SIZE</h1>
+	<div class="container" acss-col acss-gap-y="100">
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>.no-shrink</h1>
+				<p>.no-shrink is a container property, it will make children no wrap.</p>
+				<div class="row-container no-shrink" acss-row>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT A is called Alice</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT B is called Bob</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT C is called Charlie</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT D is called David</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT E is called Eric</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT F is called Frank</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>Without .no-shrink</h1>
+				<p>Without .no-shrink, if width of elements over parent width, flex system will calcaluate each element a new width for.</p>
+				<div class="row-container" acss-row>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT A is called Alice</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT B is called Bob</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT C is called Charlie</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT D is called David</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT E is called Eric</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT F is called Frank</div>
+				</div>
+			</div>
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>.no-self-shrink</h1>
+				<p>You can set specific element no shrink with .no-self-shrink</p>
+				<div class="row-container" acss-row>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT A is called Alice</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT B is called Bob</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT C is called Charlie</div>
+					<div class="element no-self-shrink" acss-border-width="1" acss-border-color="black">NOBODY CAN SHRINK ME!</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT E is called Eric</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT F is called Frank</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>.is-fill</h1>
+				<p>This is very useful if you want a element fill the remain space of container</p>
+				<div class="row-container no-shrink" acss-row>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex="1">FILL ALL SPACE</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT A</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT B</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT C</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT D</div>
+					<div class="element" acss-border-width="1" acss-border-color="black">ELEMENT E</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-flex]</h1>
+				<p>You can use this attribute to set width weight of each elements. If you want to learn more, read <a class="is-underline" href="https://github.com/xieranmaya/blog/issues/9">THIS</a></p>
+				<div class="row-container" acss-row>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex="1">[acss-flex="1"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex="2">[acss-flex="2"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex="3">[acss-flex="3"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex="4">[acss-flex="4"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex="5">[acss-flex="5"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex="6">[acss-flex="6"]</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-flex-grow]</h1>
+				<div class="row-container" acss-row>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-grow="1">[acss-flex-grow="1"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-grow="2">[acss-flex-grow="2"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-grow="3">[acss-flex-grow="3"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-grow="4">[acss-flex-grow="4"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-grow="5">[acss-flex-grow="5"]</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-grow="6">[acss-flex-grow="6"]</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-flex-shrink]</h1>
+				<div class="row-container" acss-row>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-shrink="1">[acss-flex-shrink="1"] ELEMENT</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-shrink="2">[acss-flex-shrink="2"] ELEMENT</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-shrink="3">[acss-flex-shrink="3"] ELEMENT</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-shrink="4">[acss-flex-shrink="4"] ELEMENT</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-shrink="5">[acss-flex-shrink="5"] ELEMENT</div>
+					<div class="element" acss-border-width="1" acss-border-color="black" acss-flex-shrink="6">[acss-flex-shrink="6"] ELEMENT</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
