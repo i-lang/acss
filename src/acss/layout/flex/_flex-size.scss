@@ -2,46 +2,16 @@
 @import '../../base/default';
 
 @mixin build-shrink-attributes($rwd) {
-  [acss#{$rwd}-row], [acss#{$rwd}-col], [acss#{$rwd}-grid] {
-    &.no#{$rwd}-shrink > * {
-      flex-shrink: 0;
-    }
-
-    > .no#{$rwd}-shrink {
-      flex-shrink: 0;
-    }
-
-    > .is#{$rwd}-fill {
-      flex: 1;
-    }
+  .no#{$rwd}-shrink > * {
+    flex-shrink: 0;
   }
 
-  [acss#{$rwd}-row], [acss#{$rwd}-col], [acss#{$rwd}-grid] {
-    &.no-shrink > * {
-      flex-shrink: 0;
-    }
-
-    > .no-shrink {
-      flex-shrink: 0;
-    }
-
-    > .is-fill {
-      flex: 1;
-    }
+  .no#{$rwd}-self-shrink {
+    flex-shrink: 0;
   }
 
-  [acss-row], [acss-col], [acss-grid] {
-    &.no#{$rwd}-shrink > * {
-      flex-shrink: 0;
-    }
-
-    > .no#{$rwd}-shrink {
-      flex-shrink: 0;
-    }
-
-    > .is#{$rwd}-fill {
-      flex: 1;
-    }
+  .is#{$rwd}-fill {
+    flex: 1;
   }
 }
 
