@@ -37,8 +37,8 @@
 }
 
 @mixin build-divider-x-attribute($rwd) {
-  $divider-gap: $min-divider-gap;
-  @while ($divider-gap <= $max-divider-gap) {
+  $divider-gap: $min-gap;
+  @while ($divider-gap <= $max-gap) {
     @include build-divider-x($rwd, $divider-gap);
     $divider-gap: $divider-gap + 5;
   }
