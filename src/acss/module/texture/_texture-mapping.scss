@@ -1,7 +1,7 @@
 @import "../../base/rwd";
 
 @mixin build-texture-mapping-attributes($rwd) {
-  .acss-texture {
+  [acss-texture] {
     &[acss#{$rwd}-texture-mapping="width"] {
       background-size: 100% auto;
     }

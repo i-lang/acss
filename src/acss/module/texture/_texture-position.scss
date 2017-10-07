@@ -1,7 +1,7 @@
 @import "../../base/rwd";
 
 @mixin build-texture-position-attributes($rwd) {
-  .acss-texture {
+  [acss-texture] {
     &[acss#{$rwd}-texture-position="center"] {
       background-position: center;
     }
