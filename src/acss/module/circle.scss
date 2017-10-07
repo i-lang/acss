@@ -1,6 +1,6 @@
 @import '../base/mixins';
 
-.acss-circle {
+[acss-circle] {
   @include border-radius(100%);
   overflow: hidden;
 }
