@@ -1,5 +1,5 @@
 @import "../base/rwd-base";
-@import "compass/css3";
+@import "../base/mixins";
 
 @mixin build-translate-attribute($rwd) {
   [acss-translate~="half#{$rwd}"] {

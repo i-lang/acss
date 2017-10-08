@@ -1,0 +1,51 @@
+@mixin box-sizing($box-sizing: border-box) {
+	-moz-box-sizing: $box-sizing;
+	-webkit-box-sizing: $box-sizing;
+	box-sizing: $box-sizing;
+}
+
+@mixin input-placeholder() {
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+@mixin user-select($select) {
+	-moz-user-select: if($select =="none", -moz-none, $select);
+	-webkit-user-select: $select;
+	-ms-user-select: $select;
+	user-select: $select;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin translate($x, $y) {
+	-webkit-transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
+
+@mixin translateX($x) {
+	-webkit-transform: translateX($x);
+	-ms-transform: translateX($x);
+	transform: translateX($x);
+}
+
+@mixin translateY($y) {
+	-webkit-transform: translateY($y);
+	-ms-transform: translateY($y);
+	transform: translateY($y);
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SIZE EXAMPLES</title>
+	<link rel="stylesheet" href="../css/acss.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<style>
+		.element {
+			background-color: #fbb;
+		}
+
+		.full-size-container {
+			width: 750px;
+			height: 150px;
+		}
+
+		.full-min-size-container,.full-max-size-container {
+			width: 150px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+<div acss-col acss-align-x="center">
+	<h1 acss-font-size="40">SIZE</h1>
+	<div class="container" acss-col acss-gap-y="100">
+		<div class="examples" acss-col acss-gap-y="30">
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-size]</h1>
+				<div class="full-size-container" acss-border-width="1" acss-border-color="gray-7">
+					<div class="element" acss-center
+						acss-full-size
+						acss-border-color="black" acss-border-width="1">MATCH PARENT</div>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-width]</h1>
+				<div class="full-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+					<span class="element"
+						style="display: inline-block;"
+						acss-border-color="black" acss-border-width="1">NORMAL INLINE-BLOCK</span>
+					<span class="element" acss-position="dock bottom left" acss-border-color="black"
+						acss-border-width="1" acss-full-width
+						style="display: inline-block;">INLINE-BLOCK MATCH PARENT WIDTH</span>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-height]</h1>
+				<div class="full-size-container" acss-border-width="1" acss-border-color="gray-7">
+					<span class="element" acss-border-color="black"
+						acss-border-width="1" acss-full-height
+						style="display: inline-block;">INLINE-BLOCK MATCH PARENT HEIGHT</span>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-min-size]</h1>
+				<div acss-row acss-gap-x="5">
+					<div class="full-min-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-min-size
+							style="display: inline-block;">MATCH PARENT SIZE</span>
+					</div>
+					<div class="full-min-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-min-size
+							style="display: inline-block;">THE ELEMENT'S TEXT WILL OVERFLOW THE CONTAINER IF THE TEXT IS SMALLER THEN TEXT AREA SIZE</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-min-width]</h1>
+				<div acss-row acss-gap-x="5">
+					<div class="full-min-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-min-width
+							style="display: inline-block;">MATCH PARENT SIZE</span>
+					</div>
+					<div class="full-min-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-min-width
+							style="display: inline-block;">THE ELEMENT'S TEXT WILL OVERFLOW THE CONTAINER IF THE TEXT IS SMALLER THEN TEXT AREA SIZE</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-min-height]</h1>
+				<div acss-row acss-gap-x="5">
+					<div class="full-min-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-min-height
+							style="display: inline-block;">MATCH PARENT SIZE</span>
+					</div>
+					<div class="full-min-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-min-height
+							style="display: inline-block;">THE ELEMENT'S TEXT WILL OVERFLOW THE CONTAINER IF THE TEXT IS SMALLER THEN TEXT AREA SIZE</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-max-size]</h1>
+				<div acss-row acss-gap-x="5">
+					<div class="full-max-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-max-size
+							style="display: inline-block;">MATCH PARENT SIZE</span>
+					</div>
+					<div class="full-max-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-max-size
+							style="display: inline-block;">THE ELEMENT'S TEXT WILL OVERFLOW THE CONTAINER IF THE TEXT IS SMALLER THEN TEXT AREA SIZE</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-max-width]</h1>
+				<div acss-row acss-gap-x="5">
+					<div class="full-max-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-max-width
+							style="display: inline-block;">MATCH PARENT SIZE</span>
+					</div>
+					<div class="full-max-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-max-width
+							style="display: inline-block;">THE ELEMENT'S TEXT WILL OVERFLOW THE CONTAINER IF THE TEXT IS SMALLER THEN TEXT AREA SIZE</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="example" acss-col acss-gap-y="5">
+				<h1>[acss-full-max-height]</h1>
+				<div acss-row acss-gap-x="5">
+					<div class="full-max-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-max-height
+							style="display: inline-block;">MATCH PARENT SIZE</span>
+					</div>
+					<div class="full-max-size-container" acss-border-width="1" acss-border-color="gray-7" acss-dock>
+						<span class="element" acss-position="dock bottom left" acss-border-color="black"
+							acss-border-width="1" acss-full-max-height
+							style="display: inline-block;">THE ELEMENT'S TEXT WILL OVERFLOW THE CONTAINER IF THE TEXT IS SMALLER THEN TEXT AREA SIZE</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

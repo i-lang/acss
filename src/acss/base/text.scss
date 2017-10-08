@@ -67,6 +67,20 @@
   }
 }
 
+@mixin build-font-style($rwd, $style) {
+  [acss-font-style="#{$style}#{$rwd}"] {
+    font-style: $style;
+  }
+}
+
+@mixin build-font-style-attribute($rwd) {
+  $styles: (normal, italic, oblique);
+
+  @each $style in $styles {
+    @include build-font-style($rwd, $style);
+  }
+}
+
 @mixin build-text-attributes($rwd) {
   @include build-line-height-attribute($rwd);
   @include build-font-size-attribute($rwd);
@@ -74,6 +88,7 @@
   @include build-font-attribute($cht-fonts);
   @include build-font-attribute($eng-fonts);
   @include build-text-align-attribute($rwd);
+  @include build-font-style-attribute($rwd);
 }
 
 @include rwd {

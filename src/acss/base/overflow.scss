@@ -19,18 +19,21 @@
 }
 
 @mixin build-overflow-attribute($rwd) {
+  @include build-overflow($rwd, "auto", auto);
   @include build-overflow($rwd, "hidden", hidden);
   @include build-overflow($rwd, "visible", visible);
   @include build-overflow($rwd, "scroll", scroll);
 }
 
 @mixin build-overflow-x-attribute($rwd) {
+  @include build-overflow-x($rwd, "auto", auto);
   @include build-overflow-x($rwd, "hidden", hidden);
   @include build-overflow-x($rwd, "visible", visible);
   @include build-overflow-x($rwd, "scroll", scroll);
 }
 
 @mixin build-overflow-y-attribute($rwd) {
+  @include build-overflow-y($rwd, "auto", auto);
   @include build-overflow-y($rwd, "hidden", hidden);
   @include build-overflow-y($rwd, "visible", visible);
   @include build-overflow-y($rwd, "scroll", scroll);

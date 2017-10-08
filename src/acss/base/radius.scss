@@ -1,7 +1,7 @@
 @import 'default';
 @import 'rwd';
 @import 'util';
-@import 'compass/css3';
+@import 'mixins';
 
 @mixin build-radius($rwd, $radius) {
   [acss-radius~="#{$radius}#{$rwd}"] {

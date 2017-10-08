@@ -1,3 +1,15 @@
+[v1.2.0]
+remove compass dependency
+add [font-style]
+change flex-align-wrap to flex-align-content
+add auto property to [acss-overflow], [acss-overflow-x], [acss-overflow-y]
+add [acss-grid][acss-align-x]
+remove max-divider-gap constanct
+change .acss-circle to [acss-circle]
+change .acss-rounded to [acss-rounded]
+chnage .acss-texture to [acss-texture]
+add .no-self-shrink
+
 [v1.1.6]
 fix [acss-border-width] rwd
 
