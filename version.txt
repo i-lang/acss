@@ -1,3 +1,6 @@
+[v1.2.1]
+fix typo demo/text.html
+
 [v1.2.0]
 remove compass dependency
 add [font-style]
