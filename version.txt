@@ -1,3 +1,6 @@
+[v1.3.0]
+add [acss-margin]
+
 [v1.2.1]
 fix typo demo/text.html
 
