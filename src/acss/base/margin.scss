@@ -1,0 +1,50 @@
+@import 'util';
+@import 'rwd-base';
+@import 'default';
+
+@mixin build-margin($rwd, $margin) {
+  [acss-margin~="top=#{$margin}#{$rwd}"] {
+    margin-top: px($margin);
+  }
+  [acss-margin~="left=#{$margin}#{$rwd}"] {
+    margin-left: px($margin);
+  }
+  [acss-margin~="bottom=#{$margin}#{$rwd}"] {
+    margin-bottom: px($margin);
+  }
+  [acss-margin~="right=#{$margin}#{$rwd}"] {
+    margin-right: px($margin);
+  }
+}
+
+@mixin build-margin-attributes($rwd) {
+  $margin: $min-margin;
+  @while($margin <= $max-margin) {
+    @include build-margin($rwd, $margin);
+    $margin: $margin + 5;
+  }
+}
+
+@include rwd {
+  @include build-margin-attributes($rwd);
+}
+
+@include rwd-xl {
+  @include build-margin-attributes($rwd-xl);
+}
+
+@include rwd-lg {
+  @include build-margin-attributes($rwd-lg);
+}
+
+@include rwd-md {
+  @include build-margin-attributes($rwd-md);
+}
+
+@include rwd-sm {
+  @include build-margin-attributes($rwd-sm);
+}
+
+@include rwd-xs {
+  @include build-margin-attributes($rwd-xs);
+}

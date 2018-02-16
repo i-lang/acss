@@ -1,5 +1,5 @@
 @import 'util';
-@import '../base/rwd-base';
+@import 'rwd-base';
 @import 'default';
 
 @mixin build-gap-x($rwd, $gap) {
@@ -9,7 +9,7 @@
 }
 
 @mixin build-gap-x-attribute($rwd) {
-  $gap: 0;
+  $gap: $min-gap;
   @while ($gap <= $max-gap) {
     @include build-gap-x($rwd, $gap);
     $gap: $gap + 5;
